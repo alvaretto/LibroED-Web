@@ -1,0 +1,75 @@
+---
+title: "Apartado 11': Ecuaciones Lineales de Orden Superior"
+---
+
+## Ecuaciones Lineales de Orden $n > 1$
+
+Supongamos que tenemos una ecuación:
+$$ a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x) $$
+
+con $n > 1$.
+
+::: {.callout-note}
+## Observación importante
+
+Existe una teoría general bien establecida sobre ecuaciones diferenciales lineales de cualquier orden. Pero éste es un estudio esencialmente teórico: **no es posible describir la solución general de una E. D. lineal de orden 2 o superior por medio de cuadraturas**.
+
+Sin embargo, sí que se calculan las soluciones de forma muy satisfactoria cuando nos encontramos ante ecuaciones lineales con coeficientes constantes.
+:::
+
+## Método de reducción de orden
+
+Este método radica en haber encontrado previamente una **solución particular** $y_n(x)$ de la lineal homogénea asociada:
+$$a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = 0$$
+
+Si hemos logrado encontrar tal solución particular, efectuamos el cambio de función $y$ por $z$ dado por:
+$$y(x) = y_n(x)z(x)$$
+
+### Procedimiento {.unnumbered}
+
+Derivando sucesivamente:
+\begin{align*}
+y'(x) &= y'_n(x)z(x) + y_n(x)z'(x) \\
+y''(x) &= y''_n(x)z(x) + 2y'_n(x)z'(x) + y_n(x)z''(x) \\
+&\vdots \\
+y^{(n)}(x) &= y_n^{(n)}(x)z(x) + \cdots + \binom{n}{k}y_n^{(k)}(x)z^{(n-k)}(x) + \cdots + y_n(x)z^{(n)}(x)
+\end{align*}
+
+Sustituyendo en la lineal y sacando factor común los $z^{(k)}$, el coeficiente de $z$ es 0 por ser precisamente $y_n$ solución de la ecuación lineal homogénea. Así, podemos poner:
+$$ b_n(x)z^{(n)} + b_{n-1}(x)z^{(n-1)} + \cdots + b_1(x)z' = g(x) $$
+
+Si en ella hacemos $z' = u$ aparece:
+$$ b_n(x)u^{(n-1)} + b_{n-1}(x)u^{(n-2)} + \cdots + b_1(x)u = g(x) $$
+
+que es una **ecuación lineal de orden $n-1$**.
+
+::: {.callout-tip}
+## RECETA 11'. Ecuaciones lineales de orden superior
+
+Son de la forma:
+$$ a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x) $$
+
+Si logramos encontrar alguna solución $y_n(x)$ de la lineal homogénea asociada, el cambio de función $y = y_n z$ hace que la lineal se transforme en una del tipo anterior, cuyo orden se puede reducir. Así, aparece una nueva ecuación lineal, esta vez de orden $n-1$.
+:::
+
+## Resultados generales
+
+### Estructura de la solución general {.unnumbered}
+
+La solución general de la lineal de orden $n$ puede expresarse como:
+$$ y(x) = y_p(x) + C_1 y_1(x) + \cdots + C_{n-1}y_{n-1}(x) + C_n y_n(x) $$
+
+donde $y_p(x)$ es una solución particular de la lineal.
+
+::: {.callout-important}
+La solución general de la lineal puede expresarse como una solución particular de la lineal más la solución general de la lineal homogénea asociada.
+:::
+
+### Método de variación de las constantes {.unnumbered}
+
+También existe el método de variación de las constantes para E. D. lineales de orden $n$, destinado a resolver la ecuación lineal cuando se conoce la solución general de la homogénea asociada, $y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x)$.
+
+En estas condiciones, se busca la solución de la lineal de la forma:
+$$ y(x) = C_1(x)y_1(x) + C_2(x)y_2(x) + \cdots + C_n(x)y_n(x) $$
+
+para ciertas funciones $C_k(x)$ a determinar.

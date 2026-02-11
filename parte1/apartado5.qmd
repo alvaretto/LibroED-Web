@@ -1,0 +1,66 @@
+---
+title: "Apartado 5: Ecuaciones Lineales"
+---
+
+## Ecuaciones Lineales de Primer Orden
+
+Una ecuación diferencial lineal de primer orden es de la forma:
+$$ y' + a(x)y = b(x) $$
+
+donde $a(x)$ y $b(x)$ son funciones dadas de $x$.
+
+### Método del Factor Integrante {.unnumbered}
+
+El método de resolución consiste en multiplicar ambos lados de la ecuación por un **factor integrante** $\mu(x)$ que convierte el lado izquierdo en la derivada de un producto.
+
+::: {.callout-tip}
+## RECETA 5. Ecuaciones Lineales
+
+Para resolver $y' + a(x)y = b(x)$:
+
+1. Calcular el factor integrante: $\mu(x) = e^{\int a(x) \, dx}$
+
+2. Multiplicar la ecuación por $\mu(x)$:
+   $$\mu(x)y' + \mu(x)a(x)y = \mu(x)b(x)$$
+
+3. El lado izquierdo es $\frac{d}{dx}[\mu(x)y]$:
+   $$\frac{d}{dx}[\mu(x)y] = \mu(x)b(x)$$
+
+4. Integrar ambos lados:
+   $$\mu(x)y = \int \mu(x)b(x) \, dx + C$$
+
+5. Despejar $y$:
+   $$y = \frac{1}{\mu(x)}\left[\int \mu(x)b(x) \, dx + C\right]$$
+:::
+
+### Ejemplo 5 {.unnumbered}
+
+**Resolver**
+$$ y' + 2xy = x $$
+
+**Solución:**
+
+1. Identificamos: $a(x) = 2x$, $b(x) = x$
+
+2. Factor integrante:
+   $$\mu(x) = e^{\int 2x \, dx} = e^{x^2}$$
+
+3. Multiplicamos:
+   $$e^{x^2}y' + 2xe^{x^2}y = xe^{x^2}$$
+
+4. El lado izquierdo es la derivada:
+   $$\frac{d}{dx}[e^{x^2}y] = xe^{x^2}$$
+
+5. Integramos:
+   $$e^{x^2}y = \int xe^{x^2} \, dx = \frac{1}{2}e^{x^2} + C$$
+
+6. Solución:
+   $$y = \frac{1}{2} + Ce^{-x^2}$$
+
+::: {.callout-note}
+## Observación
+
+La solución general es la suma de:
+- **Solución particular** de la ecuación completa: $y_p = \frac{1}{2}$
+- **Solución general** de la ecuación homogénea: $y_h = Ce^{-x^2}$
+:::

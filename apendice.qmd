@@ -1,0 +1,98 @@
+---
+title: "Apéndice: Fórmulas de Integración"
+---
+
+## Reglas principales de integración
+
+### 1. Integral indefinida {.unnumbered}
+
+Si $F'(x) = f(x)$, entonces:
+$$\int f(x) \, dx = F(x) + C$$
+
+### 2. Integrales inmediatas {.unnumbered}
+
+::: {.panel-tabset}
+
+## Potencias y logaritmo
+
+$$\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)$$
+
+$$\int \frac{1}{x} \, dx = \ln|x| + C$$
+
+## Exponencial
+
+$$\int e^x \, dx = e^x + C$$
+
+$$\int a^x \, dx = \frac{a^x}{\ln a} + C \quad (a > 0, a \neq 1)$$
+
+## Trigonométricas
+
+$$\int \operatorname{sen} x \, dx = -\cos x + C$$
+
+$$\int \cos x \, dx = \operatorname{sen} x + C$$
+
+$$\int \operatorname{tg} x \, dx = -\ln|\cos x| + C$$
+
+$$\int \operatorname{cotg} x \, dx = \ln|\operatorname{sen} x| + C$$
+
+$$\int \sec x \, dx = \ln|\sec x + \operatorname{tg} x| + C$$
+
+$$\int \csc x \, dx = \ln|\csc x - \operatorname{cotg} x| + C$$
+
+## Trigonométricas inversas
+
+$$\int \frac{1}{\sqrt{1-x^2}} \, dx = \operatorname{arcsen} x + C$$
+
+$$\int \frac{1}{1+x^2} \, dx = \operatorname{arctg} x + C$$
+
+$$\int \frac{1}{x\sqrt{x^2-1}} \, dx = \operatorname{arcsec} |x| + C$$
+
+:::
+
+### 3. Método de sustitución {.unnumbered}
+
+Si $u = g(x)$, entonces:
+$$\int f(g(x))g'(x) \, dx = \int f(u) \, du$$
+
+### 4. Integración por partes {.unnumbered}
+
+$$\int u \, dv = uv - \int v \, du$$
+
+o equivalentemente:
+$$\int u(x)v'(x) \, dx = u(x)v(x) - \int u'(x)v(x) \, dx$$
+
+### 5. Fracciones racionales {.unnumbered}
+
+Para integrar $\frac{P(x)}{Q(x)}$ donde $P$ y $Q$ son polinomios:
+
+1. Si grado de $P \geq$ grado de $Q$: dividir primero
+2. Descomponer en fracciones simples
+3. Integrar cada fracción simple
+
+::: {.callout-tip}
+## Descomposición en fracciones simples
+
+- Para $(x-a)^n$: términos $\frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + \cdots + \frac{A_n}{(x-a)^n}$
+
+- Para $x^2 + bx + c$ irreducible: término $\frac{Ax + B}{x^2 + bx + c}$
+:::
+
+### Tabla de integrales útiles {.unnumbered}
+
+| Integral | Resultado |
+|----------|-----------|
+| $\displaystyle\int \frac{1}{a^2+x^2} \, dx$ | $\displaystyle\frac{1}{a}\operatorname{arctg}\frac{x}{a} + C$ |
+| $\displaystyle\int \frac{1}{\sqrt{a^2-x^2}} \, dx$ | $\displaystyle\operatorname{arcsen}\frac{x}{a} + C$ |
+| $\displaystyle\int \frac{1}{a^2-x^2} \, dx$ | $\displaystyle\frac{1}{2a}\ln\left|\frac{a+x}{a-x}\right| + C$ |
+| $\displaystyle\int \frac{1}{\sqrt{x^2 \pm a^2}} \, dx$ | $\displaystyle\ln|x + \sqrt{x^2 \pm a^2}| + C$ |
+| $\displaystyle\int \sqrt{a^2-x^2} \, dx$ | $\displaystyle\frac{x}{2}\sqrt{a^2-x^2} + \frac{a^2}{2}\operatorname{arcsen}\frac{x}{a} + C$ |
+
+::: {.callout-note}
+## Recursos para más fórmulas
+
+Para una lista más completa de fórmulas de integración, consultar:
+
+- Tablas de integrales de Gradshteyn y Ryzhik
+- [Wolfram Integrator](http://integrals.wolfram.com/)
+- [Symbolab Calculator](https://www.symbolab.com/)
+:::

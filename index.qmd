@@ -1,0 +1,67 @@
+---
+title: "Métodos Clásicos de Resolución de E.D.O."
+subtitle: "Ecuaciones Diferenciales Ordinarias"
+---
+
+# Bienvenida {.unnumbered}
+
+Este libro presenta los **métodos clásicos de resolución de ecuaciones diferenciales ordinarias (E.D.O.)**, organizados de manera sistemática y pedagógica.
+
+## Contenido del libro
+
+El material está estructurado en **tres partes principales**:
+
+### Parte I: Ecuaciones Explícitas de Primer Orden
+
+Métodos fundamentales para resolver ecuaciones del tipo $y' = f(x,y)$:
+
+- Variables separadas
+- Ecuaciones homogéneas
+- Ecuaciones lineales
+- Ecuación de Bernoulli
+- Ecuaciones exactas
+- Factor integrante
+
+### Parte II: E.D. con Derivada Implícita
+
+Técnicas especiales para ecuaciones donde la derivada no está despejada:
+
+- Ecuación de Clairaut
+- Ecuación de Lagrange
+- Ecuación de d'Alembert
+
+### Parte III: Reducción de Orden
+
+Métodos avanzados para ecuaciones de orden superior:
+
+- Reducción en ausencia de variable dependiente
+- Reducción en ausencia de variable independiente
+- Ecuaciones homogéneas generalizadas
+
+## Características del material
+
+::: {.callout-tip}
+## RECETAS
+
+A lo largo del libro encontrarás **recetas** que resumen paso a paso los métodos de resolución.
+:::
+
+::: {.callout-note}
+## Ejemplos resueltos
+
+Cada método incluye ejemplos completamente desarrollados con explicaciones detalladas.
+:::
+
+::: {.callout-warning}
+## Ejercicios
+
+Al final de cada apartado hay ejercicios propuestos para practicar.
+:::
+
+## Navegación
+
+Utiliza el menú lateral para navegar entre los diferentes apartados. La barra de búsqueda te permitirá encontrar rápidamente conceptos específicos.
+
+---
+
+**Material Educativo** • 2026

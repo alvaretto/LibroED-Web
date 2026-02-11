@@ -1,0 +1,82 @@
+---
+title: "Apartado 9: Ecuación de la forma $x = f(y, y')$"
+---
+
+## Método general
+
+Estas ecuaciones son similares a las que aparecen en el apartado 8 pero con el papel de $x$ e $y$ intercambiado. En general, para intentar resolverlas, tomamos $y' = p$ y derivamos $x = f(y, y')$ (o, si se prefiere interpretarlo así, $x = f(y, p)$) respecto de $y$ (en lugar de respecto a $x$, como hacíamos en el apartado 8).
+
+::: {.callout-warning}
+## ¡Atención!
+
+Esto requiere tener un poco más de cuidado, además de usar $\frac{dx}{dy} = \frac{1}{dy/dx} = \frac{1}{p}$.
+:::
+
+Así:
+$$ \frac{1}{p} = \frac{dx}{dy} = f_y(y, p) + f_p(y, p)\frac{dp}{dy} $$
+
+Según como sea $f$, esta nueva ecuación $\frac{1}{p} = f_y(y, p) + f_p(y, p)\frac{dp}{dy}$ a la que hemos reducido la que teníamos responde a alguno de los tipos previamente estudiados, luego podríamos resolverla.
+
+Si logramos hacerlo, obtenemos su solución $y = \phi(p, C)$. Con esto, la solución de la ecuación de partida será la familia de curvas paramétricas:
+$$
+\begin{cases}
+x = f(\phi(p, C), p) \\
+y = \phi(p, C)
+\end{cases}
+$$
+
+## Casos especiales
+
+Pero no podemos asegurar que, para una función $f$ cualquiera, sepamos resolver la ecuación intermedia que nos aparece. Se pueden estudiar casos similares a los de la forma $y = f(x, y')$ en los que se garantiza que el método no quedará interrumpido.
+
+Los tres casos que merece la pena distinguir son los siguientes:
+
+### 9.1. Ecuación $x = f(y')$ {.unnumbered}
+
+Similar al caso 8.1, pero derivando respecto a $y$.
+
+### 9.2. Ecuación $x + y\varphi(y') + \psi(y') = 0$ {.unnumbered}
+
+Similar al caso 8.2 (ecuación de Lagrange), pero con $x$ e $y$ intercambiados.
+
+### 9.3. Ecuación $x - \frac{y}{y'} + \psi(y') = 0$ {.unnumbered}
+
+Similar al caso 8.3 (ecuación de Clairaut), pero con $x$ e $y$ intercambiados.
+
+::: {.callout-note}
+## Ejercicio
+
+Se deja al lector que, como ejercicio, describa el método de resolución de estos tres tipos de ecuaciones. Simplemente hay que dedicarse a modificar, con cuidado, el proceso utilizado en los correspondientes tipos 8.1, 8.2 y 8.3, recordando que ahora hay que derivar respecto de $y$ en lugar de respecto de $x$.
+:::
+
+::: {.callout-tip}
+## RECETA 9. Ecuación de la forma $x = f(y, y')$
+
+En general, se toma $y' = p$ y se deriva la ecuación $x = f(y, y')$ respecto de $y$. Según como sea $f$, la nueva E. D. que así se obtiene es ya conocida, procediéndose a su resolución. Se pueden estudiar casos similares a los de la forma $y = f(x, y')$.
+:::
+
+### Ejemplo 9 {.unnumbered}
+
+**Resolver**
+$$ x = (y')^3 + y'. $$
+
+**Solución:**
+
+Si tomamos $\frac{dy}{dx} = y' = p$ y derivamos $x = p^3 + p$ respecto de $y$ tenemos:
+$$ \frac{1}{p} = \frac{1}{dy/dx} = \frac{dx}{dy} = 3p^2 \frac{dp}{dy} + \frac{dp}{dy} $$
+
+que podemos poner como $dy = (3p^3 + p) \, dp$, ecuación en variables separadas.
+
+Integrándola, $y = \frac{3}{4}p^4 + \frac{1}{2}p^2 + C$.
+
+::: {.callout-important}
+## Solución
+
+Por lo tanto, las soluciones de la ecuación $x = (y')^3 + y'$ son la familia de curvas paramétricas:
+$$
+\begin{cases}
+x = p^3 + p \\
+y = \frac{3}{4}p^4 + \frac{1}{2}p^2 + C
+\end{cases}
+$$
+:::

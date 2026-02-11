@@ -1,0 +1,80 @@
+---
+title: "Apartado 12: $F(y, y', \\ldots, y^{(n)}) = 0$"
+---
+
+## Reducción de orden: ausencia de $x$
+
+En esta ecuación no aparece explícitamente la variable independiente $x$. Vamos a ver cómo se reduce de orden si efectuamos el cambio $y' = p$ y la transformamos en una nueva en la que aparecerán $y$, $p$ y las derivadas de $p$ respecto de $y$.
+
+::: {.callout-warning}
+## ¡Atención!
+
+Las derivadas de $p$ son **respecto de $y$**, no respecto de $x$.
+:::
+
+## Derivadas sucesivas
+
+Si denotamos $p' = \frac{dp}{dy}$, $p'' = \frac{d^2p}{dy^2}$, ..., y hacemos uso de la regla de la cadena, entonces:
+
+$$y' = p$$
+
+$$ y'' = \frac{dy'}{dx} = \frac{dp}{dx} = \frac{dp}{dy}\frac{dy}{dx} = p'p $$
+
+$$ y''' = \frac{dy''}{dx} = \frac{d}{dx}(p'p) = \frac{d}{dy}(p'p)\frac{dy}{dx} = [p''p + (p')^2]p $$
+
+y así sucesivamente. Nótese que en la expresión de cada $y^{(k)}$ sólo aparecen derivadas de $p$ hasta el orden $k-1$.
+
+## Transformación de la ecuación
+
+Con esto, sustituyendo en $F$ los valores que hemos encontrado para $y'$, $y''$, ..., $y^{(n)}$, la E. D. original se transforma en una de la forma:
+$$ G\left( y, \frac{dp}{dy}, \ldots, \frac{d^{n-1}p}{dy^{n-1}} \right) = 0 $$
+
+cuyo orden es $n-1$.
+
+Si logramos resolver esta nueva ecuación encontraremos que, en general, su solución será de la forma $p = \phi(y, C_1, \ldots, C_{n-1})$, dependiente de $n-1$ constantes.
+
+Ahora, devolviendo a $p$ su valor original, es decir, $p = \frac{dy}{dx}$, obtenemos:
+$$\frac{dy}{dx} = \phi(y, C_1, \ldots, C_{n-1})$$
+
+que es otra ecuación, esta vez de primer orden, que también hay que resolver (lo cual, además, añade una nueva constante). Las soluciones de esta última serán, obviamente, las mismas que las de la E. D. de partida.
+
+::: {.callout-tip}
+## RECETA 12. Ecuación de la forma $F(y, y', \ldots, y^{(n)}) = 0$
+
+Hacemos el cambio $y' = p$ y transformamos la E. D. en una nueva dependiendo de $y$, $p$ y las derivadas de $p$ respecto de $y$. Ésta es de orden $n-1$.
+:::
+
+### Ejemplo 12 {.unnumbered}
+
+**Resolver**
+$$ 2yy'' = (y')^2 + 1. $$
+
+**Solución:**
+
+Tomando $y' = p$, y tal como hemos comprobado al explicar el método, se tiene $y'' = p'p$ donde $p' = \frac{dp}{dy}$.
+
+Entonces, al sustituir en la E. D., ésta se nos transforma en $2yp'p = p^2 + 1$, es decir:
+$$\frac{2p \, dp}{p^2 + 1} = \frac{dy}{y}$$
+
+que es de variables separadas.
+
+Si integramos:
+$$\log(p^2 + 1) = \log(C_1 y)$$
+
+de donde $p^2 + 1 = C_1 y$, y por tanto $p = \pm\sqrt{C_1 y - 1}$.
+
+Volvemos ahora a restaurar el valor $p = \frac{dy}{dx}$, con lo cual nos aparece:
+$$\frac{dy}{dx} = \pm\sqrt{C_1 y - 1}$$
+
+Ésta es de nuevo una ecuación en variables separadas, que podemos escribir como:
+$$(C_1 y - 1)^{-1/2} dy = \pm dx$$
+
+Integrándola:
+$$2\sqrt{C_1 y - 1} = \pm C_1 x + C_2$$
+
+::: {.callout-important}
+## Solución
+
+Con lo que ya hemos encontrado las soluciones de la E. D. de partida:
+$$2\sqrt{C_1 y - 1} = \pm C_1 x + C_2$$
+:::

@@ -1,0 +1,81 @@
+---
+title: "Apartado 4: Ecuaciones Exactas"
+---
+
+## Ecuaciones Exactas
+
+Llamamos exacta a una ecuación diferencial
+$$ P(x, y) \, dx + Q(x, y) \, dy = 0, $$
+es decir, $y' = \frac{dy}{dx} = -\frac{P(x,y)}{Q(x,y)}$, que cumple $P_y = Q_x$ (con la notación $P_y = \frac{\partial P}{\partial y}$, $Q_x = \frac{\partial Q}{\partial x}$).
+
+### Expresiones diferenciales {.unnumbered}
+
+Una expresión diferencial $P(x, y) \, dx + Q(x, y) \, dy$ se dice que es una **diferencial cerrada** en una región $R$ del plano $xy$ si se verifica $P_y(x, y) = Q_x(x, y)$ para todo $(x, y) \in R$.
+
+Y se dice **exacta** en $R$ cuando existe alguna función $F(x, y)$ tal que $\frac{\partial F}{\partial x} = P$ y $\frac{\partial F}{\partial y} = Q$ para todo $(x, y) \in R$; en otras palabras, si la diferencial de $F$ es $dF = P \, dx + Q \, dy$ ($F$, que es única salvo constantes, se denomina **función potencial**).
+
+::: {.callout-note}
+## Teorema de Schwartz
+
+El teorema de Schwartz sobre igualdad de derivadas cruzadas nos asegura que cualquier expresión diferencial exacta es cerrada. Lo contrario no es cierto en general, aunque sí en dominios **simplemente conexos** (sin agujeros).
+:::
+
+### Método de resolución {.unnumbered}
+
+Si tenemos $P \, dx + Q \, dy = 0$ exacta, como existe $F$ tal que $dF = P \, dx + Q \, dy$, entonces la ecuación podemos ponerla en la forma $dF = 0$ y, por tanto, su solución será $F(x, y) = C$ (siendo $C$ constante arbitraria). Así pues, basta con que encontremos la función potencial $F$.
+
+El procedimiento para hallarla es:
+
+1. Buscamos $F$ tal que $\frac{\partial F}{\partial x} = P$; integrando $P(x, y)$ respecto a $x$ mientras se mantiene $y$ constante:
+   $$F(x, y) = \int P(x, y) \, dx + \varphi(y)$$
+   donde $\varphi(y)$ es una función arbitraria.
+
+2. Derivando respecto de $y$:
+   $$\frac{\partial F}{\partial y} = \frac{\partial}{\partial y} \int P(x, y) \, dx + \varphi'(y)$$
+
+3. Como $\frac{\partial F}{\partial y} = Q$, resulta:
+   $$\varphi'(y) = Q(x, y) - \frac{\partial}{\partial y} \int P(x, y) \, dx$$
+
+4. Integrando obtenemos $\varphi(y)$ y, sustituyendo su valor, llegamos a $F(x, y)$.
+
+5. Las soluciones quedan expresadas implícitamente como $F(x, y) = C$.
+
+::: {.callout-tip}
+## RECETA 4. Ecuaciones exactas
+
+Son las de la forma
+$$ P(x, y) \, dx + Q(x, y) \, dy = 0, $$
+que cumplen $P_y = Q_x$. Se busca una función $F(x, y)$ tal que $dF = P \, dx + Q \, dy$, y la solución de la E. D. es $F(x, y) = C$.
+:::
+
+### Ejemplo 4 {.unnumbered}
+
+**Resolver**
+$$ 3y + e^x + (3x + \cos y)y' = 0. $$
+
+**Solución:**
+
+Ponemos la ecuación en la forma $P \, dx + Q \, dy = 0$ con:
+- $P(x, y) = 3y + e^x$
+- $Q(x, y) = 3x + \cos y$
+
+Verificamos: $P_y = 3 = Q_x$, luego la E. D. es exacta.
+
+Calculemos la función potencial $F$:
+
+1. Como $F_x = 3y + e^x$, integrando respecto de $x$:
+   $$F(x, y) = 3yx + e^x + \varphi(y)$$
+
+2. Derivando respecto de $y$ e igualando a $Q$:
+   $$3x + \varphi'(y) = 3x + \cos y$$
+
+3. Por tanto $\varphi'(y) = \cos y$, de donde $\varphi(y) = \operatorname{sen} y$.
+
+4. Así: $F(x, y) = 3yx + e^x + \operatorname{sen} y$
+
+::: {.callout-important}
+## Solución
+
+La solución de la E. D. viene dada, implícitamente, por:
+$$3yx + e^x + \operatorname{sen} y = C$$
+:::

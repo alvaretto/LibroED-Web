@@ -1,0 +1,73 @@
+---
+title: "Apartado 3: Ecuaciones Homogéneas"
+---
+
+## Ecuaciones Homogéneas
+
+Supongamos que tenemos la ecuación
+$$ y' = f\left(\frac{y}{x}\right). $$
+
+Para resolverla, hacemos el cambio de función $y(x)$ por $u(x)$ mediante $u = \frac{y}{x}$. Así, derivando $y = ux$ tenemos $y' = u'x + u$, es decir, $u'x + u = f(u)$. Esta ecuación, que podemos poner como $u'x = f(u) - u$, es de variables separadas. Vamos a solucionarla:
+
+### Caso 1: $f(u) \neq u$ {.unnumbered}
+
+Podemos escribir $\frac{du}{f(u)-u} = \frac{dx}{x}$ e, integrando, $\int \frac{du}{f(u)-u} = \log(\frac{x}{C})$. Despejando $x$ obtenemos $x = C e^{\phi(u)}$ con $\phi(u) = \int \frac{du}{f(u)-u}$.
+
+Por tanto, las curvas con ecuaciones paramétricas
+$$
+\begin{cases}
+x = C e^{\phi(u)} \\
+y = C u e^{\phi(u)}
+\end{cases}
+$$
+son solución de la ecuación diferencial para cada $C \in \mathbb{R}$.
+
+::: {.callout-note}
+## Familia de curvas homotéticas
+
+Esto constituye una familia de curvas homotéticas: una curva se obtiene de otra mediante una homotecia, es decir, multiplicando los valores de $x$ e $y$ por una constante.
+:::
+
+A veces, es conveniente expresar estas soluciones de otras formas. Siempre puede ponerse $x = C e^{\phi(y/x)}$, solución dada mediante una función implícita. Y, cuando en $x = C e^{\phi(u)}$ se logra despejar de alguna forma $u = H(x, C)$, la solución de la E. D. queda mucho más sencilla: $y = xH(x, C)$.
+
+### Caso 2: Soluciones singulares {.unnumbered}
+
+Supongamos ahora que existe algún $u_0$ tal que $f(u_0) = u_0$. En este caso, es inmediato comprobar que la recta $y = u_0x$ es solución: $y' = u_0 = f(u_0) = f(\frac{y}{x})$, luego se satisface la ecuación diferencial.
+
+::: {.callout-important}
+## Soluciones singulares
+
+Este tipo de soluciones que no se obtienen con el procedimiento general suelen denominarse **soluciones singulares**.
+:::
+
+### Nota sobre funciones homogéneas {.unnumbered}
+
+En general, una función $h(x, y)$ se dice **homogénea de grado $\alpha$** si $h(\lambda x, \lambda y) = \lambda^\alpha h(x, y)$.
+
+Es inmediato comprobar que una E. D. de la forma
+$$ P(x, y) \, dx + Q(x, y) \, dy = 0 $$
+con $P(x, y)$ y $Q(x, y)$ funciones homogéneas del mismo grado es, efectivamente, una ecuación diferencial homogénea (despejar $y' = \frac{dy}{dx} = -\frac{P(x,y)}{Q(x,y)} = -\frac{P(x,x(y/x))}{Q(x,x(y/x))}$ y extraer $\lambda = x$ de $P$ y $Q$). De aquí proviene el nombre de este tipo de ecuaciones.
+
+::: {.callout-tip}
+## RECETA 3. Homogéneas
+
+Son de la forma
+$$ y' = f\left(\frac{y}{x}\right). $$
+
+Se hace el cambio de función $y(x)$ por $u(x)$ mediante $y = ux$, transformándose así la E. D. en una de variables separadas.
+:::
+
+### Ejemplo 3 {.unnumbered}
+
+**Resolver**
+$$ y' = \frac{2xy - y^2}{x^2}. $$
+
+**Solución:**
+
+Con el cambio $y = ux$ podemos poner $y' = 2\frac{y}{x} - (\frac{y}{x})^2 = 2u - u^2$. Como $y' = u'x + u$, sustituyendo tenemos $u'x + u = 2u - u^2$, es decir, $xu' = u - u^2$.
+
+Si $u \neq u^2$, podemos poner $\frac{du}{u-u^2} = \frac{dx}{x}$. Para integrar, descomponemos $\frac{1}{u-u^2} = \frac{A}{u} + \frac{B}{1-u}$, lo que se satisface para $A = B = 1$.
+
+Entonces, integrando, $\log u - \log(1 - u) = \log \frac{x}{C}$, es decir, $\frac{u}{1-u} = \frac{x}{C}$; y sustituyendo $u = \frac{y}{x}$ tenemos $\frac{y/x}{1-y/x} = \frac{x}{C}$, de donde $Cy = x(x - y)$. De aquí es fácil despejar explícitamente $y$ si así se desea.
+
+Por otra parte, a partir de $u_0 = 0$ y $u_0 = 1$ (para las cuales $u = u^2$), se tienen las soluciones singulares $y = 0$ e $y = x$.

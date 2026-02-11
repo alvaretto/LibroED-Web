@@ -1,0 +1,103 @@
+---
+title: "Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos"
+---
+
+## Ecuaciones homogéneas respecto a $y, y', \ldots, y^{(n)}$
+
+Si la ecuación $F(x, y, y', \ldots, y^{(n)}) = 0$ es tal que, para $\alpha$ fijo, $F$ cumple:
+$$ F(x, \lambda u_0, \lambda u_1, \ldots, \lambda u_n) = \lambda^\alpha F(x, u_0, u_1, \ldots, u_n) $$
+
+vamos a comprobar cómo, a través de un cambio de variable dependiente, el orden se puede reducir en uno.
+
+::: {.callout-note}
+## Definición
+
+La propiedad que caracteriza a la función $F$ suele expresarse diciendo que $F$ es **homogénea** de grado $\alpha$ respecto a los argumentos $u_0, u_1, \ldots, u_n$.
+
+Con este lenguaje, la ecuación que estamos intentando resolver es homogénea de grado $\alpha$ respecto de $y, y', \ldots, y^{(n)}$.
+:::
+
+## Solución trivial
+
+En primer lugar, es claro que, cuando $\alpha > 0$, la función constante $y = 0$ (para la cual $y' = y'' = \cdots = 0$) es solución ya que, efectivamente:
+$$F(x, y, y', \ldots, y^{(n)}) = F(x, 0, 0, \ldots, 0) = 0^\alpha F(x, 1, 1, \ldots, 1) = 0$$
+
+## Cambio de función
+
+Para hallar las demás soluciones, tomemos una nueva función $z$ dada por:
+$$y' = yz$$
+
+Obviamente, esto es equivalente a decir $y = \exp(\int z\,dx)$, puesto que:
+$$ \frac{dy}{dx} = yz \Longleftrightarrow \frac{dy}{y} = z\,dx \Longleftrightarrow \log y = \int z\,dx \Longleftrightarrow y = \exp\left( \int z\,dx \right) $$
+
+### Derivadas sucesivas {.unnumbered}
+
+Si derivamos sucesivamente la expresión $y' = yz$, obtenemos:
+$$y'' = y'z + yz' = y(z^2 + z')$$
+$$y''' = y''z + y'z' + yz'' = y(z^3 + 3zz' + z'')$$
+
+y así sucesivamente.
+
+::: {.callout-important}
+Es importante destacar el hecho de que siempre aparece una relación del tipo $y^{(k)} = yg_k(z, z', \ldots, z^{(k-1)})$.
+:::
+
+## Transformación de la ecuación
+
+Sin más que sustituir, en la E. D. queda:
+$$ F(x, y, yz, y(z^2 + z'), \ldots, yg_n(z, z', \ldots, z^{(n-1)})) = 0 $$
+
+de donde, extrayendo $\lambda = y$:
+$$ y^\alpha F(x, 1, z, z^2 + z', \ldots, g_n(z, z', \ldots, z^{(n-1)})) = 0 $$
+
+y por tanto, como estamos suponiendo que $y$ no es la función nula, el segundo factor habrá de ser cero. Claramente, esto puede ponerse en la forma:
+$$ G(x, z, z', \ldots, z^{(n-1)}) = 0 $$
+
+que es una **ecuación de orden $n-1$**.
+
+Si logramos resolverla, tendremos que sus soluciones serán $z = \phi(x, C_1, \ldots, C_{n-1})$, una familia dependiente de $n-1$ constantes. Entonces, las soluciones de la E. D. original serán:
+$$ y = \exp\left( \int \phi(x, C_1, \ldots, C_{n-1})\,dx \right) $$
+
+lo que, al integrar, introduce la $n$-ésima constante. Así, puede ponerse:
+$$ y = C_n \exp\left( \int \phi(x, C_1, \ldots, C_{n-1})\,dx \right) $$
+
+::: {.callout-tip}
+## RECETA 13. Si la ecuación $F(x, y, y', \ldots, y^{(n)}) = 0$
+
+es tal que, para $\alpha$ fijo, $F$ cumple:
+$$ F(x, \lambda u_0, \lambda u_1, \ldots, \lambda u_n) = \lambda^\alpha F(x, u_0, u_1, \ldots, u_n) $$
+
+entonces el cambio de función dado por $y' = yz$ (es decir, $y = \exp(\int z\,dx)$) hace que el orden se reduzca en uno.
+:::
+
+### Ejemplo 13 {.unnumbered}
+
+**Resolver**
+$$ 3x^2((y')^2 - yy'') = y^2. $$
+
+**Solución:**
+
+Esta ecuación es homogénea de grado 2 respecto de $y, y', y''$ pues, al sustituir $y, y', y''$ por $\lambda y, \lambda y', \lambda y''$, la ecuación queda multiplicada por $\lambda^2$.
+
+Para resolverla, hacemos el cambio $y$ por $z$ dado por $y = \exp(\int z(x)\,dx)$, con lo cual:
+$$ y' = z\exp\left( \int z\,dx \right), \quad y'' = (z' + z^2)\exp\left( \int z\,dx \right) $$
+
+Sustituyendo en la E. D. queda:
+$$ 3x^2\left[ z^2\exp\left( 2 \int z\,dx \right) - (z' + z^2)\exp\left( 2 \int z\,dx \right) \right] = \exp\left( 2 \int z\,dx \right) $$
+
+de donde, simplificando $\exp(2 \int z\,dx)$, se sigue $-3x^2 z' = 1$, ecuación en variables separadas.
+
+Tras ponerla como $dz = -\frac{1}{3}x^{-2}\,dx$ la integramos, con lo que $z = \frac{1}{3}x^{-1} + C_1$.
+
+Por último:
+\begin{align*}
+y &= \exp\left( \int z(x)\,dx \right) = \exp\left( \int \left( \frac{1}{3}x^{-1} + C_1 \right) dx \right) \\
+&= \exp\left( \frac{1}{3}\log x + C_1 x + C_2 \right) = x^{1/3}\exp(C_1 x + C_2)
+\end{align*}
+
+::: {.callout-important}
+## Solución
+
+La solución de la ecuación original es, sin más que cambiar la notación de las constantes, la familia de funciones:
+$$y = K_1 x^{1/3}e^{K_2 x}$$
+:::

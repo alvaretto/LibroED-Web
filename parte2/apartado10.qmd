@@ -1,0 +1,86 @@
+---
+title: "Apartado 10: Ecuación de la forma $F(y, y') = 0$"
+---
+
+## Método general
+
+Para intentar encontrar sus soluciones, consideremos la curva $F(\alpha, \beta) = 0$. El método de resolución requiere que hayamos logrado encontrar previamente una **representación paramétrica** de la curva, esto es, $\alpha = \varphi(t)$ y $\beta = \psi(t)$ tal que $F(\varphi(t), \psi(t)) = 0$.
+
+Si así ha sido, vamos ahora a efectuar el cambio de función $y$ por $t$ mediante:
+$$y = \varphi(t), \quad y' = \psi(t)$$
+
+Entonces, derivando $y = \varphi(t)$ respecto de $x$ tenemos $y' = \varphi'(t)\frac{dt}{dx}$ que, al ser $y' = \psi(t)$, puede escribirse como:
+$$ \psi(t) = \varphi'(t)\frac{dt}{dx} $$
+
+Esta es una ecuación en **variables separadas**.
+
+## Resolución según casos
+
+### Caso 1: $\psi(t) \neq 0$ {.unnumbered}
+
+Podemos poner $dx = \frac{\varphi'(t)}{\psi(t)} \, dt$ e, integrando:
+$$x = \int \frac{\varphi'(t)}{\psi(t)} \, dt + C$$
+
+Como consecuencia, la familia de curvas paramétricas:
+$$
+\begin{cases}
+x = \int \frac{\varphi'(t)}{\psi(t)} \, dt + C \\
+y = \varphi(t)
+\end{cases}
+$$
+son soluciones de la E. D. de partida.
+
+### Caso 2: Soluciones singulares ($\psi(t_0) = 0$) {.unnumbered}
+
+Si existe algún $t_0$ para el que $\psi(t_0) = 0$, formalmente efectuamos el siguiente razonamiento:
+$$0 = \varphi'(t)\frac{dt}{dx}$$
+
+así que $\varphi'(t) = 0$ y consecuentemente $\varphi(t) = \text{cte.} = \varphi(t_0)$, lo que nos conduciría a la solución $y = \varphi(t_0)$.
+
+Y, en efecto, podemos comprobar con rigor que esta **recta horizontal** es solución de la E. D. sin más que sustituir en ella:
+$$F(y, y') = F(\varphi(t_0), 0) = F(\varphi(t_0), \psi(t_0)) = 0$$
+
+::: {.callout-tip}
+## RECETA 10. Ecuación de la forma $F(y, y') = 0$
+
+Consideramos la curva $F(\alpha, \beta) = 0$. Si encontramos una representación paramétrica $\alpha = \varphi(t)$, $\beta = \psi(t)$, $F(\varphi(t), \psi(t)) = 0$, se hace el cambio de función $y$ por $t$ mediante $y = \varphi(t)$, $y' = \psi(t)$. Así, derivando $y = \varphi(t)$ respecto de $x$, aparece una ecuación en variables separadas.
+:::
+
+### Ejemplo 10 {.unnumbered}
+
+**Resolver**
+$$ y^{2/3} + (y')^{2/3} = 1. $$
+
+**Solución:**
+
+Si tomamos $y = \cos^3 t$, $y' = \operatorname{sen}^3 t$, es claro que:
+$$(\cos^3 t)^{2/3} + (\operatorname{sen}^3 t)^{2/3} = 1$$
+
+Derivando $y = \cos^3 t$ tenemos $y' = -3 \cos^2 t \operatorname{sen} t \frac{dt}{dx}$, lo que, usando $y' = \operatorname{sen}^3 t$, resulta ser:
+$$\operatorname{sen}^3 t = -3 \cos^2 t \operatorname{sen} t \frac{dt}{dx}$$
+
+**Si suponemos** $\operatorname{sen} t \neq 0$, tenemos:
+$$dx = \frac{-3 \cos^2 t}{\operatorname{sen}^2 t} \, dt = -3 \operatorname{cotg}^2 t \, dt$$
+
+Integrando:
+\begin{align*}
+x &= -3 \int \operatorname{cotg}^2 t \, dt \\
+&= -3 \int (1 + \operatorname{cotg}^2 t) \, dt + 3 \int dt \\
+&= 3 \operatorname{cotg} t + 3t + C
+\end{align*}
+
+Por tanto, las curvas paramétricas:
+$$
+\begin{cases}
+x = 3 \operatorname{cotg} t + 3t + C \\
+y = \cos^3 t
+\end{cases}
+$$
+son soluciones de la E. D. de partida.
+
+::: {.callout-important}
+## Soluciones singulares
+
+Por último, para los $t$ tales que $\operatorname{sen}^3 t = 0$, lo cual ocurre cuando $t = k\pi$, $k \in \mathbb{Z}$, aparecen como soluciones singulares las rectas horizontales $y = \cos^3(k\pi)$, es decir:
+$$y = 1 \quad \text{e} \quad y = -1$$
+:::

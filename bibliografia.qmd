@@ -1,0 +1,33 @@
+---
+title: "Bibliografía"
+---
+
+## Referencias
+
+A continuación se presenta la bibliografía recomendada para profundizar en el estudio de ecuaciones diferenciales ordinarias:
+
+1. **F. Ayres**, *Ecuaciones diferenciales*, Col. Schaum, McGraw-Hill, México, 1988.
+
+2. **M. Braun**, *Ecuaciones diferenciales y sus aplicaciones*, Grupo Editorial Iberoamérica, México, 1990.
+
+3. **W. E. Boyce y R. C. DiPrima**, *Ecuaciones diferenciales y problemas con valores en la frontera*, Limusa, México, 1992 (3.ª edición).
+
+4. **E. A. Coddington**, *Introducción a las ecuaciones diferenciales ordinarias*, CECSA, México, 1980.
+
+5. **M. W. Hirsch y S. Smale**, *Ecuaciones diferenciales, sistemas dinámicos y álgebra lineal*, Alianza Universidad Textos, Madrid, 1983.
+
+6. **S. G. Krantz**, *Differential Equations. Theory, Technique and Practice*, CRC Press, Boca Raton, 2015.
+
+7. **L. Pontriaguine**, *Ecuaciones diferenciales ordinarias*, Mir, Moscú, 1969.
+
+8. **G. F. Simmons**, *Ecuaciones diferenciales con aplicaciones y notas históricas*, McGraw-Hill, México, 1977.
+
+9. **J. Stewart**, *Cálculo, conceptos y contextos*, Thomson, México, 1999.
+
+::: {.callout-tip}
+## Recursos adicionales
+
+Para consulta en línea, se recomienda:
+- [Wolfram MathWorld - Differential Equations](http://mathworld.wolfram.com/)
+- [MIT OpenCourseWare - Differential Equations](https://ocw.mit.edu/)
+:::

@@ -1,0 +1,96 @@
+---
+title: "Apartado 7: $F$ algebraica en $y'$ de grado $n$"
+---
+
+## Ecuaciones algebraicas en $y'$
+
+Tenemos
+$$ (y')^n + a_1(x, y)(y')^{n-1} + \dots + a_{n-1}(x, y)y' + a_n(x, y) = 0. $$
+
+Resolviendo este polinomio en $y'$ de grado $n$ igualado a cero obtenemos
+$$ (y' - f_1(x, y))(y' - f_2(x, y))\cdots(y' - f_n(x, y)) = 0. $$
+
+Por lo tanto, las soluciones de la E. D. de partida serán las de cada una de las nuevas ecuaciones diferenciales $y' - f_i(x, y) = 0$, $i = 1, 2, \dots, n$, que habrá que resolver. De esta forma obtenemos $n$ familias uniparamétricas de soluciones.
+
+::: {.callout-tip}
+## RECETA 7. $F$ algebraica en $y'$ de grado $n$
+
+Tenemos
+$$ (y')^n + a_1(x, y)(y')^{n-1} + \dots + a_{n-1}(x, y)y' + a_n(x, y) = 0. $$
+
+Resolviéndolo como un polinomio en $y'$ de grado $n$ igualado a cero obtenemos
+$$ (y' - f_1(x, y))(y' - f_2(x, y))\cdots(y' - f_n(x, y)) = 0. $$
+
+Por tanto, las soluciones de la E. D. de partida serán las soluciones de cada una de las ecuaciones $y' - f_i(x, y) = 0$, $i = 1, 2, \dots, n$.
+:::
+
+### Ejemplo 7 {.unnumbered}
+
+**Resolver**
+$$ y^2((y')^2 + 1) = 1. $$
+
+**Solución:**
+
+Despejando $(y')^2$ queda $(y')^2 = \frac{1-y^2}{y^2}$, cuyas soluciones algebraicas son $y' = \pm \frac{\sqrt{1-y^2}}{y}$.
+
+Vamos a resolver estas dos nuevas ecuaciones diferenciales a la vez (ambas son de variables separadas). Si las ponemos como $\pm \frac{y \, dy}{\sqrt{1-y^2}} = dx$, integrando, $\mp \sqrt{1 - y^2} = x + C$.
+
+Si elevamos al cuadrado ambos términos, podemos expresar conjuntamente las dos familias de soluciones como $1 - y^2 = (x + C)^2$, es decir:
+$$(x + C)^2 + y^2 = 1$$
+
+que son las **circunferencias con centro en el eje $x$ y radio 1**.
+
+::: {.callout-important}
+## Soluciones singulares
+
+Por último, es evidente que $y = 1$ e $y = -1$ también son soluciones de la E. D., aunque no se encuentran entre las que acabamos de hallar. Si atendemos a la interpretación geométrica de las ecuaciones diferenciales, es lógico que estas dos rectas sean soluciones, ya que son las **envolventes** de la familia de circunferencias que satisfacen la E. D.
+:::
+
+## Obtención de la envolvente de una familia de curvas
+
+Recordemos qué es una envolvente: Dada una familia uniparamétrica de curvas $\{\varphi_\alpha\}_{\alpha \in A}$ en el plano, la envolvente de la familia es una nueva curva $\varphi$ tal que, en cada punto de contacto de $\varphi$ con alguna de las $\varphi_\alpha$, la tangente de $\varphi$ y de $\varphi_\alpha$ es la misma.
+
+### Familia de curvas implícitas {.unnumbered}
+
+Supongamos que tenemos una familia de curvas expresadas implícitamente como $F(x, y, C) = 0$. Las envolventes se obtienen eliminando $C$ del sistema:
+$$
+\begin{cases}
+F(x, y, C) = 0 \\
+F_C(x, y, C) = 0
+\end{cases}
+$$
+donde con $F_C$ hemos denotado la derivada parcial de $F$ respecto a $C$.
+
+En el caso de las circunferencias del ejemplo anterior tendríamos:
+$$
+\begin{cases}
+(x + C)^2 + y^2 = 1 \\
+2(x + C) = 0
+\end{cases}
+$$
+
+Despejando en la segunda ecuación, $x = -C$ y, sustituyendo en la primera, $y^2 = 1$. Es decir, las envolventes son las rectas $y = \pm 1$.
+
+### Familia de curvas paramétricas {.unnumbered}
+
+Supongamos que tenemos la familia de curvas en paramétricas:
+$$
+\begin{cases}
+x = x(t, C) \\
+y = y(t, C)
+\end{cases}
+$$
+
+Las envolventes se obtienen despejando $C = C(t)$ en el jacobiano igualado a cero:
+$$
+\det \begin{pmatrix} x_C & y_C \\ x_t & y_t \end{pmatrix} = 0
+$$
+y sustituyendo en las ecuaciones paramétricas.
+
+::: {.callout-note}
+## Puntos singulares
+
+Realmente, con estos procedimientos no sólo aparecen las envolventes, sino también los lugares geométricos de **puntos singulares**, ya sea de puntos de retroceso, de puntos de inflexión o de cúspides.
+
+Los puntos de retroceso se llaman **puntos singulares esenciales** y los otros **puntos singulares evitables**. En todo caso, después de aplicar estos métodos, hay que comprobar siempre qué es lo que hemos encontrado.
+:::

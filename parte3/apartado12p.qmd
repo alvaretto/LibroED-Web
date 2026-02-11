@@ -1,0 +1,72 @@
+---
+title: "Apartado 12': Ecuaciones Homogéneas Respecto a las Derivadas"
+---
+
+## Ecuaciones homogéneas generalizadas
+
+Si la ecuación $F(x, y, y', \ldots, y^{(n)}) = 0$ es tal que, para $\alpha$ y $m$ fijos, $F$ cumple:
+$$ F(\lambda x, \lambda^m u_0, \lambda^{m-1}u_1, \ldots, \lambda^{m-n}u_n) = \lambda^\alpha F(x, u_0, u_1, \ldots, u_n) $$
+
+vamos a ver que, efectuando un cambio tanto de variable independiente como de dependiente, esta E. D. se podrá transformar en una del tipo anterior (es decir, en la que no aparecerá la variable independiente).
+
+::: {.callout-note}
+## Definición
+
+Una ecuación de estas características suele decirse que es **homogénea generalizada** de grado $\alpha$, en la que cada factor $x$ contribuye con grado 1, cada $y$ con grado $m$, $y'$ con grado $m-1$, $y''$ con $m-2$, etcétera.
+:::
+
+## Cambio de variables
+
+Tomamos dos nuevas variables $t$ y $z$ ($t$ la independiente y $z$ la dependiente) que relacionamos con las originales $x$ e $y$ mediante:
+$$x = e^t, \quad y = e^{mt}z$$
+
+Con esto, si denotamos $z' = \frac{dz}{dt}$, tenemos:
+$$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{me^{mt}z + e^{mt}z'}{e^t} = e^{(m-1)t}(z' + mz) $$
+
+A partir de aquí:
+\begin{align*}
+\frac{d^2 y}{dx^2} &= \frac{d}{dx}\left( \frac{dy}{dx} \right) = \frac{d}{dt}\left( \frac{dy}{dx} \right)\frac{dt}{dx} \\
+&= e^{(m-2)t}(z'' + (2m-1)z' + m(m-1)z)
+\end{align*}
+
+y así sucesivamente. En general, por inducción, es claro que:
+$$ \frac{d^{(k)}y}{dx^{(k)}} = e^{(m-k)t}g_k(z, z', \ldots, z^{(k)}) $$
+
+## Transformación de la ecuación
+
+De este modo, sustituyendo en la E. D. que estamos intentando resolver, obtenemos:
+$$ F(e^t, e^{mt}z, e^{(m-1)t}(z' + mz), \ldots, e^{(m-n)t}g_n(z, z', \ldots, z^{(n)})) = 0 $$
+
+extrayendo $\lambda = e^t$, esto resulta ser:
+$$ e^{\alpha t}F(1, z, (z' + mz), \ldots, g_n(z, z', \ldots, z^{(n)})) = 0 $$
+
+Como $e^{\alpha t}$ no puede anularse, el otro factor tiene que ser cero, luego hemos transformado la ecuación de partida en una de la forma:
+$$ G(z, z', \ldots, z^{(n)}) = 0 $$
+
+en la que no aparece explícitamente la variable independiente $t$. Esta ecuación puede reducirse de orden aplicando el proceso descrito en el apartado anterior.
+
+::: {.callout-tip}
+## RECETA 12'. Si la ecuación $F(x, y, y', \ldots, y^{(n)}) = 0$
+
+es tal que, para $\alpha$ y $m$ fijos, $F$ cumple:
+$$ F(\lambda x, \lambda^m u_0, \lambda^{m-1}u_1, \ldots, \lambda^{m-n}u_n) = \lambda^\alpha F(x, u_0, u_1, \ldots, u_n) $$
+
+haciendo el cambio $x = e^t$, $y = e^{mt}z$ la E. D. se transforma en una de la forma $G(z, z', \ldots, z^{(n)}) = 0$, a la que se puede aplicar el método anterior.
+:::
+
+### Ejemplo 12' {.unnumbered}
+
+**Resolver**
+$$ 4x^2 y^3 y'' = x^2 - y^4. $$
+
+**Análisis de homogeneidad:**
+
+Para que esta ecuación sea homogénea generalizada, cada monomio tiene que ser del mismo grado. En el miembro de la derecha, esto se consigue con $2 = 4m$, es decir, $m = \frac{1}{2}$, con lo cual $x^2 - y^4$ es de grado 2.
+
+El miembro de la izquierda es de grado $2 + 3m + (m-2) = 2 + \frac{3}{2} + (\frac{1}{2} - 2) = 2$, coincidente con el del otro miembro.
+
+Así pues, con $m = \frac{1}{2}$ la E. D. es homogénea generalizada de grado 2.
+
+**Solución:**
+
+(El desarrollo completo está disponible en el documento LaTeX original)

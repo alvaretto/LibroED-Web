@@ -1,0 +1,109 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Métodos Clásicos de Resolución de E.D.O."
+  subtitle: "Ecuaciones Diferenciales Ordinarias"
+  author: "Material Educativo"
+  date: today
+
+  favicon: favicon.png
+
+  page-navigation: true
+
+  chapters:
+    - index.qmd
+
+    - part: "Parte I: Ecuaciones Explícitas de Primer Orden"
+      chapters:
+        - parte1/apartado1.qmd
+        - parte1/apartado2.qmd
+        - parte1/apartado3.qmd
+        - parte1/apartado4.qmd
+        - parte1/apartado5.qmd
+        - parte1/apartado6.qmd
+
+    - part: "Parte II: E.D. con Derivada Implícita"
+      chapters:
+        - parte2/apartado7.qmd
+        - parte2/apartado8.qmd
+        - parte2/apartado9.qmd
+        - parte2/apartado10.qmd
+
+    - part: "Parte III: Reducción de Orden"
+      chapters:
+        - parte3/apartado11.qmd
+        - parte3/apartado11p.qmd
+        - parte3/apartado12.qmd
+        - parte3/apartado12p.qmd
+        - parte3/apartado13.qmd
+
+    - bibliografia.qmd
+    - apendice.qmd
+
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Inicio"
+        href: index.qmd
+      - text: "Descargar PDF"
+        icon: download
+        href: ../LibroED_UNIFICADO.pdf
+
+  sidebar:
+    style: "docked"
+    background: light
+    search: true
+    collapse-level: 1
+
+  page-footer:
+    left: "Copyright 2026, Material Educativo"
+    right:
+      - icon: github
+        href: https://github.com
+      - icon: twitter
+        href: https://twitter.com
+
+format:
+  html:
+    theme:
+      light: [cosmo, custom.scss]
+      dark: [darkly, custom.scss]
+
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    toc-title: "Contenido"
+    toc-location: left
+
+    number-sections: true
+    number-depth: 3
+
+    code-fold: true
+    code-tools: true
+    code-copy: true
+
+    link-external-icon: true
+    link-external-newwindow: true
+
+    smooth-scroll: true
+
+    # Matemáticas
+    html-math-method: mathjax
+
+    # Highlight
+    highlight-style: github
+
+    # Grid
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+
+  pdf:
+    documentclass: book
+    toc: true
+    number-sections: true
+    colorlinks: true

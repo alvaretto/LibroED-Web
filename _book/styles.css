@@ -1,0 +1,112 @@
+/* Estilos personalizados para LibroED */
+
+/* Cajas para recetas */
+.callout-tip {
+  border-left-color: #0d6efd !important;
+  background-color: #cfe2ff !important;
+}
+
+.callout-tip .callout-title {
+  background-color: #0d6efd !important;
+  color: white !important;
+}
+
+/* Cajas para ejemplos */
+.callout-note {
+  border-left-color: #198754 !important;
+  background-color: #d1e7dd !important;
+}
+
+/* Cajas para advertencias */
+.callout-warning {
+  border-left-color: #ffc107 !important;
+  background-color: #fff3cd !important;
+}
+
+/* Cajas importantes */
+.callout-important {
+  border-left-color: #dc3545 !important;
+  background-color: #f8d7da !important;
+}
+
+/* Ecuaciones */
+.katex, .MathJax {
+  font-size: 1.1em !important;
+}
+
+/* Mejorar legibilidad de ecuaciones en display */
+.katex-display {
+  margin: 1.5em 0 !important;
+  padding: 1em !important;
+  background-color: #f8f9fa !important;
+  border-radius: 5px !important;
+}
+
+/* Botones de navegación */
+.nav-page {
+  background-color: #0d6efd !important;
+  color: white !important;
+  padding: 0.5em 1em !important;
+  border-radius: 5px !important;
+  text-decoration: none !important;
+}
+
+.nav-page:hover {
+  background-color: #0b5ed7 !important;
+}
+
+/* Tablas */
+table {
+  margin: 1.5em auto !important;
+  border-collapse: collapse !important;
+}
+
+table th {
+  background-color: #0d6efd !important;
+  color: white !important;
+  padding: 0.75em !important;
+}
+
+table td {
+  padding: 0.5em !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+/* Sidebar personalizado */
+.sidebar-title {
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  color: #0d6efd !important;
+}
+
+/* Resaltar código */
+pre code {
+  background-color: #f8f9fa !important;
+  padding: 1em !important;
+  border-radius: 5px !important;
+}
+
+/* Mejorar botones interactivos */
+button, .btn {
+  border-radius: 5px !important;
+  transition: all 0.3s ease !important;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+/* Animaciones suaves */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* Modo oscuro personalizado */
+html[data-bs-theme="dark"] .katex-display {
+  background-color: #212529 !important;
+}
+
+html[data-bs-theme="dark"] pre code {
+  background-color: #212529 !important;
+}

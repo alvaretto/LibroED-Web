@@ -1,0 +1,142 @@
+---
+title: "Apartado 8: Ecuación de la forma $y = f(x, y')$"
+---
+
+## Método general
+
+Como procedimiento general para intentar resolver este tipo de ecuaciones, tomamos $y' = p$ y derivamos $y = f(x, y')$ respecto de $x$, con lo cual tenemos
+$$ p = y' = f_x + f_{y'} \frac{dy'}{dx} = f_x(x, p) + f_{y'}(x, p)p'. $$
+
+Cuando $f$ tiene la forma adecuada, la nueva ecuación $p = f_x(x, p) + f_p(x, p)p'$ que hemos encontrado puede ser de alguno de los tipos ya estudiados. Si éste es el caso, la resolvemos, obteniendo su solución $x = \phi(p, C)$.
+
+Entonces, la solución de la E. D. de partida será:
+$$
+\begin{cases}
+x = \phi(p, C) \\
+y = f(\phi(p, C), p)
+\end{cases}
+$$
+expresado como una familia de curvas en paramétricas.
+
+::: {.callout-note}
+Puede resultar extraño pensar que el parámetro $p$ vale precisamente $\frac{dy}{dx}$; pero esto no importa en absoluto, sino que puede considerarse una simple curiosidad.
+:::
+
+## 8.1. Ecuación $y = f(y')$
+
+En este caso, como $f(x, y') = f(y')$, se tiene $f_x(x, p) = 0$, luego con el proceso descrito habremos obtenido la ecuación $p = f_p(p)p'$ o, lo que es lo mismo, $p = f'(p)p'$.
+
+Si $p \neq 0$, esto lo podemos poner como $dx = \frac{f'(p)}{p} \, dp$, que es de variables separadas. Integrándola, $x = \int \frac{f'(p)}{p} \, dp = \phi(p) + C$, y las soluciones de $y = f(y')$ serán las curvas:
+$$
+\begin{cases}
+x = \phi(p) + C \\
+y = f(p)
+\end{cases}
+$$
+
+::: {.callout-important}
+## Observación geométrica
+
+Notar, a la vista de su representación paramétrica, que todas ellas tienen la misma forma: se diferencian únicamente en un desplazamiento horizontal.
+:::
+
+A partir de $p = 0$ obtenemos la solución constante $y = f(0)$. Gráficamente, esto es una recta envolvente de las demás soluciones.
+
+## 8.2. Ecuación de Lagrange: $y + x\varphi(y') + \psi(y') = 0$
+
+Si ponemos $y' = p$ y derivamos respecto de $x$ queda:
+$$ p + \varphi(p) + x\varphi'(p)\frac{dp}{dx} + \psi'(p)\frac{dp}{dx} = 0 $$
+
+que podemos escribir como:
+$$(p + \varphi(p)) \, dx + x\varphi'(p) \, dp + \psi'(p) \, dp = 0$$
+
+### Caso 1: $p + \varphi(p) \neq 0$ {.unnumbered}
+
+Dividimos por $p + \varphi(p)$, con lo que nos aparece la ecuación lineal:
+$$ \frac{dx}{dp} + \frac{\varphi'(p)}{p + \varphi(p)}x + \frac{\psi'(p)}{p + \varphi(p)} = 0 $$
+
+en la que $x$ actúa como función y $p$ como variable. Si la resolvemos, obtendremos como solución $x = \phi(p, C)$. Con esto, habremos encontrado para la E. D. de Lagrange las soluciones:
+$$
+\begin{cases}
+x = \phi(p, C) \\
+y = -\phi(p, C)\varphi(p) - \psi(p)
+\end{cases}
+$$
+en forma de familia de curvas paramétricas.
+
+### Caso 2: Soluciones singulares {.unnumbered}
+
+Supongamos que existe algún $\lambda$ para el cual $\lambda + \varphi(\lambda) = 0$. Formalmente, tomamos $y' = \lambda$, sustituyendo en la E. D., $y + x\varphi(\lambda) + \psi(\lambda) = 0$, es decir:
+$$y = \lambda x - \psi(\lambda)$$
+
+Esta recta es, efectivamente, solución de la ecuación de Lagrange. Estas rectas decimos que son las **soluciones singulares** de la ecuación.
+
+## 8.3. Ecuación de Clairaut: $y - xy' + \psi(y') = 0$
+
+Éste es un caso particular de ecuación de Lagrange con $\varphi(y') = -y'$. Aquí, como $\varphi(\lambda) + \lambda = 0$ para todo $\lambda \in \mathbb{R}$, no existen las soluciones que, en la ecuación de Lagrange, encontrábamos por el método general; sólo aparecen rectas.
+
+::: {.callout-tip}
+## Solución general de Clairaut
+
+Tenemos como soluciones de la E. D. toda la familia de rectas:
+$$y = \lambda x - \psi(\lambda), \quad \lambda \in \mathbb{R}$$
+:::
+
+### Solución singular (envolvente) {.unnumbered}
+
+Existe una solución singular, la envolvente de este haz de rectas. Para ello, planteamos el sistema:
+$$
+\begin{cases}
+y = \lambda x - \psi(\lambda) \\
+0 = x - \psi'(\lambda)
+\end{cases}
+$$
+
+donde la segunda ecuación es la primera derivada respecto al parámetro $\lambda$. La envolvente queda expresada en forma paramétrica como:
+$$
+\begin{cases}
+x = \psi'(\lambda) \\
+y = \lambda \psi'(\lambda) - \psi(\lambda)
+\end{cases}
+$$
+
+::: {.callout-note}
+## Verificación
+
+Podemos garantizar que esta curva es una envolvente y no un lugar geométrico de puntos singulares. En cada punto $(x(\lambda), y(\lambda))$ de la curva, esta interseca precisamente a la recta $y = \lambda x - \psi(\lambda)$ del haz; y la pendiente de esa recta en el punto de intersección coincide con la de la curva:
+$$ \frac{dy}{dx} = \frac{dy/d\lambda}{dx/d\lambda} = \frac{\psi'(\lambda) + \lambda\psi''(\lambda) - \psi'(\lambda)}{\psi''(\lambda)} = \lambda $$
+:::
+
+::: {.callout-tip}
+## RECETA 8. Ecuación de la forma $y = f(x, y')$
+
+En general, se toma $y' = p$ y se deriva la ecuación $y = f(x, y')$ respecto de $x$. Si $f$ tiene la forma adecuada, a la nueva E. D. se le puede aplicar alguno de los métodos ya estudiados.
+
+**8.1.** Cuando $y = f(y')$, la ecuación que se obtiene es de variables separadas.
+
+**8.2.** Ecuación de Lagrange: $y + x\varphi(y') + \psi(y') = 0$. Se reduce a una ecuación lineal con $x$ como función y $p$ como variable. Además, para los $\lambda$ tales que $\lambda + \varphi(\lambda) = 0$ se obtienen como soluciones las rectas $y = \lambda x - \psi(\lambda)$.
+
+**8.3.** Ecuación de Clairaut: $y - xy' + \psi(y') = 0$. Es un caso particular de ecuación de Lagrange en el que sólo aparecen rectas (y su envolvente).
+:::
+
+### Ejemplo 8.3: Ecuación de Clairaut {.unnumbered}
+
+**Resolver**
+$$ y = y'x - 2(y')^2. $$
+
+**Solución:**
+
+Estamos ante una ecuación de Clairaut $y - xy' + \psi(y') = 0$ con $\psi(y') = 2(y')^2$.
+
+Sin más que tomar $y' = \lambda$, las rectas $y = \lambda x - 2\lambda^2$ son solución de la E. D. para cada $\lambda \in \mathbb{R}$.
+
+**Calculemos su envolvente:** en el sistema
+$$
+\begin{cases}
+y = \lambda x - 2\lambda^2 \\
+0 = x - 4\lambda
+\end{cases}
+$$
+
+Despejamos $\lambda = \frac{x}{4}$ en la segunda ecuación y, sustituyendo en la primera, encontramos que la envolvente es la parábola:
+$$y = \frac{x^2}{8}$$

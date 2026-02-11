@@ -1,0 +1,84 @@
+---
+title: "Apartado 1: Variables Separadas"
+---
+
+## Variables separadas
+
+Si tenemos la E. D.
+$$ g(x) = h(y)y', $$
+formalmente, podemos poner $g(x) \, dx = h(y) \, dy$; si suponemos que $G$ es una primitiva de $g$ y $H$ una de $h$, tendremos $G'(x) \, dx = H'(y) \, dy$ e, integrando, $G(x) = H(y) + C$, que es la solución general de la ecuación.
+
+Expliquemos con un poco más de rigor por qué funciona el método: Sea $y = \varphi(x)$ una solución de la E. D., es decir, $\varphi(x)$ debe cumplir $g(x) = h(\varphi(x))\varphi'(x)$. Pero $H$ es una primitiva de $h$, así que, por la regla de la cadena, $g(x) = h(\varphi(x))\varphi'(x) = (H \circ \varphi)'(x)$. Integrando, $G(x) = (H \circ \varphi)(x) + C$ (lo que antes hemos expresado como $G(x) = H(y) + C$), de donde $\varphi(x) = H^{-1}(G(x) - C)$.
+
+En los pasos anteriores, está justificado emplear la regla de la cadena cuando $\varphi$ y $H$ son derivables, lo cual es cierto sin más que suponer que $h$ sea continua. Y finalmente, para poder despejar $\varphi$ mediante el uso de $H^{-1}$ bastaría con exigir además que $h$ no se anulara en el intervalo de definición, con lo cual, como $H' = h \neq 0$, $H$ es creciente o decreciente luego existe $H^{-1}$ (en otras palabras, como la derivada de $H$ no se anula, el teorema de la función inversa nos asegura que existe $H^{-1}$).
+
+Las ecuaciones en variables separadas son las más sencillas de integrar y, a la vez, las más importantes, ya que cualquier otro método de resolución se basa esencialmente en aplicar diversos trucos para llegar a una ecuación en variables separadas. En ellas hemos visto, con todo rigor, qué hipótesis hay que imponer para que el método que conduce a la solución esté correctamente empleado, y cómo se justifica el funcionamiento del proceso. A partir de ahora no incidiremos más en estos detalles que, aunque importantes, sobrecargarían la explicación. El lector puede detenerse mentalmente a pensar en ellos, justificando adecuadamente los pasos que se efectúen.
+
+En cualquier caso, conviene recordar que la expresión $\frac{dy}{dx}$ es simplemente una útil notación para designar la derivada de $y$ respecto de $x$, no un cociente de $dy$ dividido por $dx$; ni $dy$ ni $dx$ tienen entidad en sí mismas. Esta notación se emplea, no porque sí ni para introducir confusión, sino que, al contrario, se usa porque es consecuente con los enunciados de varios importantes resultados. Ya hemos visto cómo resulta adecuada a la hora de recordar cómo resolver ecuaciones en variables separadas $g(x) = h(y)\frac{dy}{dx}$, descomponiendo $g(x) \, dx = h(x) \, dy$ (como si $\frac{dy}{dx}$ fuese realmente una fracción) e integrando ambos lados de la expresión anterior. Pero no sólo aquí se pone de manifiesto la utilidad de esta notación. Por ejemplo, el teorema de la función inversa prueba (con las hipótesis adecuadas) que, cuando $y$ es una función de $x$, si se despeja $x$ como función de $y$ se cumple
+$$ x'(y) = \frac{dx}{dy} = \frac{1}{dy/dx} = \frac{1}{y'(x)}, $$
+es decir, se produce un comportamiento similar a si estuviéramos operando con fracciones. Análogamente, si tenemos que $z$ es una función de $y$ y, a su vez, $y$ una función de $x$, la regla de la cadena establece que la derivada de la función compuesta $z(x)$ es
+$$ \frac{dz}{dx} = \frac{dz}{dy} \frac{dy}{dx}, $$
+que es como si simplificáramos $dy$ en los supuestos cocientes de la derecha. Esto permite usar las notaciones del tipo $\frac{dy}{dx}$ y su comportamiento como si fuesen fracciones como regla nemotécnica de los resultados anteriores.
+
+::: {.callout-tip}
+## RECETA 1. Variables separadas
+
+Son de la forma
+$$ g(x) = h(y)y'. $$
+Formalmente, se separa $g(x) = h(y)\frac{dy}{dx}$ en $g(x) \, dx = h(y) \, dy$ y se integra.
+:::
+
+### Ejemplo 1 {.unnumbered}
+
+**Resolver**
+$$ \frac{dy}{dx} + (\operatorname{sen} x)y = 0. $$
+
+**Solución:**
+
+Despejando, $\frac{dy}{y} = -(\operatorname{sen} x) \, dx$ e, integrando, $\log y = \cos x + C$, es decir, $y = e^{\cos x + C}$. Sin más que tomar $K = e^C$ encontramos las soluciones $y = K e^{\cos x}$.
+
+Fijarse que, en principio, parece que $K$ tiene que ser positiva; pero en realidad la integral de $\frac{dy}{y}$ es $\log |y|$, lo que nos llevaría a soluciones con valores negativos de $K$. Por último, notar $y = 0$ (es decir, tomar $K = 0$) también es claramente una solución de la E. D., aunque no se obtiene con el método seguido.
+
+::: {.callout-important}
+Así pues, la solución general de la E. D. es de la forma $y = K e^{\cos x}$ con $K \in \mathbb{R}$.
+:::
+
+---
+
+### Visualización interactiva {.unnumbered}
+
+Puedes explorar cómo cambia la familia de soluciones con diferentes valores de $K$:
+
+```{ojs}
+//| echo: false
+viewof K = Inputs.range([-3, 3], {
+  value: 1,
+  step: 0.1,
+  label: "Constante K:"
+})
+
+Plot.plot({
+  marks: [
+    Plot.line(d3.range(-6, 6, 0.1).map(x => ({
+      x: x,
+      y: K * Math.exp(Math.cos(x))
+    })), {x: "x", y: "y", stroke: "blue", strokeWidth: 2}),
+    Plot.ruleX([0], {stroke: "gray"}),
+    Plot.ruleY([0], {stroke: "gray"})
+  ],
+  grid: true,
+  x: {domain: [-6, 6], label: "x"},
+  y: {domain: [-5, 5], label: "y"},
+  width: 700,
+  height: 400,
+  style: {
+    fontSize: "12px"
+  }
+})
+```
+
+::: {.callout-note}
+## Observación
+
+Nota cómo todas las curvas pasan por puntos donde $\cos x$ alcanza sus máximos y mínimos.
+:::

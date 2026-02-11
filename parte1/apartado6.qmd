@@ -1,0 +1,100 @@
+---
+title: "Apartado 6: Ecuación de Bernoulli"
+---
+
+## Ecuación de Bernoulli
+
+La ecuación de Bernoulli es de la forma:
+$$ y' + a(x)y = b(x)y^n $$
+
+donde $n$ es un número real ($n \neq 0, 1$).
+
+::: {.callout-note}
+## Casos especiales
+
+- Si $n = 0$: la ecuación es **lineal**
+- Si $n = 1$: la ecuación es de **variables separadas**
+:::
+
+### Método de resolución {.unnumbered}
+
+El método consiste en hacer un cambio de variable que transforma la ecuación de Bernoulli en una ecuación lineal.
+
+**Cambio de variable:** $z = y^{1-n}$
+
+Derivando: $z' = (1-n)y^{-n}y'$, es decir, $y' = \frac{y^n z'}{1-n}$
+
+Sustituyendo en la ecuación original:
+$$\frac{y^n z'}{1-n} + a(x)y = b(x)y^n$$
+
+Dividiendo por $y^n$:
+$$\frac{z'}{1-n} + a(x)y^{1-n} = b(x)$$
+
+Como $z = y^{1-n}$:
+$$\frac{z'}{1-n} + a(x)z = b(x)$$
+
+Multiplicando por $(1-n)$:
+$$z' + (1-n)a(x)z = (1-n)b(x)$$
+
+Esta es una **ecuación lineal** en $z$ que podemos resolver con el método del factor integrante.
+
+::: {.callout-tip}
+## RECETA 6. Ecuación de Bernoulli
+
+Para resolver $y' + a(x)y = b(x)y^n$ con $n \neq 0, 1$:
+
+1. Hacer el cambio $z = y^{1-n}$
+
+2. La ecuación se transforma en la lineal:
+   $$z' + (1-n)a(x)z = (1-n)b(x)$$
+
+3. Resolver la ecuación lineal en $z$
+
+4. Deshacer el cambio: $y = z^{\frac{1}{1-n}}$
+:::
+
+### Ejemplo 6 {.unnumbered}
+
+**Resolver**
+$$ y' + \frac{y}{x} = y^2 $$
+
+**Solución:**
+
+Esta es una ecuación de Bernoulli con $a(x) = \frac{1}{x}$, $b(x) = 1$, $n = 2$.
+
+1. Cambio de variable: $z = y^{1-2} = y^{-1} = \frac{1}{y}$
+
+2. Derivando: $z' = -\frac{y'}{y^2}$, por tanto $y' = -y^2 z'$
+
+3. Sustituyendo en la ecuación:
+   $$-y^2 z' + \frac{y}{x} = y^2$$
+
+4. Dividiendo por $y^2$:
+   $$-z' + \frac{1}{xy} = 1$$
+
+5. Como $z = \frac{1}{y}$:
+   $$-z' + \frac{z}{x} = 1$$
+
+6. Reordenando:
+   $$z' - \frac{z}{x} = -1$$
+
+7. Esta es una ecuación lineal. Factor integrante:
+   $$\mu(x) = e^{\int -\frac{1}{x} \, dx} = e^{-\ln x} = \frac{1}{x}$$
+
+8. Multiplicamos:
+   $$\frac{z'}{x} - \frac{z}{x^2} = -\frac{1}{x}$$
+
+9. Integrando:
+   $$\frac{z}{x} = -\ln|x| + C$$
+
+10. Despejando $z$:
+    $$z = -x\ln|x| + Cx$$
+
+11. Deshaciendo el cambio $y = \frac{1}{z}$:
+    $$y = \frac{1}{Cx - x\ln|x|}$$
+
+::: {.callout-important}
+## Solución general
+
+$$y = \frac{1}{x(C - \ln|x|)}$$
+:::

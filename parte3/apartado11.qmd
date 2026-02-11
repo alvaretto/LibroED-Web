@@ -1,0 +1,70 @@
+---
+title: "Apartado 11: $F(x, y^{(k)}, \\dots, y^{(n)}) = 0$"
+---
+
+## Reducción de orden: ausencia de $y$
+
+Tenemos una ecuación en la que no aparece la variable dependiente $y$ (y además, si $k > 1$, tampoco sus derivadas hasta el orden $k - 1$).
+
+Es evidente que el cambio $y^{(k)} = z$ la convierte en:
+$$ F(x, z, \dots, z^{(n-k)}) = 0 $$
+
+que es una E. D. de orden $n - k$.
+
+## Procedimiento completo
+
+Si logramos resolverla, obtenemos que su solución será $z = \phi(x, C_1, \dots, C_{n-k})$, una familia dependiente de $n - k$ constantes.
+
+Entonces, al ser $y^{(k)} = z$, para tener las soluciones de la ecuación original bastará con integrar $k$ veces $\phi(x, C_1, \dots, C_{n-k})$ respecto de $x$, es decir:
+$$ y = \underbrace{\int \cdots \int}_{k \text{ veces}} \phi(x, C_1, \dots, C_{n-k}) \underbrace{dx \, dx \dots dx}_{k \text{ veces}} $$
+
+lo cual introducirá $k$ nuevas constantes en la solución general. De este modo, dicha solución general tendrá la forma:
+$$ y = \underbrace{\int \cdots \int}_{k \text{ veces}} \phi(x, C_1, \dots, C_{n-k}) \underbrace{dx \, dx \dots dx}_{k \text{ veces}} + C_{n-k+1}x^{k-1} + \cdots + C_{n-1}x + C_n $$
+
+::: {.callout-tip}
+## RECETA 11. Ecuación de la forma $F(x, y^{(k)}, \dots, y^{(n)}) = 0$
+
+Mediante el cambio $y^{(k)} = z$ se convierte en una ecuación de orden $n - k$.
+:::
+
+### Ejemplo 11 {.unnumbered}
+
+**Resolver**
+$$ y'' - xy''' + (y''')^3 = 0. $$
+
+**Solución:**
+
+Tomemos $y'' = z$, con lo que la ecuación se transforma en $z - xz' + (z')^3 = 0$, que es de **Clairaut**.
+
+Sin más que sustituir $z' = \lambda$, las soluciones de ésta son las rectas:
+$$z = \lambda x - \lambda^3, \quad \lambda \in \mathbb{R}$$
+
+**Calculemos las envolventes:** en el sistema
+$$
+\begin{cases}
+z = \lambda x - \lambda^3 \\
+0 = x - 3\lambda^2
+\end{cases}
+$$
+
+Despejamos $\lambda = \pm\sqrt{\frac{x}{3}}$ en la segunda ecuación, con lo que, sustituyendo en la primera, encontramos las dos envolventes:
+$$z = \pm\frac{2x}{3\sqrt{3}}\sqrt{\frac{x}{3}}$$
+
+**Una vez resuelta completamente la ecuación de Clairaut, hallemos las soluciones de la original:**
+
+Como $y'' = z$, a partir de $z = \lambda x - \lambda^3$, integrando dos veces:
+$$ y = \int \left( \int (\lambda x - \lambda^3) \, dx \right) dx = \frac{\lambda x^3}{6} - \frac{\lambda^3 x^2}{2} + C_1 x + C_2 $$
+
+Cambiando la notación de las constantes:
+$$y = K_1x^3 - 108K_1^3 x^2 + K_2 x + K_3$$
+
+Por último, de $z = \pm\frac{2}{3\sqrt{3}}x^{3/2}$ obtenemos:
+$$ y = \int \left( \int \frac{\pm 2}{3\sqrt{3}}x^{3/2} \, dx \right) dx = \frac{\pm 8x^{7/2}}{105\sqrt{3}} + C_1 x + C_2 $$
+
+::: {.callout-important}
+## Soluciones finales
+
+Es decir, las dos familias de curvas:
+$$y = \frac{8x^{7/2}}{105\sqrt{3}} + C_1 x + C_2$$
+$$y = -\frac{8x^{7/2}}{105\sqrt{3}} + C_1 x + C_2$$
+:::

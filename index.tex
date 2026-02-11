@@ -1,0 +1,2153 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+]{book}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Métodos Clásicos de Resolución de E.D.O.},
+  pdfauthor={Material Educativo},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Métodos Clásicos de Resolución de E.D.O.}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Ecuaciones Diferenciales Ordinarias}
+\author{Material Educativo}
+\date{2026-02-11}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\mainmatter
+\bookmarksetup{startatroot}
+
+\chapter{Métodos Clásicos de Resolución de
+E.D.O.}\label{muxe9todos-cluxe1sicos-de-resoluciuxf3n-de-e.d.o.}
+
+Ecuaciones Diferenciales Ordinarias
+
+\hfill\break
+
+\bookmarksetup{startatroot}
+
+\chapter*{Bienvenida}\label{bienvenida}
+\addcontentsline{toc}{chapter}{Bienvenida}
+
+\markboth{Bienvenida}{Bienvenida}
+
+Este libro presenta los \textbf{métodos clásicos de resolución de
+ecuaciones diferenciales ordinarias (E.D.O.)}, organizados de manera
+sistemática y pedagógica.
+
+\section{Contenido del libro}\label{contenido-del-libro}
+
+El material está estructurado en \textbf{tres partes principales}:
+
+\subsection{Parte I: Ecuaciones Explícitas de Primer
+Orden}\label{parte-i-ecuaciones-expluxedcitas-de-primer-orden}
+
+Métodos fundamentales para resolver ecuaciones del tipo \(y' = f(x,y)\):
+
+\begin{itemize}
+\tightlist
+\item
+  Variables separadas
+\item
+  Ecuaciones homogéneas
+\item
+  Ecuaciones lineales
+\item
+  Ecuación de Bernoulli
+\item
+  Ecuaciones exactas
+\item
+  Factor integrante
+\end{itemize}
+
+\subsection{Parte II: E.D. con Derivada
+Implícita}\label{parte-ii-e.d.-con-derivada-impluxedcita}
+
+Técnicas especiales para ecuaciones donde la derivada no está despejada:
+
+\begin{itemize}
+\tightlist
+\item
+  Ecuación de Clairaut
+\item
+  Ecuación de Lagrange
+\item
+  Ecuación de d'Alembert
+\end{itemize}
+
+\subsection{Parte III: Reducción de
+Orden}\label{parte-iii-reducciuxf3n-de-orden}
+
+Métodos avanzados para ecuaciones de orden superior:
+
+\begin{itemize}
+\tightlist
+\item
+  Reducción en ausencia de variable dependiente
+\item
+  Reducción en ausencia de variable independiente
+\item
+  Ecuaciones homogéneas generalizadas
+\end{itemize}
+
+\section{Características del
+material}\label{caracteruxedsticas-del-material}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETAS}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+A lo largo del libro encontrarás \textbf{recetas} que resumen paso a
+paso los métodos de resolución.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Ejemplos resueltos}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Cada método incluye ejemplos completamente desarrollados con
+explicaciones detalladas.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-warning-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Ejercicios}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Al final de cada apartado hay ejercicios propuestos para practicar.
+
+\end{tcolorbox}
+
+\section{Navegación}\label{navegaciuxf3n}
+
+Utiliza el menú lateral para navegar entre los diferentes apartados. La
+barra de búsqueda te permitirá encontrar rápidamente conceptos
+específicos.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Material Educativo} • 2026
+
+\part{Parte I: Ecuaciones Explícitas de Primer Orden}
+
+\chapter{Apartado 1: Variables
+Separadas}\label{apartado-1-variables-separadas}
+
+\section{Variables separadas}\label{variables-separadas}
+
+Si tenemos la E. D. \[ g(x) = h(y)y', \] formalmente, podemos poner
+\(g(x) \, dx = h(y) \, dy\); si suponemos que \(G\) es una primitiva de
+\(g\) y \(H\) una de \(h\), tendremos \(G'(x) \, dx = H'(y) \, dy\) e,
+integrando, \(G(x) = H(y) + C\), que es la solución general de la
+ecuación.
+
+Expliquemos con un poco más de rigor por qué funciona el método: Sea
+\(y = \varphi(x)\) una solución de la E. D., es decir, \(\varphi(x)\)
+debe cumplir \(g(x) = h(\varphi(x))\varphi'(x)\). Pero \(H\) es una
+primitiva de \(h\), así que, por la regla de la cadena,
+\(g(x) = h(\varphi(x))\varphi'(x) = (H \circ \varphi)'(x)\). Integrando,
+\(G(x) = (H \circ \varphi)(x) + C\) (lo que antes hemos expresado como
+\(G(x) = H(y) + C\)), de donde \(\varphi(x) = H^{-1}(G(x) - C)\).
+
+En los pasos anteriores, está justificado emplear la regla de la cadena
+cuando \(\varphi\) y \(H\) son derivables, lo cual es cierto sin más que
+suponer que \(h\) sea continua. Y finalmente, para poder despejar
+\(\varphi\) mediante el uso de \(H^{-1}\) bastaría con exigir además que
+\(h\) no se anulara en el intervalo de definición, con lo cual, como
+\(H' = h \neq 0\), \(H\) es creciente o decreciente luego existe
+\(H^{-1}\) (en otras palabras, como la derivada de \(H\) no se anula, el
+teorema de la función inversa nos asegura que existe \(H^{-1}\)).
+
+Las ecuaciones en variables separadas son las más sencillas de integrar
+y, a la vez, las más importantes, ya que cualquier otro método de
+resolución se basa esencialmente en aplicar diversos trucos para llegar
+a una ecuación en variables separadas. En ellas hemos visto, con todo
+rigor, qué hipótesis hay que imponer para que el método que conduce a la
+solución esté correctamente empleado, y cómo se justifica el
+funcionamiento del proceso. A partir de ahora no incidiremos más en
+estos detalles que, aunque importantes, sobrecargarían la explicación.
+El lector puede detenerse mentalmente a pensar en ellos, justificando
+adecuadamente los pasos que se efectúen.
+
+En cualquier caso, conviene recordar que la expresión \(\frac{dy}{dx}\)
+es simplemente una útil notación para designar la derivada de \(y\)
+respecto de \(x\), no un cociente de \(dy\) dividido por \(dx\); ni
+\(dy\) ni \(dx\) tienen entidad en sí mismas. Esta notación se emplea,
+no porque sí ni para introducir confusión, sino que, al contrario, se
+usa porque es consecuente con los enunciados de varios importantes
+resultados. Ya hemos visto cómo resulta adecuada a la hora de recordar
+cómo resolver ecuaciones en variables separadas
+\(g(x) = h(y)\frac{dy}{dx}\), descomponiendo \(g(x) \, dx = h(x) \, dy\)
+(como si \(\frac{dy}{dx}\) fuese realmente una fracción) e integrando
+ambos lados de la expresión anterior. Pero no sólo aquí se pone de
+manifiesto la utilidad de esta notación. Por ejemplo, el teorema de la
+función inversa prueba (con las hipótesis adecuadas) que, cuando \(y\)
+es una función de \(x\), si se despeja \(x\) como función de \(y\) se
+cumple \[ x'(y) = \frac{dx}{dy} = \frac{1}{dy/dx} = \frac{1}{y'(x)}, \]
+es decir, se produce un comportamiento similar a si estuviéramos
+operando con fracciones. Análogamente, si tenemos que \(z\) es una
+función de \(y\) y, a su vez, \(y\) una función de \(x\), la regla de la
+cadena establece que la derivada de la función compuesta \(z(x)\) es
+\[ \frac{dz}{dx} = \frac{dz}{dy} \frac{dy}{dx}, \] que es como si
+simplificáramos \(dy\) en los supuestos cocientes de la derecha. Esto
+permite usar las notaciones del tipo \(\frac{dy}{dx}\) y su
+comportamiento como si fuesen fracciones como regla nemotécnica de los
+resultados anteriores.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 1. Variables separadas}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Son de la forma \[ g(x) = h(y)y'. \] Formalmente, se separa
+\(g(x) = h(y)\frac{dy}{dx}\) en \(g(x) \, dx = h(y) \, dy\) y se
+integra.
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 1}\label{ejemplo-1}
+\addcontentsline{toc}{subsection}{Ejemplo 1}
+
+\textbf{Resolver} \[ \frac{dy}{dx} + (\operatorname{sen} x)y = 0. \]
+
+\textbf{Solución:}
+
+Despejando, \(\frac{dy}{y} = -(\operatorname{sen} x) \, dx\) e,
+integrando, \(\log y = \cos x + C\), es decir, \(y = e^{\cos x + C}\).
+Sin más que tomar \(K = e^C\) encontramos las soluciones
+\(y = K e^{\cos x}\).
+
+Fijarse que, en principio, parece que \(K\) tiene que ser positiva; pero
+en realidad la integral de \(\frac{dy}{y}\) es \(\log |y|\), lo que nos
+llevaría a soluciones con valores negativos de \(K\). Por último, notar
+\(y = 0\) (es decir, tomar \(K = 0\)) también es claramente una solución
+de la E. D., aunque no se obtiene con el método seguido.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Así pues, la solución general de la E. D. es de la forma
+\(y = K e^{\cos x}\) con \(K \in \mathbb{R}\).
+
+\end{tcolorbox}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection*{Visualización
+interactiva}\label{visualizaciuxf3n-interactiva}
+\addcontentsline{toc}{subsection}{Visualización interactiva}
+
+Puedes explorar cómo cambia la familia de soluciones con diferentes
+valores de \(K\):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{//| echo: false}
+\NormalTok{viewof K = Inputs.range([{-}3, 3], \{}
+\NormalTok{  value: 1,}
+\NormalTok{  step: 0.1,}
+\NormalTok{  label: "Constante K:"}
+\NormalTok{\})}
+
+\NormalTok{Plot.plot(\{}
+\NormalTok{  marks: [}
+\NormalTok{    Plot.line(d3.range({-}6, 6, 0.1).map(x =\textgreater{} (\{}
+\NormalTok{      x: x,}
+\NormalTok{      y: K * Math.exp(Math.cos(x))}
+\NormalTok{    \})), \{x: "x", y: "y", stroke: "blue", strokeWidth: 2\}),}
+\NormalTok{    Plot.ruleX([0], \{stroke: "gray"\}),}
+\NormalTok{    Plot.ruleY([0], \{stroke: "gray"\})}
+\NormalTok{  ],}
+\NormalTok{  grid: true,}
+\NormalTok{  x: \{domain: [{-}6, 6], label: "x"\},}
+\NormalTok{  y: \{domain: [{-}5, 5], label: "y"\},}
+\NormalTok{  width: 700,}
+\NormalTok{  height: 400,}
+\NormalTok{  style: \{}
+\NormalTok{    fontSize: "12px"}
+\NormalTok{  \}}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Observación}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Nota cómo todas las curvas pasan por puntos donde \(\cos x\) alcanza sus
+máximos y mínimos.
+
+\end{tcolorbox}
+
+\chapter{\texorpdfstring{Apartado 2: Ecuación de la forma
+\(y' = f(ax + by)\)}{Apartado 2: Ecuación de la forma y\textquotesingle{} = f(ax + by)}}\label{apartado-2-ecuaciuxf3n-de-la-forma-y-fax-by}
+
+\section{\texorpdfstring{Ecuación de la forma
+\(y' = f(ax + by)\)}{Ecuación de la forma y\textquotesingle{} = f(ax + by)}}\label{ecuaciuxf3n-de-la-forma-y-fax-by}
+
+Si \(a = 0\) o \(b = 0\), la ecuación es separable. En otro caso,
+efectuemos el cambio de función \(y(x)\) por \(z(x)\) dado por
+\(z = ax + by\), de donde \(z' = a + by'\), por tanto,
+\(y' = \frac{z'-a}{b}\). Entonces, sustituyendo en la E. D. obtenemos
+\(\frac{z'-a}{b} = f(z)\), es decir, \(z' = a + bf(z)\), que es de
+variables separadas. La escribimos como \[ dx = \frac{dz}{a + bf(z)}, \]
+con lo que, integrando,
+\(x = \int (a + bf(z))^{-1} \, dz = \phi(z, C)\). Así pues, las
+soluciones de la E. D. de partida serán \[ x = \phi(ax + by, C), \] de
+modo que hemos encontrado \(y\) como función de \(x\) expresada en forma
+implícita.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 2. Ecuación de la forma \(y' = f(ax + by)\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+El cambio de función \(y(x)\) por \(z(x)\) dado por \(z = ax + by\) la
+transforma en una de variables separadas.
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 2}\label{ejemplo-2}
+\addcontentsline{toc}{subsection}{Ejemplo 2}
+
+\textbf{Resolver} \[ y' - e^x e^y = -1. \]
+
+\textbf{Solución:}
+
+Tenemos \(y' + 1 = e^{x+y}\), con lo que si efectuamos el cambio de
+función dado por la sustitución \(z = x + y\), la ecuación queda
+transformada en \(z' = e^z\), es decir, \(dx = e^{-z} \, dz\), ecuación
+en variables separadas cuya solución es \(x = -e^{-z} + C\).
+
+Volviendo a las variables iniciales, \(C - x = e^{-x-y}\), de donde
+\(\log(C - x) = -x - y\), y por tanto la solución de la E. D. de partida
+es \(y = -\log(C - x) - x\).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Observación}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Observar que no nos hemos preocupado de poner módulos cuando al calcular
+una integral aparece un logaritmo. El lector podría analizar estos casos
+con mucho más cuidado.
+
+\end{tcolorbox}
+
+\chapter{Apartado 3: Ecuaciones
+Homogéneas}\label{apartado-3-ecuaciones-homoguxe9neas}
+
+\section{Ecuaciones Homogéneas}\label{ecuaciones-homoguxe9neas}
+
+Supongamos que tenemos la ecuación \[ y' = f\left(\frac{y}{x}\right). \]
+
+Para resolverla, hacemos el cambio de función \(y(x)\) por \(u(x)\)
+mediante \(u = \frac{y}{x}\). Así, derivando \(y = ux\) tenemos
+\(y' = u'x + u\), es decir, \(u'x + u = f(u)\). Esta ecuación, que
+podemos poner como \(u'x = f(u) - u\), es de variables separadas. Vamos
+a solucionarla:
+
+\subsection*{\texorpdfstring{Caso 1:
+\(f(u) \neq u\)}{Caso 1: f(u) \textbackslash neq u}}\label{caso-1-fu-neq-u}
+\addcontentsline{toc}{subsection}{Caso 1: \(f(u) \neq u\)}
+
+Podemos escribir \(\frac{du}{f(u)-u} = \frac{dx}{x}\) e, integrando,
+\(\int \frac{du}{f(u)-u} = \log(\frac{x}{C})\). Despejando \(x\)
+obtenemos \(x = C e^{\phi(u)}\) con
+\(\phi(u) = \int \frac{du}{f(u)-u}\).
+
+Por tanto, las curvas con ecuaciones paramétricas \[
+\begin{cases}
+x = C e^{\phi(u)} \\
+y = C u e^{\phi(u)}
+\end{cases}
+\] son solución de la ecuación diferencial para cada
+\(C \in \mathbb{R}\).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Familia de curvas homotéticas}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Esto constituye una familia de curvas homotéticas: una curva se obtiene
+de otra mediante una homotecia, es decir, multiplicando los valores de
+\(x\) e \(y\) por una constante.
+
+\end{tcolorbox}
+
+A veces, es conveniente expresar estas soluciones de otras formas.
+Siempre puede ponerse \(x = C e^{\phi(y/x)}\), solución dada mediante
+una función implícita. Y, cuando en \(x = C e^{\phi(u)}\) se logra
+despejar de alguna forma \(u = H(x, C)\), la solución de la E. D. queda
+mucho más sencilla: \(y = xH(x, C)\).
+
+\subsection*{Caso 2: Soluciones
+singulares}\label{caso-2-soluciones-singulares}
+\addcontentsline{toc}{subsection}{Caso 2: Soluciones singulares}
+
+Supongamos ahora que existe algún \(u_0\) tal que \(f(u_0) = u_0\). En
+este caso, es inmediato comprobar que la recta \(y = u_0x\) es solución:
+\(y' = u_0 = f(u_0) = f(\frac{y}{x})\), luego se satisface la ecuación
+diferencial.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Soluciones singulares}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Este tipo de soluciones que no se obtienen con el procedimiento general
+suelen denominarse \textbf{soluciones singulares}.
+
+\end{tcolorbox}
+
+\subsection*{Nota sobre funciones
+homogéneas}\label{nota-sobre-funciones-homoguxe9neas}
+\addcontentsline{toc}{subsection}{Nota sobre funciones homogéneas}
+
+En general, una función \(h(x, y)\) se dice \textbf{homogénea de grado
+\(\alpha\)} si \(h(\lambda x, \lambda y) = \lambda^\alpha h(x, y)\).
+
+Es inmediato comprobar que una E. D. de la forma
+\[ P(x, y) \, dx + Q(x, y) \, dy = 0 \] con \(P(x, y)\) y \(Q(x, y)\)
+funciones homogéneas del mismo grado es, efectivamente, una ecuación
+diferencial homogénea (despejar
+\(y' = \frac{dy}{dx} = -\frac{P(x,y)}{Q(x,y)} = -\frac{P(x,x(y/x))}{Q(x,x(y/x))}\)
+y extraer \(\lambda = x\) de \(P\) y \(Q\)). De aquí proviene el nombre
+de este tipo de ecuaciones.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 3. Homogéneas}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Son de la forma \[ y' = f\left(\frac{y}{x}\right). \]
+
+Se hace el cambio de función \(y(x)\) por \(u(x)\) mediante \(y = ux\),
+transformándose así la E. D. en una de variables separadas.
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 3}\label{ejemplo-3}
+\addcontentsline{toc}{subsection}{Ejemplo 3}
+
+\textbf{Resolver} \[ y' = \frac{2xy - y^2}{x^2}. \]
+
+\textbf{Solución:}
+
+Con el cambio \(y = ux\) podemos poner
+\(y' = 2\frac{y}{x} - (\frac{y}{x})^2 = 2u - u^2\). Como
+\(y' = u'x + u\), sustituyendo tenemos \(u'x + u = 2u - u^2\), es decir,
+\(xu' = u - u^2\).
+
+Si \(u \neq u^2\), podemos poner \(\frac{du}{u-u^2} = \frac{dx}{x}\).
+Para integrar, descomponemos
+\(\frac{1}{u-u^2} = \frac{A}{u} + \frac{B}{1-u}\), lo que se satisface
+para \(A = B = 1\).
+
+Entonces, integrando, \(\log u - \log(1 - u) = \log \frac{x}{C}\), es
+decir, \(\frac{u}{1-u} = \frac{x}{C}\); y sustituyendo
+\(u = \frac{y}{x}\) tenemos \(\frac{y/x}{1-y/x} = \frac{x}{C}\), de
+donde \(Cy = x(x - y)\). De aquí es fácil despejar explícitamente \(y\)
+si así se desea.
+
+Por otra parte, a partir de \(u_0 = 0\) y \(u_0 = 1\) (para las cuales
+\(u = u^2\)), se tienen las soluciones singulares \(y = 0\) e \(y = x\).
+
+\chapter{Apartado 4: Ecuaciones
+Exactas}\label{apartado-4-ecuaciones-exactas}
+
+\section{Ecuaciones Exactas}\label{ecuaciones-exactas}
+
+Llamamos exacta a una ecuación diferencial
+\[ P(x, y) \, dx + Q(x, y) \, dy = 0, \] es decir,
+\(y' = \frac{dy}{dx} = -\frac{P(x,y)}{Q(x,y)}\), que cumple
+\(P_y = Q_x\) (con la notación \(P_y = \frac{\partial P}{\partial y}\),
+\(Q_x = \frac{\partial Q}{\partial x}\)).
+
+\subsection*{Expresiones diferenciales}\label{expresiones-diferenciales}
+\addcontentsline{toc}{subsection}{Expresiones diferenciales}
+
+Una expresión diferencial \(P(x, y) \, dx + Q(x, y) \, dy\) se dice que
+es una \textbf{diferencial cerrada} en una región \(R\) del plano \(xy\)
+si se verifica \(P_y(x, y) = Q_x(x, y)\) para todo \((x, y) \in R\).
+
+Y se dice \textbf{exacta} en \(R\) cuando existe alguna función
+\(F(x, y)\) tal que \(\frac{\partial F}{\partial x} = P\) y
+\(\frac{\partial F}{\partial y} = Q\) para todo \((x, y) \in R\); en
+otras palabras, si la diferencial de \(F\) es \(dF = P \, dx + Q \, dy\)
+(\(F\), que es única salvo constantes, se denomina \textbf{función
+potencial}).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Teorema de Schwartz}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+El teorema de Schwartz sobre igualdad de derivadas cruzadas nos asegura
+que cualquier expresión diferencial exacta es cerrada. Lo contrario no
+es cierto en general, aunque sí en dominios \textbf{simplemente conexos}
+(sin agujeros).
+
+\end{tcolorbox}
+
+\subsection*{Método de resolución}\label{muxe9todo-de-resoluciuxf3n}
+\addcontentsline{toc}{subsection}{Método de resolución}
+
+Si tenemos \(P \, dx + Q \, dy = 0\) exacta, como existe \(F\) tal que
+\(dF = P \, dx + Q \, dy\), entonces la ecuación podemos ponerla en la
+forma \(dF = 0\) y, por tanto, su solución será \(F(x, y) = C\) (siendo
+\(C\) constante arbitraria). Así pues, basta con que encontremos la
+función potencial \(F\).
+
+El procedimiento para hallarla es:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Buscamos \(F\) tal que \(\frac{\partial F}{\partial x} = P\);
+  integrando \(P(x, y)\) respecto a \(x\) mientras se mantiene \(y\)
+  constante: \[F(x, y) = \int P(x, y) \, dx + \varphi(y)\] donde
+  \(\varphi(y)\) es una función arbitraria.
+\item
+  Derivando respecto de \(y\):
+  \[\frac{\partial F}{\partial y} = \frac{\partial}{\partial y} \int P(x, y) \, dx + \varphi'(y)\]
+\item
+  Como \(\frac{\partial F}{\partial y} = Q\), resulta:
+  \[\varphi'(y) = Q(x, y) - \frac{\partial}{\partial y} \int P(x, y) \, dx\]
+\item
+  Integrando obtenemos \(\varphi(y)\) y, sustituyendo su valor, llegamos
+  a \(F(x, y)\).
+\item
+  Las soluciones quedan expresadas implícitamente como \(F(x, y) = C\).
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 4. Ecuaciones exactas}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Son las de la forma \[ P(x, y) \, dx + Q(x, y) \, dy = 0, \] que cumplen
+\(P_y = Q_x\). Se busca una función \(F(x, y)\) tal que
+\(dF = P \, dx + Q \, dy\), y la solución de la E. D. es
+\(F(x, y) = C\).
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 4}\label{ejemplo-4}
+\addcontentsline{toc}{subsection}{Ejemplo 4}
+
+\textbf{Resolver} \[ 3y + e^x + (3x + \cos y)y' = 0. \]
+
+\textbf{Solución:}
+
+Ponemos la ecuación en la forma \(P \, dx + Q \, dy = 0\) con: -
+\(P(x, y) = 3y + e^x\) - \(Q(x, y) = 3x + \cos y\)
+
+Verificamos: \(P_y = 3 = Q_x\), luego la E. D. es exacta.
+
+Calculemos la función potencial \(F\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Como \(F_x = 3y + e^x\), integrando respecto de \(x\):
+  \[F(x, y) = 3yx + e^x + \varphi(y)\]
+\item
+  Derivando respecto de \(y\) e igualando a \(Q\):
+  \[3x + \varphi'(y) = 3x + \cos y\]
+\item
+  Por tanto \(\varphi'(y) = \cos y\), de donde
+  \(\varphi(y) = \operatorname{sen} y\).
+\item
+  Así: \(F(x, y) = 3yx + e^x + \operatorname{sen} y\)
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Solución}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+La solución de la E. D. viene dada, implícitamente, por:
+\[3yx + e^x + \operatorname{sen} y = C\]
+
+\end{tcolorbox}
+
+\chapter{Apartado 5: Ecuaciones
+Lineales}\label{apartado-5-ecuaciones-lineales}
+
+\section{Ecuaciones Lineales de Primer
+Orden}\label{ecuaciones-lineales-de-primer-orden}
+
+Una ecuación diferencial lineal de primer orden es de la forma:
+\[ y' + a(x)y = b(x) \]
+
+donde \(a(x)\) y \(b(x)\) son funciones dadas de \(x\).
+
+\subsection*{Método del Factor
+Integrante}\label{muxe9todo-del-factor-integrante}
+\addcontentsline{toc}{subsection}{Método del Factor Integrante}
+
+El método de resolución consiste en multiplicar ambos lados de la
+ecuación por un \textbf{factor integrante} \(\mu(x)\) que convierte el
+lado izquierdo en la derivada de un producto.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 5. Ecuaciones Lineales}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Para resolver \(y' + a(x)y = b(x)\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Calcular el factor integrante: \(\mu(x) = e^{\int a(x) \, dx}\)
+\item
+  Multiplicar la ecuación por \(\mu(x)\):
+  \[\mu(x)y' + \mu(x)a(x)y = \mu(x)b(x)\]
+\item
+  El lado izquierdo es \(\frac{d}{dx}[\mu(x)y]\):
+  \[\frac{d}{dx}[\mu(x)y] = \mu(x)b(x)\]
+\item
+  Integrar ambos lados: \[\mu(x)y = \int \mu(x)b(x) \, dx + C\]
+\item
+  Despejar \(y\):
+  \[y = \frac{1}{\mu(x)}\left[\int \mu(x)b(x) \, dx + C\right]\]
+\end{enumerate}
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 5}\label{ejemplo-5}
+\addcontentsline{toc}{subsection}{Ejemplo 5}
+
+\textbf{Resolver} \[ y' + 2xy = x \]
+
+\textbf{Solución:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Identificamos: \(a(x) = 2x\), \(b(x) = x\)
+\item
+  Factor integrante: \[\mu(x) = e^{\int 2x \, dx} = e^{x^2}\]
+\item
+  Multiplicamos: \[e^{x^2}y' + 2xe^{x^2}y = xe^{x^2}\]
+\item
+  El lado izquierdo es la derivada:
+  \[\frac{d}{dx}[e^{x^2}y] = xe^{x^2}\]
+\item
+  Integramos:
+  \[e^{x^2}y = \int xe^{x^2} \, dx = \frac{1}{2}e^{x^2} + C\]
+\item
+  Solución: \[y = \frac{1}{2} + Ce^{-x^2}\]
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Observación}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+La solución general es la suma de: - \textbf{Solución particular} de la
+ecuación completa: \(y_p = \frac{1}{2}\) - \textbf{Solución general} de
+la ecuación homogénea: \(y_h = Ce^{-x^2}\)
+
+\end{tcolorbox}
+
+\chapter{Apartado 6: Ecuación de
+Bernoulli}\label{apartado-6-ecuaciuxf3n-de-bernoulli}
+
+\section{Ecuación de Bernoulli}\label{ecuaciuxf3n-de-bernoulli}
+
+La ecuación de Bernoulli es de la forma: \[ y' + a(x)y = b(x)y^n \]
+
+donde \(n\) es un número real (\(n \neq 0, 1\)).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Casos especiales}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(n = 0\): la ecuación es \textbf{lineal}
+\item
+  Si \(n = 1\): la ecuación es de \textbf{variables separadas}
+\end{itemize}
+
+\end{tcolorbox}
+
+\subsection*{Método de resolución}\label{muxe9todo-de-resoluciuxf3n-1}
+\addcontentsline{toc}{subsection}{Método de resolución}
+
+El método consiste en hacer un cambio de variable que transforma la
+ecuación de Bernoulli en una ecuación lineal.
+
+\textbf{Cambio de variable:} \(z = y^{1-n}\)
+
+Derivando: \(z' = (1-n)y^{-n}y'\), es decir, \(y' = \frac{y^n z'}{1-n}\)
+
+Sustituyendo en la ecuación original:
+\[\frac{y^n z'}{1-n} + a(x)y = b(x)y^n\]
+
+Dividiendo por \(y^n\): \[\frac{z'}{1-n} + a(x)y^{1-n} = b(x)\]
+
+Como \(z = y^{1-n}\): \[\frac{z'}{1-n} + a(x)z = b(x)\]
+
+Multiplicando por \((1-n)\): \[z' + (1-n)a(x)z = (1-n)b(x)\]
+
+Esta es una \textbf{ecuación lineal} en \(z\) que podemos resolver con
+el método del factor integrante.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 6. Ecuación de Bernoulli}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Para resolver \(y' + a(x)y = b(x)y^n\) con \(n \neq 0, 1\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Hacer el cambio \(z = y^{1-n}\)
+\item
+  La ecuación se transforma en la lineal:
+  \[z' + (1-n)a(x)z = (1-n)b(x)\]
+\item
+  Resolver la ecuación lineal en \(z\)
+\item
+  Deshacer el cambio: \(y = z^{\frac{1}{1-n}}\)
+\end{enumerate}
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 6}\label{ejemplo-6}
+\addcontentsline{toc}{subsection}{Ejemplo 6}
+
+\textbf{Resolver} \[ y' + \frac{y}{x} = y^2 \]
+
+\textbf{Solución:}
+
+Esta es una ecuación de Bernoulli con \(a(x) = \frac{1}{x}\),
+\(b(x) = 1\), \(n = 2\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Cambio de variable: \(z = y^{1-2} = y^{-1} = \frac{1}{y}\)
+\item
+  Derivando: \(z' = -\frac{y'}{y^2}\), por tanto \(y' = -y^2 z'\)
+\item
+  Sustituyendo en la ecuación: \[-y^2 z' + \frac{y}{x} = y^2\]
+\item
+  Dividiendo por \(y^2\): \[-z' + \frac{1}{xy} = 1\]
+\item
+  Como \(z = \frac{1}{y}\): \[-z' + \frac{z}{x} = 1\]
+\item
+  Reordenando: \[z' - \frac{z}{x} = -1\]
+\item
+  Esta es una ecuación lineal. Factor integrante:
+  \[\mu(x) = e^{\int -\frac{1}{x} \, dx} = e^{-\ln x} = \frac{1}{x}\]
+\item
+  Multiplicamos: \[\frac{z'}{x} - \frac{z}{x^2} = -\frac{1}{x}\]
+\item
+  Integrando: \[\frac{z}{x} = -\ln|x| + C\]
+\item
+  Despejando \(z\): \[z = -x\ln|x| + Cx\]
+\item
+  Deshaciendo el cambio \(y = \frac{1}{z}\):
+  \[y = \frac{1}{Cx - x\ln|x|}\]
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Solución general}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+\[y = \frac{1}{x(C - \ln|x|)}\]
+
+\end{tcolorbox}
+
+\part{Parte II: E.D. con Derivada Implícita}
+
+\chapter{\texorpdfstring{Apartado 7: \(F\) algebraica en \(y'\) de grado
+\(n\)}{Apartado 7: F algebraica en y\textquotesingle{} de grado n}}\label{apartado-7-f-algebraica-en-y-de-grado-n}
+
+\section{\texorpdfstring{Ecuaciones algebraicas en
+\(y'\)}{Ecuaciones algebraicas en y\textquotesingle{}}}\label{ecuaciones-algebraicas-en-y}
+
+Tenemos
+\[ (y')^n + a_1(x, y)(y')^{n-1} + \dots + a_{n-1}(x, y)y' + a_n(x, y) = 0. \]
+
+Resolviendo este polinomio en \(y'\) de grado \(n\) igualado a cero
+obtenemos
+\[ (y' - f_1(x, y))(y' - f_2(x, y))\cdots(y' - f_n(x, y)) = 0. \]
+
+Por lo tanto, las soluciones de la E. D. de partida serán las de cada
+una de las nuevas ecuaciones diferenciales \(y' - f_i(x, y) = 0\),
+\(i = 1, 2, \dots, n\), que habrá que resolver. De esta forma obtenemos
+\(n\) familias uniparamétricas de soluciones.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 7. \(F\) algebraica en \(y'\) de grado \(n\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Tenemos
+\[ (y')^n + a_1(x, y)(y')^{n-1} + \dots + a_{n-1}(x, y)y' + a_n(x, y) = 0. \]
+
+Resolviéndolo como un polinomio en \(y'\) de grado \(n\) igualado a cero
+obtenemos
+\[ (y' - f_1(x, y))(y' - f_2(x, y))\cdots(y' - f_n(x, y)) = 0. \]
+
+Por tanto, las soluciones de la E. D. de partida serán las soluciones de
+cada una de las ecuaciones \(y' - f_i(x, y) = 0\),
+\(i = 1, 2, \dots, n\).
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 7}\label{ejemplo-7}
+\addcontentsline{toc}{subsection}{Ejemplo 7}
+
+\textbf{Resolver} \[ y^2((y')^2 + 1) = 1. \]
+
+\textbf{Solución:}
+
+Despejando \((y')^2\) queda \((y')^2 = \frac{1-y^2}{y^2}\), cuyas
+soluciones algebraicas son \(y' = \pm \frac{\sqrt{1-y^2}}{y}\).
+
+Vamos a resolver estas dos nuevas ecuaciones diferenciales a la vez
+(ambas son de variables separadas). Si las ponemos como
+\(\pm \frac{y \, dy}{\sqrt{1-y^2}} = dx\), integrando,
+\(\mp \sqrt{1 - y^2} = x + C\).
+
+Si elevamos al cuadrado ambos términos, podemos expresar conjuntamente
+las dos familias de soluciones como \(1 - y^2 = (x + C)^2\), es decir:
+\[(x + C)^2 + y^2 = 1\]
+
+que son las \textbf{circunferencias con centro en el eje \(x\) y radio
+1}.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Soluciones singulares}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Por último, es evidente que \(y = 1\) e \(y = -1\) también son
+soluciones de la E. D., aunque no se encuentran entre las que acabamos
+de hallar. Si atendemos a la interpretación geométrica de las ecuaciones
+diferenciales, es lógico que estas dos rectas sean soluciones, ya que
+son las \textbf{envolventes} de la familia de circunferencias que
+satisfacen la E. D.
+
+\end{tcolorbox}
+
+\section{Obtención de la envolvente de una familia de
+curvas}\label{obtenciuxf3n-de-la-envolvente-de-una-familia-de-curvas}
+
+Recordemos qué es una envolvente: Dada una familia uniparamétrica de
+curvas \(\{\varphi_\alpha\}_{\alpha \in A}\) en el plano, la envolvente
+de la familia es una nueva curva \(\varphi\) tal que, en cada punto de
+contacto de \(\varphi\) con alguna de las \(\varphi_\alpha\), la
+tangente de \(\varphi\) y de \(\varphi_\alpha\) es la misma.
+
+\subsection*{Familia de curvas
+implícitas}\label{familia-de-curvas-impluxedcitas}
+\addcontentsline{toc}{subsection}{Familia de curvas implícitas}
+
+Supongamos que tenemos una familia de curvas expresadas implícitamente
+como \(F(x, y, C) = 0\). Las envolventes se obtienen eliminando \(C\)
+del sistema: \[
+\begin{cases}
+F(x, y, C) = 0 \\
+F_C(x, y, C) = 0
+\end{cases}
+\] donde con \(F_C\) hemos denotado la derivada parcial de \(F\)
+respecto a \(C\).
+
+En el caso de las circunferencias del ejemplo anterior tendríamos: \[
+\begin{cases}
+(x + C)^2 + y^2 = 1 \\
+2(x + C) = 0
+\end{cases}
+\]
+
+Despejando en la segunda ecuación, \(x = -C\) y, sustituyendo en la
+primera, \(y^2 = 1\). Es decir, las envolventes son las rectas
+\(y = \pm 1\).
+
+\subsection*{Familia de curvas
+paramétricas}\label{familia-de-curvas-paramuxe9tricas}
+\addcontentsline{toc}{subsection}{Familia de curvas paramétricas}
+
+Supongamos que tenemos la familia de curvas en paramétricas: \[
+\begin{cases}
+x = x(t, C) \\
+y = y(t, C)
+\end{cases}
+\]
+
+Las envolventes se obtienen despejando \(C = C(t)\) en el jacobiano
+igualado a cero: \[
+\det \begin{pmatrix} x_C & y_C \\ x_t & y_t \end{pmatrix} = 0
+\] y sustituyendo en las ecuaciones paramétricas.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Puntos singulares}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Realmente, con estos procedimientos no sólo aparecen las envolventes,
+sino también los lugares geométricos de \textbf{puntos singulares}, ya
+sea de puntos de retroceso, de puntos de inflexión o de cúspides.
+
+Los puntos de retroceso se llaman \textbf{puntos singulares esenciales}
+y los otros \textbf{puntos singulares evitables}. En todo caso, después
+de aplicar estos métodos, hay que comprobar siempre qué es lo que hemos
+encontrado.
+
+\end{tcolorbox}
+
+\chapter{\texorpdfstring{Apartado 8: Ecuación de la forma
+\(y = f(x, y')\)}{Apartado 8: Ecuación de la forma y = f(x, y\textquotesingle)}}\label{apartado-8-ecuaciuxf3n-de-la-forma-y-fx-y}
+
+\section{Método general}\label{muxe9todo-general}
+
+Como procedimiento general para intentar resolver este tipo de
+ecuaciones, tomamos \(y' = p\) y derivamos \(y = f(x, y')\) respecto de
+\(x\), con lo cual tenemos
+\[ p = y' = f_x + f_{y'} \frac{dy'}{dx} = f_x(x, p) + f_{y'}(x, p)p'. \]
+
+Cuando \(f\) tiene la forma adecuada, la nueva ecuación
+\(p = f_x(x, p) + f_p(x, p)p'\) que hemos encontrado puede ser de alguno
+de los tipos ya estudiados. Si éste es el caso, la resolvemos,
+obteniendo su solución \(x = \phi(p, C)\).
+
+Entonces, la solución de la E. D. de partida será: \[
+\begin{cases}
+x = \phi(p, C) \\
+y = f(\phi(p, C), p)
+\end{cases}
+\] expresado como una familia de curvas en paramétricas.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Puede resultar extraño pensar que el parámetro \(p\) vale precisamente
+\(\frac{dy}{dx}\); pero esto no importa en absoluto, sino que puede
+considerarse una simple curiosidad.
+
+\end{tcolorbox}
+
+\section{\texorpdfstring{8.1. Ecuación
+\(y = f(y')\)}{8.1. Ecuación y = f(y\textquotesingle)}}\label{ecuaciuxf3n-y-fy}
+
+En este caso, como \(f(x, y') = f(y')\), se tiene \(f_x(x, p) = 0\),
+luego con el proceso descrito habremos obtenido la ecuación
+\(p = f_p(p)p'\) o, lo que es lo mismo, \(p = f'(p)p'\).
+
+Si \(p \neq 0\), esto lo podemos poner como
+\(dx = \frac{f'(p)}{p} \, dp\), que es de variables separadas.
+Integrándola, \(x = \int \frac{f'(p)}{p} \, dp = \phi(p) + C\), y las
+soluciones de \(y = f(y')\) serán las curvas: \[
+\begin{cases}
+x = \phi(p) + C \\
+y = f(p)
+\end{cases}
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Observación geométrica}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Notar, a la vista de su representación paramétrica, que todas ellas
+tienen la misma forma: se diferencian únicamente en un desplazamiento
+horizontal.
+
+\end{tcolorbox}
+
+A partir de \(p = 0\) obtenemos la solución constante \(y = f(0)\).
+Gráficamente, esto es una recta envolvente de las demás soluciones.
+
+\section{\texorpdfstring{8.2. Ecuación de Lagrange:
+\(y + x\varphi(y') + \psi(y') = 0\)}{8.2. Ecuación de Lagrange: y + x\textbackslash varphi(y\textquotesingle) + \textbackslash psi(y\textquotesingle) = 0}}\label{ecuaciuxf3n-de-lagrange-y-xvarphiy-psiy-0}
+
+Si ponemos \(y' = p\) y derivamos respecto de \(x\) queda:
+\[ p + \varphi(p) + x\varphi'(p)\frac{dp}{dx} + \psi'(p)\frac{dp}{dx} = 0 \]
+
+que podemos escribir como:
+\[(p + \varphi(p)) \, dx + x\varphi'(p) \, dp + \psi'(p) \, dp = 0\]
+
+\subsection*{\texorpdfstring{Caso 1:
+\(p + \varphi(p) \neq 0\)}{Caso 1: p + \textbackslash varphi(p) \textbackslash neq 0}}\label{caso-1-p-varphip-neq-0}
+\addcontentsline{toc}{subsection}{Caso 1: \(p + \varphi(p) \neq 0\)}
+
+Dividimos por \(p + \varphi(p)\), con lo que nos aparece la ecuación
+lineal:
+\[ \frac{dx}{dp} + \frac{\varphi'(p)}{p + \varphi(p)}x + \frac{\psi'(p)}{p + \varphi(p)} = 0 \]
+
+en la que \(x\) actúa como función y \(p\) como variable. Si la
+resolvemos, obtendremos como solución \(x = \phi(p, C)\). Con esto,
+habremos encontrado para la E. D. de Lagrange las soluciones: \[
+\begin{cases}
+x = \phi(p, C) \\
+y = -\phi(p, C)\varphi(p) - \psi(p)
+\end{cases}
+\] en forma de familia de curvas paramétricas.
+
+\subsection*{Caso 2: Soluciones
+singulares}\label{caso-2-soluciones-singulares-1}
+\addcontentsline{toc}{subsection}{Caso 2: Soluciones singulares}
+
+Supongamos que existe algún \(\lambda\) para el cual
+\(\lambda + \varphi(\lambda) = 0\). Formalmente, tomamos
+\(y' = \lambda\), sustituyendo en la E. D.,
+\(y + x\varphi(\lambda) + \psi(\lambda) = 0\), es decir:
+\[y = \lambda x - \psi(\lambda)\]
+
+Esta recta es, efectivamente, solución de la ecuación de Lagrange. Estas
+rectas decimos que son las \textbf{soluciones singulares} de la
+ecuación.
+
+\section{\texorpdfstring{8.3. Ecuación de Clairaut:
+\(y - xy' + \psi(y') = 0\)}{8.3. Ecuación de Clairaut: y - xy\textquotesingle{} + \textbackslash psi(y\textquotesingle) = 0}}\label{ecuaciuxf3n-de-clairaut-y---xy-psiy-0}
+
+Éste es un caso particular de ecuación de Lagrange con
+\(\varphi(y') = -y'\). Aquí, como \(\varphi(\lambda) + \lambda = 0\)
+para todo \(\lambda \in \mathbb{R}\), no existen las soluciones que, en
+la ecuación de Lagrange, encontrábamos por el método general; sólo
+aparecen rectas.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución general de Clairaut}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Tenemos como soluciones de la E. D. toda la familia de rectas:
+\[y = \lambda x - \psi(\lambda), \quad \lambda \in \mathbb{R}\]
+
+\end{tcolorbox}
+
+\subsection*{Solución singular
+(envolvente)}\label{soluciuxf3n-singular-envolvente}
+\addcontentsline{toc}{subsection}{Solución singular (envolvente)}
+
+Existe una solución singular, la envolvente de este haz de rectas. Para
+ello, planteamos el sistema: \[
+\begin{cases}
+y = \lambda x - \psi(\lambda) \\
+0 = x - \psi'(\lambda)
+\end{cases}
+\]
+
+donde la segunda ecuación es la primera derivada respecto al parámetro
+\(\lambda\). La envolvente queda expresada en forma paramétrica como: \[
+\begin{cases}
+x = \psi'(\lambda) \\
+y = \lambda \psi'(\lambda) - \psi(\lambda)
+\end{cases}
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Verificación}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Podemos garantizar que esta curva es una envolvente y no un lugar
+geométrico de puntos singulares. En cada punto
+\((x(\lambda), y(\lambda))\) de la curva, esta interseca precisamente a
+la recta \(y = \lambda x - \psi(\lambda)\) del haz; y la pendiente de
+esa recta en el punto de intersección coincide con la de la curva:
+\[ \frac{dy}{dx} = \frac{dy/d\lambda}{dx/d\lambda} = \frac{\psi'(\lambda) + \lambda\psi''(\lambda) - \psi'(\lambda)}{\psi''(\lambda)} = \lambda \]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 8. Ecuación de la forma \(y = f(x, y')\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+En general, se toma \(y' = p\) y se deriva la ecuación \(y = f(x, y')\)
+respecto de \(x\). Si \(f\) tiene la forma adecuada, a la nueva E. D. se
+le puede aplicar alguno de los métodos ya estudiados.
+
+\textbf{8.1.} Cuando \(y = f(y')\), la ecuación que se obtiene es de
+variables separadas.
+
+\textbf{8.2.} Ecuación de Lagrange: \(y + x\varphi(y') + \psi(y') = 0\).
+Se reduce a una ecuación lineal con \(x\) como función y \(p\) como
+variable. Además, para los \(\lambda\) tales que
+\(\lambda + \varphi(\lambda) = 0\) se obtienen como soluciones las
+rectas \(y = \lambda x - \psi(\lambda)\).
+
+\textbf{8.3.} Ecuación de Clairaut: \(y - xy' + \psi(y') = 0\). Es un
+caso particular de ecuación de Lagrange en el que sólo aparecen rectas
+(y su envolvente).
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 8.3: Ecuación de
+Clairaut}\label{ejemplo-8.3-ecuaciuxf3n-de-clairaut}
+\addcontentsline{toc}{subsection}{Ejemplo 8.3: Ecuación de Clairaut}
+
+\textbf{Resolver} \[ y = y'x - 2(y')^2. \]
+
+\textbf{Solución:}
+
+Estamos ante una ecuación de Clairaut \(y - xy' + \psi(y') = 0\) con
+\(\psi(y') = 2(y')^2\).
+
+Sin más que tomar \(y' = \lambda\), las rectas
+\(y = \lambda x - 2\lambda^2\) son solución de la E. D. para cada
+\(\lambda \in \mathbb{R}\).
+
+\textbf{Calculemos su envolvente:} en el sistema \[
+\begin{cases}
+y = \lambda x - 2\lambda^2 \\
+0 = x - 4\lambda
+\end{cases}
+\]
+
+Despejamos \(\lambda = \frac{x}{4}\) en la segunda ecuación y,
+sustituyendo en la primera, encontramos que la envolvente es la
+parábola: \[y = \frac{x^2}{8}\]
+
+\chapter{\texorpdfstring{Apartado 9: Ecuación de la forma
+\(x = f(y, y')\)}{Apartado 9: Ecuación de la forma x = f(y, y\textquotesingle)}}\label{apartado-9-ecuaciuxf3n-de-la-forma-x-fy-y}
+
+\section{Método general}\label{muxe9todo-general-1}
+
+Estas ecuaciones son similares a las que aparecen en el apartado 8 pero
+con el papel de \(x\) e \(y\) intercambiado. En general, para intentar
+resolverlas, tomamos \(y' = p\) y derivamos \(x = f(y, y')\) (o, si se
+prefiere interpretarlo así, \(x = f(y, p)\)) respecto de \(y\) (en lugar
+de respecto a \(x\), como hacíamos en el apartado 8).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-warning-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Atención!}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Esto requiere tener un poco más de cuidado, además de usar
+\(\frac{dx}{dy} = \frac{1}{dy/dx} = \frac{1}{p}\).
+
+\end{tcolorbox}
+
+Así:
+\[ \frac{1}{p} = \frac{dx}{dy} = f_y(y, p) + f_p(y, p)\frac{dp}{dy} \]
+
+Según como sea \(f\), esta nueva ecuación
+\(\frac{1}{p} = f_y(y, p) + f_p(y, p)\frac{dp}{dy}\) a la que hemos
+reducido la que teníamos responde a alguno de los tipos previamente
+estudiados, luego podríamos resolverla.
+
+Si logramos hacerlo, obtenemos su solución \(y = \phi(p, C)\). Con esto,
+la solución de la ecuación de partida será la familia de curvas
+paramétricas: \[
+\begin{cases}
+x = f(\phi(p, C), p) \\
+y = \phi(p, C)
+\end{cases}
+\]
+
+\section{Casos especiales}\label{casos-especiales-1}
+
+Pero no podemos asegurar que, para una función \(f\) cualquiera, sepamos
+resolver la ecuación intermedia que nos aparece. Se pueden estudiar
+casos similares a los de la forma \(y = f(x, y')\) en los que se
+garantiza que el método no quedará interrumpido.
+
+Los tres casos que merece la pena distinguir son los siguientes:
+
+\subsection*{\texorpdfstring{9.1. Ecuación
+\(x = f(y')\)}{9.1. Ecuación x = f(y\textquotesingle)}}\label{ecuaciuxf3n-x-fy}
+\addcontentsline{toc}{subsection}{9.1. Ecuación \(x = f(y')\)}
+
+Similar al caso 8.1, pero derivando respecto a \(y\).
+
+\subsection*{\texorpdfstring{9.2. Ecuación
+\(x + y\varphi(y') + \psi(y') = 0\)}{9.2. Ecuación x + y\textbackslash varphi(y\textquotesingle) + \textbackslash psi(y\textquotesingle) = 0}}\label{ecuaciuxf3n-x-yvarphiy-psiy-0}
+\addcontentsline{toc}{subsection}{9.2. Ecuación
+\(x + y\varphi(y') + \psi(y') = 0\)}
+
+Similar al caso 8.2 (ecuación de Lagrange), pero con \(x\) e \(y\)
+intercambiados.
+
+\subsection*{\texorpdfstring{9.3. Ecuación
+\(x - \frac{y}{y'} + \psi(y') = 0\)}{9.3. Ecuación x - \textbackslash frac\{y\}\{y\textquotesingle\} + \textbackslash psi(y\textquotesingle) = 0}}\label{ecuaciuxf3n-x---fracyy-psiy-0}
+\addcontentsline{toc}{subsection}{9.3. Ecuación
+\(x - \frac{y}{y'} + \psi(y') = 0\)}
+
+Similar al caso 8.3 (ecuación de Clairaut), pero con \(x\) e \(y\)
+intercambiados.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Ejercicio}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Se deja al lector que, como ejercicio, describa el método de resolución
+de estos tres tipos de ecuaciones. Simplemente hay que dedicarse a
+modificar, con cuidado, el proceso utilizado en los correspondientes
+tipos 8.1, 8.2 y 8.3, recordando que ahora hay que derivar respecto de
+\(y\) en lugar de respecto de \(x\).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 9. Ecuación de la forma \(x = f(y, y')\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+En general, se toma \(y' = p\) y se deriva la ecuación \(x = f(y, y')\)
+respecto de \(y\). Según como sea \(f\), la nueva E. D. que así se
+obtiene es ya conocida, procediéndose a su resolución. Se pueden
+estudiar casos similares a los de la forma \(y = f(x, y')\).
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 9}\label{ejemplo-9}
+\addcontentsline{toc}{subsection}{Ejemplo 9}
+
+\textbf{Resolver} \[ x = (y')^3 + y'. \]
+
+\textbf{Solución:}
+
+Si tomamos \(\frac{dy}{dx} = y' = p\) y derivamos \(x = p^3 + p\)
+respecto de \(y\) tenemos:
+\[ \frac{1}{p} = \frac{1}{dy/dx} = \frac{dx}{dy} = 3p^2 \frac{dp}{dy} + \frac{dp}{dy} \]
+
+que podemos poner como \(dy = (3p^3 + p) \, dp\), ecuación en variables
+separadas.
+
+Integrándola, \(y = \frac{3}{4}p^4 + \frac{1}{2}p^2 + C\).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Solución}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Por lo tanto, las soluciones de la ecuación \(x = (y')^3 + y'\) son la
+familia de curvas paramétricas: \[
+\begin{cases}
+x = p^3 + p \\
+y = \frac{3}{4}p^4 + \frac{1}{2}p^2 + C
+\end{cases}
+\]
+
+\end{tcolorbox}
+
+\chapter{\texorpdfstring{Apartado 10: Ecuación de la forma
+\(F(y, y') = 0\)}{Apartado 10: Ecuación de la forma F(y, y\textquotesingle) = 0}}\label{apartado-10-ecuaciuxf3n-de-la-forma-fy-y-0}
+
+\section{Método general}\label{muxe9todo-general-2}
+
+Para intentar encontrar sus soluciones, consideremos la curva
+\(F(\alpha, \beta) = 0\). El método de resolución requiere que hayamos
+logrado encontrar previamente una \textbf{representación paramétrica} de
+la curva, esto es, \(\alpha = \varphi(t)\) y \(\beta = \psi(t)\) tal que
+\(F(\varphi(t), \psi(t)) = 0\).
+
+Si así ha sido, vamos ahora a efectuar el cambio de función \(y\) por
+\(t\) mediante: \[y = \varphi(t), \quad y' = \psi(t)\]
+
+Entonces, derivando \(y = \varphi(t)\) respecto de \(x\) tenemos
+\(y' = \varphi'(t)\frac{dt}{dx}\) que, al ser \(y' = \psi(t)\), puede
+escribirse como: \[ \psi(t) = \varphi'(t)\frac{dt}{dx} \]
+
+Esta es una ecuación en \textbf{variables separadas}.
+
+\section{Resolución según casos}\label{resoluciuxf3n-seguxfan-casos}
+
+\subsection*{\texorpdfstring{Caso 1:
+\(\psi(t) \neq 0\)}{Caso 1: \textbackslash psi(t) \textbackslash neq 0}}\label{caso-1-psit-neq-0}
+\addcontentsline{toc}{subsection}{Caso 1: \(\psi(t) \neq 0\)}
+
+Podemos poner \(dx = \frac{\varphi'(t)}{\psi(t)} \, dt\) e, integrando:
+\[x = \int \frac{\varphi'(t)}{\psi(t)} \, dt + C\]
+
+Como consecuencia, la familia de curvas paramétricas: \[
+\begin{cases}
+x = \int \frac{\varphi'(t)}{\psi(t)} \, dt + C \\
+y = \varphi(t)
+\end{cases}
+\] son soluciones de la E. D. de partida.
+
+\subsection*{\texorpdfstring{Caso 2: Soluciones singulares
+(\(\psi(t_0) = 0\))}{Caso 2: Soluciones singulares (\textbackslash psi(t\_0) = 0)}}\label{caso-2-soluciones-singulares-psit_0-0}
+\addcontentsline{toc}{subsection}{Caso 2: Soluciones singulares
+(\(\psi(t_0) = 0\))}
+
+Si existe algún \(t_0\) para el que \(\psi(t_0) = 0\), formalmente
+efectuamos el siguiente razonamiento: \[0 = \varphi'(t)\frac{dt}{dx}\]
+
+así que \(\varphi'(t) = 0\) y consecuentemente
+\(\varphi(t) = \text{cte.} = \varphi(t_0)\), lo que nos conduciría a la
+solución \(y = \varphi(t_0)\).
+
+Y, en efecto, podemos comprobar con rigor que esta \textbf{recta
+horizontal} es solución de la E. D. sin más que sustituir en ella:
+\[F(y, y') = F(\varphi(t_0), 0) = F(\varphi(t_0), \psi(t_0)) = 0\]
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 10. Ecuación de la forma \(F(y, y') = 0\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Consideramos la curva \(F(\alpha, \beta) = 0\). Si encontramos una
+representación paramétrica \(\alpha = \varphi(t)\), \(\beta = \psi(t)\),
+\(F(\varphi(t), \psi(t)) = 0\), se hace el cambio de función \(y\) por
+\(t\) mediante \(y = \varphi(t)\), \(y' = \psi(t)\). Así, derivando
+\(y = \varphi(t)\) respecto de \(x\), aparece una ecuación en variables
+separadas.
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 10}\label{ejemplo-10}
+\addcontentsline{toc}{subsection}{Ejemplo 10}
+
+\textbf{Resolver} \[ y^{2/3} + (y')^{2/3} = 1. \]
+
+\textbf{Solución:}
+
+Si tomamos \(y = \cos^3 t\), \(y' = \operatorname{sen}^3 t\), es claro
+que: \[(\cos^3 t)^{2/3} + (\operatorname{sen}^3 t)^{2/3} = 1\]
+
+Derivando \(y = \cos^3 t\) tenemos
+\(y' = -3 \cos^2 t \operatorname{sen} t \frac{dt}{dx}\), lo que, usando
+\(y' = \operatorname{sen}^3 t\), resulta ser:
+\[\operatorname{sen}^3 t = -3 \cos^2 t \operatorname{sen} t \frac{dt}{dx}\]
+
+\textbf{Si suponemos} \(\operatorname{sen} t \neq 0\), tenemos:
+\[dx = \frac{-3 \cos^2 t}{\operatorname{sen}^2 t} \, dt = -3 \operatorname{cotg}^2 t \, dt\]
+
+Integrando: \begin{align*}
+x &= -3 \int \operatorname{cotg}^2 t \, dt \\
+&= -3 \int (1 + \operatorname{cotg}^2 t) \, dt + 3 \int dt \\
+&= 3 \operatorname{cotg} t + 3t + C
+\end{align*}
+
+Por tanto, las curvas paramétricas: \[
+\begin{cases}
+x = 3 \operatorname{cotg} t + 3t + C \\
+y = \cos^3 t
+\end{cases}
+\] son soluciones de la E. D. de partida.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Soluciones singulares}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Por último, para los \(t\) tales que \(\operatorname{sen}^3 t = 0\), lo
+cual ocurre cuando \(t = k\pi\), \(k \in \mathbb{Z}\), aparecen como
+soluciones singulares las rectas horizontales \(y = \cos^3(k\pi)\), es
+decir: \[y = 1 \quad \text{e} \quad y = -1\]
+
+\end{tcolorbox}
+
+\part{Parte III: Reducción de Orden}
+
+\chapter{\texorpdfstring{Apartado 11:
+\(F(x, y^{(k)}, \dots, y^{(n)}) = 0\)}{Apartado 11: F(x, y\^{}\{(k)\}, \textbackslash dots, y\^{}\{(n)\}) = 0}}\label{apartado-11-fx-yk-dots-yn-0}
+
+\section{\texorpdfstring{Reducción de orden: ausencia de
+\(y\)}{Reducción de orden: ausencia de y}}\label{reducciuxf3n-de-orden-ausencia-de-y}
+
+Tenemos una ecuación en la que no aparece la variable dependiente \(y\)
+(y además, si \(k > 1\), tampoco sus derivadas hasta el orden
+\(k - 1\)).
+
+Es evidente que el cambio \(y^{(k)} = z\) la convierte en:
+\[ F(x, z, \dots, z^{(n-k)}) = 0 \]
+
+que es una E. D. de orden \(n - k\).
+
+\section{Procedimiento completo}\label{procedimiento-completo}
+
+Si logramos resolverla, obtenemos que su solución será
+\(z = \phi(x, C_1, \dots, C_{n-k})\), una familia dependiente de
+\(n - k\) constantes.
+
+Entonces, al ser \(y^{(k)} = z\), para tener las soluciones de la
+ecuación original bastará con integrar \(k\) veces
+\(\phi(x, C_1, \dots, C_{n-k})\) respecto de \(x\), es decir:
+\[ y = \underbrace{\int \cdots \int}_{k \text{ veces}} \phi(x, C_1, \dots, C_{n-k}) \underbrace{dx \, dx \dots dx}_{k \text{ veces}} \]
+
+lo cual introducirá \(k\) nuevas constantes en la solución general. De
+este modo, dicha solución general tendrá la forma:
+\[ y = \underbrace{\int \cdots \int}_{k \text{ veces}} \phi(x, C_1, \dots, C_{n-k}) \underbrace{dx \, dx \dots dx}_{k \text{ veces}} + C_{n-k+1}x^{k-1} + \cdots + C_{n-1}x + C_n \]
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 11. Ecuación de la forma \(F(x, y^{(k)}, \dots, y^{(n)}) = 0\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Mediante el cambio \(y^{(k)} = z\) se convierte en una ecuación de orden
+\(n - k\).
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 11}\label{ejemplo-11}
+\addcontentsline{toc}{subsection}{Ejemplo 11}
+
+\textbf{Resolver} \[ y'' - xy''' + (y''')^3 = 0. \]
+
+\textbf{Solución:}
+
+Tomemos \(y'' = z\), con lo que la ecuación se transforma en
+\(z - xz' + (z')^3 = 0\), que es de \textbf{Clairaut}.
+
+Sin más que sustituir \(z' = \lambda\), las soluciones de ésta son las
+rectas: \[z = \lambda x - \lambda^3, \quad \lambda \in \mathbb{R}\]
+
+\textbf{Calculemos las envolventes:} en el sistema \[
+\begin{cases}
+z = \lambda x - \lambda^3 \\
+0 = x - 3\lambda^2
+\end{cases}
+\]
+
+Despejamos \(\lambda = \pm\sqrt{\frac{x}{3}}\) en la segunda ecuación,
+con lo que, sustituyendo en la primera, encontramos las dos envolventes:
+\[z = \pm\frac{2x}{3\sqrt{3}}\sqrt{\frac{x}{3}}\]
+
+\textbf{Una vez resuelta completamente la ecuación de Clairaut, hallemos
+las soluciones de la original:}
+
+Como \(y'' = z\), a partir de \(z = \lambda x - \lambda^3\), integrando
+dos veces:
+\[ y = \int \left( \int (\lambda x - \lambda^3) \, dx \right) dx = \frac{\lambda x^3}{6} - \frac{\lambda^3 x^2}{2} + C_1 x + C_2 \]
+
+Cambiando la notación de las constantes:
+\[y = K_1x^3 - 108K_1^3 x^2 + K_2 x + K_3\]
+
+Por último, de \(z = \pm\frac{2}{3\sqrt{3}}x^{3/2}\) obtenemos:
+\[ y = \int \left( \int \frac{\pm 2}{3\sqrt{3}}x^{3/2} \, dx \right) dx = \frac{\pm 8x^{7/2}}{105\sqrt{3}} + C_1 x + C_2 \]
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Soluciones finales}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Es decir, las dos familias de curvas:
+\[y = \frac{8x^{7/2}}{105\sqrt{3}} + C_1 x + C_2\]
+\[y = -\frac{8x^{7/2}}{105\sqrt{3}} + C_1 x + C_2\]
+
+\end{tcolorbox}
+
+\chapter{Apartado 11': Ecuaciones Lineales de Orden
+Superior}\label{apartado-11-ecuaciones-lineales-de-orden-superior}
+
+\section{\texorpdfstring{Ecuaciones Lineales de Orden
+\(n > 1\)}{Ecuaciones Lineales de Orden n \textgreater{} 1}}\label{ecuaciones-lineales-de-orden-n-1}
+
+Supongamos que tenemos una ecuación:
+\[ a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x) \]
+
+con \(n > 1\).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Observación importante}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Existe una teoría general bien establecida sobre ecuaciones
+diferenciales lineales de cualquier orden. Pero éste es un estudio
+esencialmente teórico: \textbf{no es posible describir la solución
+general de una E. D. lineal de orden 2 o superior por medio de
+cuadraturas}.
+
+Sin embargo, sí que se calculan las soluciones de forma muy
+satisfactoria cuando nos encontramos ante ecuaciones lineales con
+coeficientes constantes.
+
+\end{tcolorbox}
+
+\section{Método de reducción de
+orden}\label{muxe9todo-de-reducciuxf3n-de-orden}
+
+Este método radica en haber encontrado previamente una \textbf{solución
+particular} \(y_n(x)\) de la lineal homogénea asociada:
+\[a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = 0\]
+
+Si hemos logrado encontrar tal solución particular, efectuamos el cambio
+de función \(y\) por \(z\) dado por: \[y(x) = y_n(x)z(x)\]
+
+\subsection*{Procedimiento}\label{procedimiento}
+\addcontentsline{toc}{subsection}{Procedimiento}
+
+Derivando sucesivamente: \begin{align*}
+y'(x) &= y'_n(x)z(x) + y_n(x)z'(x) \\
+y''(x) &= y''_n(x)z(x) + 2y'_n(x)z'(x) + y_n(x)z''(x) \\
+&\vdots \\
+y^{(n)}(x) &= y_n^{(n)}(x)z(x) + \cdots + \binom{n}{k}y_n^{(k)}(x)z^{(n-k)}(x) + \cdots + y_n(x)z^{(n)}(x)
+\end{align*}
+
+Sustituyendo en la lineal y sacando factor común los \(z^{(k)}\), el
+coeficiente de \(z\) es 0 por ser precisamente \(y_n\) solución de la
+ecuación lineal homogénea. Así, podemos poner:
+\[ b_n(x)z^{(n)} + b_{n-1}(x)z^{(n-1)} + \cdots + b_1(x)z' = g(x) \]
+
+Si en ella hacemos \(z' = u\) aparece:
+\[ b_n(x)u^{(n-1)} + b_{n-1}(x)u^{(n-2)} + \cdots + b_1(x)u = g(x) \]
+
+que es una \textbf{ecuación lineal de orden \(n-1\)}.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 11'. Ecuaciones lineales de orden superior}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Son de la forma:
+\[ a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x) \]
+
+Si logramos encontrar alguna solución \(y_n(x)\) de la lineal homogénea
+asociada, el cambio de función \(y = y_n z\) hace que la lineal se
+transforme en una del tipo anterior, cuyo orden se puede reducir. Así,
+aparece una nueva ecuación lineal, esta vez de orden \(n-1\).
+
+\end{tcolorbox}
+
+\section{Resultados generales}\label{resultados-generales}
+
+\subsection*{Estructura de la solución
+general}\label{estructura-de-la-soluciuxf3n-general}
+\addcontentsline{toc}{subsection}{Estructura de la solución general}
+
+La solución general de la lineal de orden \(n\) puede expresarse como:
+\[ y(x) = y_p(x) + C_1 y_1(x) + \cdots + C_{n-1}y_{n-1}(x) + C_n y_n(x) \]
+
+donde \(y_p(x)\) es una solución particular de la lineal.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+La solución general de la lineal puede expresarse como una solución
+particular de la lineal más la solución general de la lineal homogénea
+asociada.
+
+\end{tcolorbox}
+
+\subsection*{Método de variación de las
+constantes}\label{muxe9todo-de-variaciuxf3n-de-las-constantes}
+\addcontentsline{toc}{subsection}{Método de variación de las constantes}
+
+También existe el método de variación de las constantes para E. D.
+lineales de orden \(n\), destinado a resolver la ecuación lineal cuando
+se conoce la solución general de la homogénea asociada,
+\(y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x)\).
+
+En estas condiciones, se busca la solución de la lineal de la forma:
+\[ y(x) = C_1(x)y_1(x) + C_2(x)y_2(x) + \cdots + C_n(x)y_n(x) \]
+
+para ciertas funciones \(C_k(x)\) a determinar.
+
+\chapter{\texorpdfstring{Apartado 12:
+\(F(y, y', \ldots, y^{(n)}) = 0\)}{Apartado 12: F(y, y\textquotesingle, \textbackslash ldots, y\^{}\{(n)\}) = 0}}\label{apartado-12-fy-y-ldots-yn-0}
+
+\section{\texorpdfstring{Reducción de orden: ausencia de
+\(x\)}{Reducción de orden: ausencia de x}}\label{reducciuxf3n-de-orden-ausencia-de-x}
+
+En esta ecuación no aparece explícitamente la variable independiente
+\(x\). Vamos a ver cómo se reduce de orden si efectuamos el cambio
+\(y' = p\) y la transformamos en una nueva en la que aparecerán \(y\),
+\(p\) y las derivadas de \(p\) respecto de \(y\).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-warning-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{¡Atención!}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Las derivadas de \(p\) son \textbf{respecto de \(y\)}, no respecto de
+\(x\).
+
+\end{tcolorbox}
+
+\section{Derivadas sucesivas}\label{derivadas-sucesivas}
+
+Si denotamos \(p' = \frac{dp}{dy}\), \(p'' = \frac{d^2p}{dy^2}\),
+\ldots, y hacemos uso de la regla de la cadena, entonces:
+
+\[y' = p\]
+
+\[ y'' = \frac{dy'}{dx} = \frac{dp}{dx} = \frac{dp}{dy}\frac{dy}{dx} = p'p \]
+
+\[ y''' = \frac{dy''}{dx} = \frac{d}{dx}(p'p) = \frac{d}{dy}(p'p)\frac{dy}{dx} = [p''p + (p')^2]p \]
+
+y así sucesivamente. Nótese que en la expresión de cada \(y^{(k)}\) sólo
+aparecen derivadas de \(p\) hasta el orden \(k-1\).
+
+\section{Transformación de la
+ecuación}\label{transformaciuxf3n-de-la-ecuaciuxf3n}
+
+Con esto, sustituyendo en \(F\) los valores que hemos encontrado para
+\(y'\), \(y''\), \ldots, \(y^{(n)}\), la E. D. original se transforma en
+una de la forma:
+\[ G\left( y, \frac{dp}{dy}, \ldots, \frac{d^{n-1}p}{dy^{n-1}} \right) = 0 \]
+
+cuyo orden es \(n-1\).
+
+Si logramos resolver esta nueva ecuación encontraremos que, en general,
+su solución será de la forma \(p = \phi(y, C_1, \ldots, C_{n-1})\),
+dependiente de \(n-1\) constantes.
+
+Ahora, devolviendo a \(p\) su valor original, es decir,
+\(p = \frac{dy}{dx}\), obtenemos:
+\[\frac{dy}{dx} = \phi(y, C_1, \ldots, C_{n-1})\]
+
+que es otra ecuación, esta vez de primer orden, que también hay que
+resolver (lo cual, además, añade una nueva constante). Las soluciones de
+esta última serán, obviamente, las mismas que las de la E. D. de
+partida.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 12. Ecuación de la forma \(F(y, y', \ldots, y^{(n)}) = 0\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Hacemos el cambio \(y' = p\) y transformamos la E. D. en una nueva
+dependiendo de \(y\), \(p\) y las derivadas de \(p\) respecto de \(y\).
+Ésta es de orden \(n-1\).
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 12}\label{ejemplo-12}
+\addcontentsline{toc}{subsection}{Ejemplo 12}
+
+\textbf{Resolver} \[ 2yy'' = (y')^2 + 1. \]
+
+\textbf{Solución:}
+
+Tomando \(y' = p\), y tal como hemos comprobado al explicar el método,
+se tiene \(y'' = p'p\) donde \(p' = \frac{dp}{dy}\).
+
+Entonces, al sustituir en la E. D., ésta se nos transforma en
+\(2yp'p = p^2 + 1\), es decir:
+\[\frac{2p \, dp}{p^2 + 1} = \frac{dy}{y}\]
+
+que es de variables separadas.
+
+Si integramos: \[\log(p^2 + 1) = \log(C_1 y)\]
+
+de donde \(p^2 + 1 = C_1 y\), y por tanto \(p = \pm\sqrt{C_1 y - 1}\).
+
+Volvemos ahora a restaurar el valor \(p = \frac{dy}{dx}\), con lo cual
+nos aparece: \[\frac{dy}{dx} = \pm\sqrt{C_1 y - 1}\]
+
+Ésta es de nuevo una ecuación en variables separadas, que podemos
+escribir como: \[(C_1 y - 1)^{-1/2} dy = \pm dx\]
+
+Integrándola: \[2\sqrt{C_1 y - 1} = \pm C_1 x + C_2\]
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Solución}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Con lo que ya hemos encontrado las soluciones de la E. D. de partida:
+\[2\sqrt{C_1 y - 1} = \pm C_1 x + C_2\]
+
+\end{tcolorbox}
+
+\chapter{Apartado 12': Ecuaciones Homogéneas Respecto a las
+Derivadas}\label{apartado-12-ecuaciones-homoguxe9neas-respecto-a-las-derivadas}
+
+\section{Ecuaciones homogéneas
+generalizadas}\label{ecuaciones-homoguxe9neas-generalizadas}
+
+Si la ecuación \(F(x, y, y', \ldots, y^{(n)}) = 0\) es tal que, para
+\(\alpha\) y \(m\) fijos, \(F\) cumple:
+\[ F(\lambda x, \lambda^m u_0, \lambda^{m-1}u_1, \ldots, \lambda^{m-n}u_n) = \lambda^\alpha F(x, u_0, u_1, \ldots, u_n) \]
+
+vamos a ver que, efectuando un cambio tanto de variable independiente
+como de dependiente, esta E. D. se podrá transformar en una del tipo
+anterior (es decir, en la que no aparecerá la variable independiente).
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definición}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Una ecuación de estas características suele decirse que es
+\textbf{homogénea generalizada} de grado \(\alpha\), en la que cada
+factor \(x\) contribuye con grado 1, cada \(y\) con grado \(m\), \(y'\)
+con grado \(m-1\), \(y''\) con \(m-2\), etcétera.
+
+\end{tcolorbox}
+
+\section{Cambio de variables}\label{cambio-de-variables}
+
+Tomamos dos nuevas variables \(t\) y \(z\) (\(t\) la independiente y
+\(z\) la dependiente) que relacionamos con las originales \(x\) e \(y\)
+mediante: \[x = e^t, \quad y = e^{mt}z\]
+
+Con esto, si denotamos \(z' = \frac{dz}{dt}\), tenemos:
+\[ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{me^{mt}z + e^{mt}z'}{e^t} = e^{(m-1)t}(z' + mz) \]
+
+A partir de aquí: \begin{align*}
+\frac{d^2 y}{dx^2} &= \frac{d}{dx}\left( \frac{dy}{dx} \right) = \frac{d}{dt}\left( \frac{dy}{dx} \right)\frac{dt}{dx} \\
+&= e^{(m-2)t}(z'' + (2m-1)z' + m(m-1)z)
+\end{align*}
+
+y así sucesivamente. En general, por inducción, es claro que:
+\[ \frac{d^{(k)}y}{dx^{(k)}} = e^{(m-k)t}g_k(z, z', \ldots, z^{(k)}) \]
+
+\section{Transformación de la
+ecuación}\label{transformaciuxf3n-de-la-ecuaciuxf3n-1}
+
+De este modo, sustituyendo en la E. D. que estamos intentando resolver,
+obtenemos:
+\[ F(e^t, e^{mt}z, e^{(m-1)t}(z' + mz), \ldots, e^{(m-n)t}g_n(z, z', \ldots, z^{(n)})) = 0 \]
+
+extrayendo \(\lambda = e^t\), esto resulta ser:
+\[ e^{\alpha t}F(1, z, (z' + mz), \ldots, g_n(z, z', \ldots, z^{(n)})) = 0 \]
+
+Como \(e^{\alpha t}\) no puede anularse, el otro factor tiene que ser
+cero, luego hemos transformado la ecuación de partida en una de la
+forma: \[ G(z, z', \ldots, z^{(n)}) = 0 \]
+
+en la que no aparece explícitamente la variable independiente \(t\).
+Esta ecuación puede reducirse de orden aplicando el proceso descrito en
+el apartado anterior.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 12'. Si la ecuación \(F(x, y, y', \ldots, y^{(n)}) = 0\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+es tal que, para \(\alpha\) y \(m\) fijos, \(F\) cumple:
+\[ F(\lambda x, \lambda^m u_0, \lambda^{m-1}u_1, \ldots, \lambda^{m-n}u_n) = \lambda^\alpha F(x, u_0, u_1, \ldots, u_n) \]
+
+haciendo el cambio \(x = e^t\), \(y = e^{mt}z\) la E. D. se transforma
+en una de la forma \(G(z, z', \ldots, z^{(n)}) = 0\), a la que se puede
+aplicar el método anterior.
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 12'}\label{ejemplo-12-1}
+\addcontentsline{toc}{subsection}{Ejemplo 12'}
+
+\textbf{Resolver} \[ 4x^2 y^3 y'' = x^2 - y^4. \]
+
+\textbf{Análisis de homogeneidad:}
+
+Para que esta ecuación sea homogénea generalizada, cada monomio tiene
+que ser del mismo grado. En el miembro de la derecha, esto se consigue
+con \(2 = 4m\), es decir, \(m = \frac{1}{2}\), con lo cual \(x^2 - y^4\)
+es de grado 2.
+
+El miembro de la izquierda es de grado
+\(2 + 3m + (m-2) = 2 + \frac{3}{2} + (\frac{1}{2} - 2) = 2\),
+coincidente con el del otro miembro.
+
+Así pues, con \(m = \frac{1}{2}\) la E. D. es homogénea generalizada de
+grado 2.
+
+\textbf{Solución:}
+
+(El desarrollo completo está disponible en el documento LaTeX original)
+
+\chapter{Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos
+Argumentos}\label{apartado-13-ecuaciones-homoguxe9neas-respecto-a-ciertos-argumentos}
+
+\section{\texorpdfstring{Ecuaciones homogéneas respecto a
+\(y, y', \ldots, y^{(n)}\)}{Ecuaciones homogéneas respecto a y, y\textquotesingle, \textbackslash ldots, y\^{}\{(n)\}}}\label{ecuaciones-homoguxe9neas-respecto-a-y-y-ldots-yn}
+
+Si la ecuación \(F(x, y, y', \ldots, y^{(n)}) = 0\) es tal que, para
+\(\alpha\) fijo, \(F\) cumple:
+\[ F(x, \lambda u_0, \lambda u_1, \ldots, \lambda u_n) = \lambda^\alpha F(x, u_0, u_1, \ldots, u_n) \]
+
+vamos a comprobar cómo, a través de un cambio de variable dependiente,
+el orden se puede reducir en uno.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Definición}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+La propiedad que caracteriza a la función \(F\) suele expresarse
+diciendo que \(F\) es \textbf{homogénea} de grado \(\alpha\) respecto a
+los argumentos \(u_0, u_1, \ldots, u_n\).
+
+Con este lenguaje, la ecuación que estamos intentando resolver es
+homogénea de grado \(\alpha\) respecto de \(y, y', \ldots, y^{(n)}\).
+
+\end{tcolorbox}
+
+\section{Solución trivial}\label{soluciuxf3n-trivial}
+
+En primer lugar, es claro que, cuando \(\alpha > 0\), la función
+constante \(y = 0\) (para la cual \(y' = y'' = \cdots = 0\)) es solución
+ya que, efectivamente:
+\[F(x, y, y', \ldots, y^{(n)}) = F(x, 0, 0, \ldots, 0) = 0^\alpha F(x, 1, 1, \ldots, 1) = 0\]
+
+\section{Cambio de función}\label{cambio-de-funciuxf3n}
+
+Para hallar las demás soluciones, tomemos una nueva función \(z\) dada
+por: \[y' = yz\]
+
+Obviamente, esto es equivalente a decir \(y = \exp(\int z\,dx)\), puesto
+que:
+\[ \frac{dy}{dx} = yz \Longleftrightarrow \frac{dy}{y} = z\,dx \Longleftrightarrow \log y = \int z\,dx \Longleftrightarrow y = \exp\left( \int z\,dx \right) \]
+
+\subsection*{Derivadas sucesivas}\label{derivadas-sucesivas-1}
+\addcontentsline{toc}{subsection}{Derivadas sucesivas}
+
+Si derivamos sucesivamente la expresión \(y' = yz\), obtenemos:
+\[y'' = y'z + yz' = y(z^2 + z')\]
+\[y''' = y''z + y'z' + yz'' = y(z^3 + 3zz' + z'')\]
+
+y así sucesivamente.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Es importante destacar el hecho de que siempre aparece una relación del
+tipo \(y^{(k)} = yg_k(z, z', \ldots, z^{(k-1)})\).
+
+\end{tcolorbox}
+
+\section{Transformación de la
+ecuación}\label{transformaciuxf3n-de-la-ecuaciuxf3n-2}
+
+Sin más que sustituir, en la E. D. queda:
+\[ F(x, y, yz, y(z^2 + z'), \ldots, yg_n(z, z', \ldots, z^{(n-1)})) = 0 \]
+
+de donde, extrayendo \(\lambda = y\):
+\[ y^\alpha F(x, 1, z, z^2 + z', \ldots, g_n(z, z', \ldots, z^{(n-1)})) = 0 \]
+
+y por tanto, como estamos suponiendo que \(y\) no es la función nula, el
+segundo factor habrá de ser cero. Claramente, esto puede ponerse en la
+forma: \[ G(x, z, z', \ldots, z^{(n-1)}) = 0 \]
+
+que es una \textbf{ecuación de orden \(n-1\)}.
+
+Si logramos resolverla, tendremos que sus soluciones serán
+\(z = \phi(x, C_1, \ldots, C_{n-1})\), una familia dependiente de
+\(n-1\) constantes. Entonces, las soluciones de la E. D. original serán:
+\[ y = \exp\left( \int \phi(x, C_1, \ldots, C_{n-1})\,dx \right) \]
+
+lo que, al integrar, introduce la \(n\)-ésima constante. Así, puede
+ponerse:
+\[ y = C_n \exp\left( \int \phi(x, C_1, \ldots, C_{n-1})\,dx \right) \]
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{RECETA 13. Si la ecuación \(F(x, y, y', \ldots, y^{(n)}) = 0\)}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+es tal que, para \(\alpha\) fijo, \(F\) cumple:
+\[ F(x, \lambda u_0, \lambda u_1, \ldots, \lambda u_n) = \lambda^\alpha F(x, u_0, u_1, \ldots, u_n) \]
+
+entonces el cambio de función dado por \(y' = yz\) (es decir,
+\(y = \exp(\int z\,dx)\)) hace que el orden se reduzca en uno.
+
+\end{tcolorbox}
+
+\subsection*{Ejemplo 13}\label{ejemplo-13}
+\addcontentsline{toc}{subsection}{Ejemplo 13}
+
+\textbf{Resolver} \[ 3x^2((y')^2 - yy'') = y^2. \]
+
+\textbf{Solución:}
+
+Esta ecuación es homogénea de grado 2 respecto de \(y, y', y''\) pues,
+al sustituir \(y, y', y''\) por \(\lambda y, \lambda y', \lambda y''\),
+la ecuación queda multiplicada por \(\lambda^2\).
+
+Para resolverla, hacemos el cambio \(y\) por \(z\) dado por
+\(y = \exp(\int z(x)\,dx)\), con lo cual:
+\[ y' = z\exp\left( \int z\,dx \right), \quad y'' = (z' + z^2)\exp\left( \int z\,dx \right) \]
+
+Sustituyendo en la E. D. queda:
+\[ 3x^2\left[ z^2\exp\left( 2 \int z\,dx \right) - (z' + z^2)\exp\left( 2 \int z\,dx \right) \right] = \exp\left( 2 \int z\,dx \right) \]
+
+de donde, simplificando \(\exp(2 \int z\,dx)\), se sigue
+\(-3x^2 z' = 1\), ecuación en variables separadas.
+
+Tras ponerla como \(dz = -\frac{1}{3}x^{-2}\,dx\) la integramos, con lo
+que \(z = \frac{1}{3}x^{-1} + C_1\).
+
+Por último: \begin{align*}
+y &= \exp\left( \int z(x)\,dx \right) = \exp\left( \int \left( \frac{1}{3}x^{-1} + C_1 \right) dx \right) \\
+&= \exp\left( \frac{1}{3}\log x + C_1 x + C_2 \right) = x^{1/3}\exp(C_1 x + C_2)
+\end{align*}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-important-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Solución}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+La solución de la ecuación original es, sin más que cambiar la notación
+de las constantes, la familia de funciones: \[y = K_1 x^{1/3}e^{K_2 x}\]
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\chapter{Bibliografía}\label{bibliografuxeda}
+
+\section{Referencias}\label{referencias}
+
+A continuación se presenta la bibliografía recomendada para profundizar
+en el estudio de ecuaciones diferenciales ordinarias:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{F. Ayres}, \emph{Ecuaciones diferenciales}, Col. Schaum,
+  McGraw-Hill, México, 1988.
+\item
+  \textbf{M. Braun}, \emph{Ecuaciones diferenciales y sus aplicaciones},
+  Grupo Editorial Iberoamérica, México, 1990.
+\item
+  \textbf{W. E. Boyce y R. C. DiPrima}, \emph{Ecuaciones diferenciales y
+  problemas con valores en la frontera}, Limusa, México, 1992 (3.ª
+  edición).
+\item
+  \textbf{E. A. Coddington}, \emph{Introducción a las ecuaciones
+  diferenciales ordinarias}, CECSA, México, 1980.
+\item
+  \textbf{M. W. Hirsch y S. Smale}, \emph{Ecuaciones diferenciales,
+  sistemas dinámicos y álgebra lineal}, Alianza Universidad Textos,
+  Madrid, 1983.
+\item
+  \textbf{S. G. Krantz}, \emph{Differential Equations. Theory, Technique
+  and Practice}, CRC Press, Boca Raton, 2015.
+\item
+  \textbf{L. Pontriaguine}, \emph{Ecuaciones diferenciales ordinarias},
+  Mir, Moscú, 1969.
+\item
+  \textbf{G. F. Simmons}, \emph{Ecuaciones diferenciales con
+  aplicaciones y notas históricas}, McGraw-Hill, México, 1977.
+\item
+  \textbf{J. Stewart}, \emph{Cálculo, conceptos y contextos}, Thomson,
+  México, 1999.
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Recursos adicionales}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Para consulta en línea, se recomienda: -
+\href{http://mathworld.wolfram.com/}{Wolfram MathWorld - Differential
+Equations} - \href{https://ocw.mit.edu/}{MIT OpenCourseWare -
+Differential Equations}
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\chapter{Apéndice: Fórmulas de
+Integración}\label{apuxe9ndice-fuxf3rmulas-de-integraciuxf3n}
+
+\section{Reglas principales de
+integración}\label{reglas-principales-de-integraciuxf3n}
+
+\subsection*{1. Integral indefinida}\label{integral-indefinida}
+\addcontentsline{toc}{subsection}{1. Integral indefinida}
+
+Si \(F'(x) = f(x)\), entonces: \[\int f(x) \, dx = F(x) + C\]
+
+\subsection*{2. Integrales inmediatas}\label{integrales-inmediatas}
+\addcontentsline{toc}{subsection}{2. Integrales inmediatas}
+
+\section{Potencias y logaritmo}
+
+\[\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)\]
+
+\[\int \frac{1}{x} \, dx = \ln|x| + C\]
+
+\section{Exponencial}
+
+\[\int e^x \, dx = e^x + C\]
+
+\[\int a^x \, dx = \frac{a^x}{\ln a} + C \quad (a > 0, a \neq 1)\]
+
+\section{Trigonométricas}
+
+\[\int \operatorname{sen} x \, dx = -\cos x + C\]
+
+\[\int \cos x \, dx = \operatorname{sen} x + C\]
+
+\[\int \operatorname{tg} x \, dx = -\ln|\cos x| + C\]
+
+\[\int \operatorname{cotg} x \, dx = \ln|\operatorname{sen} x| + C\]
+
+\[\int \sec x \, dx = \ln|\sec x + \operatorname{tg} x| + C\]
+
+\[\int \csc x \, dx = \ln|\csc x - \operatorname{cotg} x| + C\]
+
+\section{Trigonométricas inversas}
+
+\[\int \frac{1}{\sqrt{1-x^2}} \, dx = \operatorname{arcsen} x + C\]
+
+\[\int \frac{1}{1+x^2} \, dx = \operatorname{arctg} x + C\]
+
+\[\int \frac{1}{x\sqrt{x^2-1}} \, dx = \operatorname{arcsec} |x| + C\]
+
+\subsection*{3. Método de
+sustitución}\label{muxe9todo-de-sustituciuxf3n}
+\addcontentsline{toc}{subsection}{3. Método de sustitución}
+
+Si \(u = g(x)\), entonces: \[\int f(g(x))g'(x) \, dx = \int f(u) \, du\]
+
+\subsection*{4. Integración por partes}\label{integraciuxf3n-por-partes}
+\addcontentsline{toc}{subsection}{4. Integración por partes}
+
+\[\int u \, dv = uv - \int v \, du\]
+
+o equivalentemente:
+\[\int u(x)v'(x) \, dx = u(x)v(x) - \int u'(x)v(x) \, dx\]
+
+\subsection*{5. Fracciones racionales}\label{fracciones-racionales}
+\addcontentsline{toc}{subsection}{5. Fracciones racionales}
+
+Para integrar \(\frac{P(x)}{Q(x)}\) donde \(P\) y \(Q\) son polinomios:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Si grado de \(P \geq\) grado de \(Q\): dividir primero
+\item
+  Descomponer en fracciones simples
+\item
+  Integrar cada fracción simple
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-tip-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Descomposición en fracciones simples}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+\begin{itemize}
+\item
+  Para \((x-a)^n\): términos
+  \(\frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + \cdots + \frac{A_n}{(x-a)^n}\)
+\item
+  Para \(x^2 + bx + c\) irreducible: término
+  \(\frac{Ax + B}{x^2 + bx + c}\)
+\end{itemize}
+
+\end{tcolorbox}
+
+\subsection*{Tabla de integrales
+útiles}\label{tabla-de-integrales-uxfatiles}
+\addcontentsline{toc}{subsection}{Tabla de integrales útiles}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4762}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5238}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Integral
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Resultado
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\displaystyle\int \frac{1}{a^2+x^2} \, dx\) &
+\(\displaystyle\frac{1}{a}\operatorname{arctg}\frac{x}{a} + C\) \\
+\(\displaystyle\int \frac{1}{\sqrt{a^2-x^2}} \, dx\) &
+\(\displaystyle\operatorname{arcsen}\frac{x}{a} + C\) \\
+\(\displaystyle\int \frac{1}{a^2-x^2} \, dx\) &
+\(\displaystyle\frac{1}{2a}\ln\left|\frac{a+x}{a-x}\right| + C\) \\
+\(\displaystyle\int \frac{1}{\sqrt{x^2 \pm a^2}} \, dx\) &
+\(\displaystyle\ln|x + \sqrt{x^2 \pm a^2}| + C\) \\
+\(\displaystyle\int \sqrt{a^2-x^2} \, dx\) &
+\(\displaystyle\frac{x}{2}\sqrt{a^2-x^2} + \frac{a^2}{2}\operatorname{arcsen}\frac{x}{a} + C\) \\
+\end{longtable}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, colframe=quarto-callout-note-color-frame, left=2mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Recursos para más fórmulas}, titlerule=0mm, arc=.35mm, bottomrule=.15mm, toptitle=1mm, colback=white, rightrule=.15mm, toprule=.15mm, opacitybacktitle=0.6, leftrule=.75mm]
+
+Para una lista más completa de fórmulas de integración, consultar:
+
+\begin{itemize}
+\tightlist
+\item
+  Tablas de integrales de Gradshteyn y Ryzhik
+\item
+  \href{http://integrals.wolfram.com/}{Wolfram Integrator}
+\item
+  \href{https://www.symbolab.com/}{Symbolab Calculator}
+\end{itemize}
+
+\end{tcolorbox}
+
+
+\backmatter
+
+\end{document}

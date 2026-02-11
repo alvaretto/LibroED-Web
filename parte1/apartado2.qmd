@@ -1,0 +1,34 @@
+---
+title: "Apartado 2: Ecuación de la forma $y' = f(ax + by)$"
+---
+
+## Ecuación de la forma $y' = f(ax + by)$
+
+Si $a = 0$ o $b = 0$, la ecuación es separable. En otro caso, efectuemos el cambio de función $y(x)$ por $z(x)$ dado por $z = ax + by$, de donde $z' = a + by'$, por tanto, $y' = \frac{z'-a}{b}$. Entonces, sustituyendo en la E. D. obtenemos $\frac{z'-a}{b} = f(z)$, es decir, $z' = a + bf(z)$, que es de variables separadas. La escribimos como
+$$ dx = \frac{dz}{a + bf(z)}, $$
+con lo que, integrando, $x = \int (a + bf(z))^{-1} \, dz = \phi(z, C)$. Así pues, las soluciones de la E. D. de partida serán
+$$ x = \phi(ax + by, C), $$
+de modo que hemos encontrado $y$ como función de $x$ expresada en forma implícita.
+
+::: {.callout-tip}
+## RECETA 2. Ecuación de la forma $y' = f(ax + by)$
+
+El cambio de función $y(x)$ por $z(x)$ dado por $z = ax + by$ la transforma en una de variables separadas.
+:::
+
+### Ejemplo 2 {.unnumbered}
+
+**Resolver**
+$$ y' - e^x e^y = -1. $$
+
+**Solución:**
+
+Tenemos $y' + 1 = e^{x+y}$, con lo que si efectuamos el cambio de función dado por la sustitución $z = x + y$, la ecuación queda transformada en $z' = e^z$, es decir, $dx = e^{-z} \, dz$, ecuación en variables separadas cuya solución es $x = -e^{-z} + C$.
+
+Volviendo a las variables iniciales, $C - x = e^{-x-y}$, de donde $\log(C - x) = -x - y$, y por tanto la solución de la E. D. de partida es $y = -\log(C - x) - x$.
+
+::: {.callout-note}
+## Observación
+
+Observar que no nos hemos preocupado de poner módulos cuando al calcular una integral aparece un logaritmo. El lector podría analizar estos casos con mucho más cuidado.
+:::
