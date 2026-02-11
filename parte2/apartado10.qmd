@@ -16,7 +16,7 @@ Esta es una ecuación en **variables separadas**.
 
 ## Resolución según casos
 
-### Caso 1: $\psi(t) \neq 0$ {.unnumbered}
+### Caso 1: ψ(t) ≠ 0 {.unnumbered}
 
 Podemos poner $dx = \frac{\varphi'(t)}{\psi(t)} \, dt$ e, integrando:
 $$x = \int \frac{\varphi'(t)}{\psi(t)} \, dt + C$$
@@ -30,7 +30,7 @@ y = \varphi(t)
 $$
 son soluciones de la E. D. de partida.
 
-### Caso 2: Soluciones singulares ($\psi(t_0) = 0$) {.unnumbered}
+### Caso 2: Soluciones singulares (ψ(t₀) = 0) {.unnumbered}
 
 Si existe algún $t_0$ para el que $\psi(t_0) = 0$, formalmente efectuamos el siguiente razonamiento:
 $$0 = \varphi'(t)\frac{dt}{dx}$$

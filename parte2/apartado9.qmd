@@ -35,11 +35,11 @@ Los tres casos que merece la pena distinguir son los siguientes:
 
 Similar al caso 8.1, pero derivando respecto a $y$.
 
-### 9.2. Ecuación $x + y\varphi(y') + \psi(y') = 0$ {.unnumbered}
+### 9.2. Ecuación x + yφ(y') + ψ(y') = 0 {.unnumbered}
 
 Similar al caso 8.2 (ecuación de Lagrange), pero con $x$ e $y$ intercambiados.
 
-### 9.3. Ecuación $x - \frac{y}{y'} + \psi(y') = 0$ {.unnumbered}
+### 9.3. Ecuación x - y/y' + ψ(y') = 0 {.unnumbered}
 
 Similar al caso 8.3 (ecuación de Clairaut), pero con $x$ e $y$ intercambiados.
 

@@ -50,7 +50,7 @@ $$ p + \varphi(p) + x\varphi'(p)\frac{dp}{dx} + \psi'(p)\frac{dp}{dx} = 0 $$
 que podemos escribir como:
 $$(p + \varphi(p)) \, dx + x\varphi'(p) \, dp + \psi'(p) \, dp = 0$$
 
-### Caso 1: $p + \varphi(p) \neq 0$ {.unnumbered}
+### Caso 1: p + φ(p) ≠ 0 {.unnumbered}
 
 Dividimos por $p + \varphi(p)$, con lo que nos aparece la ecuación lineal:
 $$ \frac{dx}{dp} + \frac{\varphi'(p)}{p + \varphi(p)}x + \frac{\psi'(p)}{p + \varphi(p)} = 0 $$
