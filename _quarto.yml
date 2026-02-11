@@ -5,8 +5,12 @@ project:
 book:
   title: "Métodos Clásicos de Resolución de E.D.O."
   subtitle: "Ecuaciones Diferenciales Ordinarias"
-  author: "Material Educativo"
+  author: "Juan Luis Varona Malumbres"
   date: today
+  description: |
+    Profesor del Departamento de Matemáticas y Computación
+    Universidad de La Rioja
+    Publicación original: 1996
 
   favicon: favicon.png
 
@@ -59,12 +63,12 @@ book:
     collapse-level: 1
 
   page-footer:
-    left: "Copyright 2026, Material Educativo"
+    left: "© Juan Luis Varona | Universidad de La Rioja (1996) | Versión web 2026"
     right:
       - icon: github
-        href: https://github.com
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/alvaretto/LibroED-Web
+      - text: "Autor original"
+        href: http://www.unirioja.es/cu/jvarona/
 
 format:
   html:

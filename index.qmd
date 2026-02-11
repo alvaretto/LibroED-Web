@@ -62,6 +62,23 @@ Al final de cada apartado hay ejercicios propuestos para practicar.
 
 Utiliza el menú lateral para navegar entre los diferentes apartados. La barra de búsqueda te permitirá encontrar rápidamente conceptos específicos.
 
+## Sobre esta obra
+
+::: {.callout-important}
+## Autor y publicación original
+
+Este material está basado en el libro **"Métodos clásicos de resolución de ecuaciones diferenciales ordinarias"** escrito por **Juan Luis Varona Malumbres**, Profesor del Departamento de Matemáticas y Computación de la Universidad de La Rioja.
+
+**Publicación original:**
+Universidad de La Rioja, 1996
+ISBN: 84-88713-32-0
+Reimpresiones: 1999, 2007 y 2009
+
+**Sitio web del autor:** [http://www.unirioja.es/cu/jvarona/](http://www.unirioja.es/cu/jvarona/)
+
+Esta versión web es una adaptación para facilitar el acceso y estudio del material.
+:::
+
 ---
 
-**Material Educativo** • 2026
+© Juan Luis Varona | Universidad de La Rioja (1996) | Versión web 2026
