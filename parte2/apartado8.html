@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Profesor del Departamento de Matemáticas y Computación Universidad de La Rioja Publicación original: 1996">
 
 <title>Métodos Clásicos de Resolución de E.D.O. - 9&nbsp; Apartado 8: Ecuación de la forma \(y = f(x, y')\)</title>
 <style>
@@ -349,7 +350,7 @@ window.Quarto = {
   <li><a href="#ecuación-y-fy" id="toc-ecuación-y-fy" class="nav-link" data-scroll-target="#ecuación-y-fy"><span class="header-section-number">9.2</span> 8.1. Ecuación <span class="math inline">\(y = f(y')\)</span></a></li>
   <li><a href="#ecuación-de-lagrange-y-xvarphiy-psiy-0" id="toc-ecuación-de-lagrange-y-xvarphiy-psiy-0" class="nav-link" data-scroll-target="#ecuación-de-lagrange-y-xvarphiy-psiy-0"><span class="header-section-number">9.3</span> 8.2. Ecuación de Lagrange: <span class="math inline">\(y + x\varphi(y') + \psi(y') = 0\)</span></a>
   <ul class="collapse">
-  <li><a href="#caso-1-p-varphip-neq-0" id="toc-caso-1-p-varphip-neq-0" class="nav-link" data-scroll-target="#caso-1-p-varphip-neq-0">Caso 1: <span class="math inline">\(p + \varphi(p) \neq 0\)</span></a></li>
+  <li><a href="#caso-1-p-φp-0" id="toc-caso-1-p-φp-0" class="nav-link" data-scroll-target="#caso-1-p-φp-0">Caso 1: p + φ(p) ≠ 0</a></li>
   <li><a href="#caso-2-soluciones-singulares" id="toc-caso-2-soluciones-singulares" class="nav-link" data-scroll-target="#caso-2-soluciones-singulares">Caso 2: Soluciones singulares</a></li>
   </ul></li>
   <li><a href="#ecuación-de-clairaut-y---xy-psiy-0" id="toc-ecuación-de-clairaut-y---xy-psiy-0" class="nav-link" data-scroll-target="#ecuación-de-clairaut-y---xy-psiy-0"><span class="header-section-number">9.4</span> 8.3. Ecuación de Clairaut: <span class="math inline">\(y - xy' + \psi(y') = 0\)</span></a>
@@ -438,8 +439,8 @@ Observación geométrica
 <h2 data-number="9.3" class="anchored" data-anchor-id="ecuación-de-lagrange-y-xvarphiy-psiy-0"><span class="header-section-number">9.3</span> 8.2. Ecuación de Lagrange: <span class="math inline">\(y + x\varphi(y') + \psi(y') = 0\)</span></h2>
 <p>Si ponemos <span class="math inline">\(y' = p\)</span> y derivamos respecto de <span class="math inline">\(x\)</span> queda: <span class="math display">\[ p + \varphi(p) + x\varphi'(p)\frac{dp}{dx} + \psi'(p)\frac{dp}{dx} = 0 \]</span></p>
 <p>que podemos escribir como: <span class="math display">\[(p + \varphi(p)) \, dx + x\varphi'(p) \, dp + \psi'(p) \, dp = 0\]</span></p>
-<section id="caso-1-p-varphip-neq-0" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="caso-1-p-varphip-neq-0">Caso 1: <span class="math inline">\(p + \varphi(p) \neq 0\)</span></h3>
+<section id="caso-1-p-φp-0" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="caso-1-p-φp-0">Caso 1: p + φ(p) ≠ 0</h3>
 <p>Dividimos por <span class="math inline">\(p + \varphi(p)\)</span>, con lo que nos aparece la ecuación lineal: <span class="math display">\[ \frac{dx}{dp} + \frac{\varphi'(p)}{p + \varphi(p)}x + \frac{\psi'(p)}{p + \varphi(p)} = 0 \]</span></p>
 <p>en la que <span class="math inline">\(x\)</span> actúa como función y <span class="math inline">\(p\)</span> como variable. Si la resolvemos, obtendremos como solución <span class="math inline">\(x = \phi(p, C)\)</span>. Con esto, habremos encontrado para la E. D. de Lagrange las soluciones: <span class="math display">\[
 \begin{cases}
@@ -1201,7 +1202,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>que podemos escribir como:</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>$$(p + \varphi(p)) \, dx + x\varphi'(p) \, dp + \psi'(p) \, dp = 0$$</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### Caso 1: $p + \varphi(p) \neq 0$ {.unnumbered}</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### Caso 1: p + φ(p) ≠ 0 {.unnumbered}</span></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Dividimos por $p + \varphi(p)$, con lo que nos aparece la ecuación lineal:</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$ \frac{dx}{dp} + \frac{\varphi'(p)}{p + \varphi(p)}x + \frac{\psi'(p)}{p + \varphi(p)} = 0 $$</span>
@@ -1296,7 +1297,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Copyright 2026, Material Educativo</p>
+<p>© Juan Luis Varona | Universidad de La Rioja (1996) | Versión web 2026</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
@@ -1304,16 +1305,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com">
+    <a class="nav-link" href="https://github.com/alvaretto/LibroED-Web">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com">
-      <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
+    <li class="nav-item">
+    <a class="nav-link" href="http://www.unirioja.es/cu/jvarona/">
+<p>Autor original</p>
+</a>
   </li>  
 </ul>
     </div>
