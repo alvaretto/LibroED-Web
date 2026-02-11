@@ -1,0 +1,618 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Métodos Clásicos de Resolución de E.D.O.",
+    "section": "",
+    "text": "Bienvenida\nEste libro presenta los métodos clásicos de resolución de ecuaciones diferenciales ordinarias (E.D.O.), organizados de manera sistemática y pedagógica.",
+    "crumbs": [
+      "Inicio",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Métodos Clásicos de Resolución de E.D.O.</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#contenido-del-libro",
+    "href": "index.html#contenido-del-libro",
+    "title": "Métodos Clásicos de Resolución de E.D.O.",
+    "section": "0.1 Contenido del libro",
+    "text": "0.1 Contenido del libro\nEl material está estructurado en tres partes principales:\n\n0.1.1 Parte I: Ecuaciones Explícitas de Primer Orden\nMétodos fundamentales para resolver ecuaciones del tipo \\(y' = f(x,y)\\):\n\nVariables separadas\nEcuaciones homogéneas\nEcuaciones lineales\nEcuación de Bernoulli\nEcuaciones exactas\nFactor integrante\n\n\n\n0.1.2 Parte II: E.D. con Derivada Implícita\nTécnicas especiales para ecuaciones donde la derivada no está despejada:\n\nEcuación de Clairaut\nEcuación de Lagrange\nEcuación de d’Alembert\n\n\n\n0.1.3 Parte III: Reducción de Orden\nMétodos avanzados para ecuaciones de orden superior:\n\nReducción en ausencia de variable dependiente\nReducción en ausencia de variable independiente\nEcuaciones homogéneas generalizadas",
+    "crumbs": [
+      "Inicio",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Métodos Clásicos de Resolución de E.D.O.</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#características-del-material",
+    "href": "index.html#características-del-material",
+    "title": "Métodos Clásicos de Resolución de E.D.O.",
+    "section": "0.2 Características del material",
+    "text": "0.2 Características del material\n\n\n\n\n\n\nRECETAS\n\n\n\nA lo largo del libro encontrarás recetas que resumen paso a paso los métodos de resolución.\n\n\n\n\n\n\n\n\nEjemplos resueltos\n\n\n\nCada método incluye ejemplos completamente desarrollados con explicaciones detalladas.\n\n\n\n\n\n\n\n\nEjercicios\n\n\n\nAl final de cada apartado hay ejercicios propuestos para practicar.",
+    "crumbs": [
+      "Inicio",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Métodos Clásicos de Resolución de E.D.O.</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#navegación",
+    "href": "index.html#navegación",
+    "title": "Métodos Clásicos de Resolución de E.D.O.",
+    "section": "0.3 Navegación",
+    "text": "0.3 Navegación\nUtiliza el menú lateral para navegar entre los diferentes apartados. La barra de búsqueda te permitirá encontrar rápidamente conceptos específicos.\n\nMaterial Educativo • 2026",
+    "crumbs": [
+      "Inicio",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Métodos Clásicos de Resolución de E.D.O.</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado1.html",
+    "href": "parte1/apartado1.html",
+    "title": "2  Apartado 1: Variables Separadas",
+    "section": "",
+    "text": "2.1 Variables separadas\nSi tenemos la E. D. \\[ g(x) = h(y)y', \\] formalmente, podemos poner \\(g(x) \\, dx = h(y) \\, dy\\); si suponemos que \\(G\\) es una primitiva de \\(g\\) y \\(H\\) una de \\(h\\), tendremos \\(G'(x) \\, dx = H'(y) \\, dy\\) e, integrando, \\(G(x) = H(y) + C\\), que es la solución general de la ecuación.\nExpliquemos con un poco más de rigor por qué funciona el método: Sea \\(y = \\varphi(x)\\) una solución de la E. D., es decir, \\(\\varphi(x)\\) debe cumplir \\(g(x) = h(\\varphi(x))\\varphi'(x)\\). Pero \\(H\\) es una primitiva de \\(h\\), así que, por la regla de la cadena, \\(g(x) = h(\\varphi(x))\\varphi'(x) = (H \\circ \\varphi)'(x)\\). Integrando, \\(G(x) = (H \\circ \\varphi)(x) + C\\) (lo que antes hemos expresado como \\(G(x) = H(y) + C\\)), de donde \\(\\varphi(x) = H^{-1}(G(x) - C)\\).\nEn los pasos anteriores, está justificado emplear la regla de la cadena cuando \\(\\varphi\\) y \\(H\\) son derivables, lo cual es cierto sin más que suponer que \\(h\\) sea continua. Y finalmente, para poder despejar \\(\\varphi\\) mediante el uso de \\(H^{-1}\\) bastaría con exigir además que \\(h\\) no se anulara en el intervalo de definición, con lo cual, como \\(H' = h \\neq 0\\), \\(H\\) es creciente o decreciente luego existe \\(H^{-1}\\) (en otras palabras, como la derivada de \\(H\\) no se anula, el teorema de la función inversa nos asegura que existe \\(H^{-1}\\)).\nLas ecuaciones en variables separadas son las más sencillas de integrar y, a la vez, las más importantes, ya que cualquier otro método de resolución se basa esencialmente en aplicar diversos trucos para llegar a una ecuación en variables separadas. En ellas hemos visto, con todo rigor, qué hipótesis hay que imponer para que el método que conduce a la solución esté correctamente empleado, y cómo se justifica el funcionamiento del proceso. A partir de ahora no incidiremos más en estos detalles que, aunque importantes, sobrecargarían la explicación. El lector puede detenerse mentalmente a pensar en ellos, justificando adecuadamente los pasos que se efectúen.\nEn cualquier caso, conviene recordar que la expresión \\(\\frac{dy}{dx}\\) es simplemente una útil notación para designar la derivada de \\(y\\) respecto de \\(x\\), no un cociente de \\(dy\\) dividido por \\(dx\\); ni \\(dy\\) ni \\(dx\\) tienen entidad en sí mismas. Esta notación se emplea, no porque sí ni para introducir confusión, sino que, al contrario, se usa porque es consecuente con los enunciados de varios importantes resultados. Ya hemos visto cómo resulta adecuada a la hora de recordar cómo resolver ecuaciones en variables separadas \\(g(x) = h(y)\\frac{dy}{dx}\\), descomponiendo \\(g(x) \\, dx = h(x) \\, dy\\) (como si \\(\\frac{dy}{dx}\\) fuese realmente una fracción) e integrando ambos lados de la expresión anterior. Pero no sólo aquí se pone de manifiesto la utilidad de esta notación. Por ejemplo, el teorema de la función inversa prueba (con las hipótesis adecuadas) que, cuando \\(y\\) es una función de \\(x\\), si se despeja \\(x\\) como función de \\(y\\) se cumple \\[ x'(y) = \\frac{dx}{dy} = \\frac{1}{dy/dx} = \\frac{1}{y'(x)}, \\] es decir, se produce un comportamiento similar a si estuviéramos operando con fracciones. Análogamente, si tenemos que \\(z\\) es una función de \\(y\\) y, a su vez, \\(y\\) una función de \\(x\\), la regla de la cadena establece que la derivada de la función compuesta \\(z(x)\\) es \\[ \\frac{dz}{dx} = \\frac{dz}{dy} \\frac{dy}{dx}, \\] que es como si simplificáramos \\(dy\\) en los supuestos cocientes de la derecha. Esto permite usar las notaciones del tipo \\(\\frac{dy}{dx}\\) y su comportamiento como si fuesen fracciones como regla nemotécnica de los resultados anteriores.",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apartado 1: Variables Separadas</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado1.html#variables-separadas",
+    "href": "parte1/apartado1.html#variables-separadas",
+    "title": "2  Apartado 1: Variables Separadas",
+    "section": "",
+    "text": "RECETA 1. Variables separadas\n\n\n\nSon de la forma \\[ g(x) = h(y)y'. \\] Formalmente, se separa \\(g(x) = h(y)\\frac{dy}{dx}\\) en \\(g(x) \\, dx = h(y) \\, dy\\) y se integra.\n\n\n\nEjemplo 1\nResolver \\[ \\frac{dy}{dx} + (\\operatorname{sen} x)y = 0. \\]\nSolución:\nDespejando, \\(\\frac{dy}{y} = -(\\operatorname{sen} x) \\, dx\\) e, integrando, \\(\\log y = \\cos x + C\\), es decir, \\(y = e^{\\cos x + C}\\). Sin más que tomar \\(K = e^C\\) encontramos las soluciones \\(y = K e^{\\cos x}\\).\nFijarse que, en principio, parece que \\(K\\) tiene que ser positiva; pero en realidad la integral de \\(\\frac{dy}{y}\\) es \\(\\log |y|\\), lo que nos llevaría a soluciones con valores negativos de \\(K\\). Por último, notar \\(y = 0\\) (es decir, tomar \\(K = 0\\)) también es claramente una solución de la E. D., aunque no se obtiene con el método seguido.\n\n\n\n\n\n\nImportant\n\n\n\nAsí pues, la solución general de la E. D. es de la forma \\(y = K e^{\\cos x}\\) con \\(K \\in \\mathbb{R}\\).\n\n\n\n\n\nVisualización interactiva\nPuedes explorar cómo cambia la familia de soluciones con diferentes valores de \\(K\\):\n\n\nCode\nviewof K = Inputs.range([-3, 3], {\n  value: 1,\n  step: 0.1,\n  label: \"Constante K:\"\n})\n\nPlot.plot({\n  marks: [\n    Plot.line(d3.range(-6, 6, 0.1).map(x =&gt; ({\n      x: x,\n      y: K * Math.exp(Math.cos(x))\n    })), {x: \"x\", y: \"y\", stroke: \"blue\", strokeWidth: 2}),\n    Plot.ruleX([0], {stroke: \"gray\"}),\n    Plot.ruleY([0], {stroke: \"gray\"})\n  ],\n  grid: true,\n  x: {domain: [-6, 6], label: \"x\"},\n  y: {domain: [-5, 5], label: \"y\"},\n  width: 700,\n  height: 400,\n  style: {\n    fontSize: \"12px\"\n  }\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservación\n\n\n\nNota cómo todas las curvas pasan por puntos donde \\(\\cos x\\) alcanza sus máximos y mínimos.",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Apartado 1: Variables Separadas</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado2.html",
+    "href": "parte1/apartado2.html",
+    "title": "3  Apartado 2: Ecuación de la forma \\(y' = f(ax + by)\\)",
+    "section": "",
+    "text": "3.1 Ecuación de la forma \\(y' = f(ax + by)\\)\nSi \\(a = 0\\) o \\(b = 0\\), la ecuación es separable. En otro caso, efectuemos el cambio de función \\(y(x)\\) por \\(z(x)\\) dado por \\(z = ax + by\\), de donde \\(z' = a + by'\\), por tanto, \\(y' = \\frac{z'-a}{b}\\). Entonces, sustituyendo en la E. D. obtenemos \\(\\frac{z'-a}{b} = f(z)\\), es decir, \\(z' = a + bf(z)\\), que es de variables separadas. La escribimos como \\[ dx = \\frac{dz}{a + bf(z)}, \\] con lo que, integrando, \\(x = \\int (a + bf(z))^{-1} \\, dz = \\phi(z, C)\\). Así pues, las soluciones de la E. D. de partida serán \\[ x = \\phi(ax + by, C), \\] de modo que hemos encontrado \\(y\\) como función de \\(x\\) expresada en forma implícita.",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Apartado 2: Ecuación de la forma $y' = f(ax + by)$</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado2.html#ecuación-de-la-forma-y-fax-by",
+    "href": "parte1/apartado2.html#ecuación-de-la-forma-y-fax-by",
+    "title": "3  Apartado 2: Ecuación de la forma \\(y' = f(ax + by)\\)",
+    "section": "",
+    "text": "RECETA 2. Ecuación de la forma \\(y' = f(ax + by)\\)\n\n\n\nEl cambio de función \\(y(x)\\) por \\(z(x)\\) dado por \\(z = ax + by\\) la transforma en una de variables separadas.\n\n\n\nEjemplo 2\nResolver \\[ y' - e^x e^y = -1. \\]\nSolución:\nTenemos \\(y' + 1 = e^{x+y}\\), con lo que si efectuamos el cambio de función dado por la sustitución \\(z = x + y\\), la ecuación queda transformada en \\(z' = e^z\\), es decir, \\(dx = e^{-z} \\, dz\\), ecuación en variables separadas cuya solución es \\(x = -e^{-z} + C\\).\nVolviendo a las variables iniciales, \\(C - x = e^{-x-y}\\), de donde \\(\\log(C - x) = -x - y\\), y por tanto la solución de la E. D. de partida es \\(y = -\\log(C - x) - x\\).\n\n\n\n\n\n\nObservación\n\n\n\nObservar que no nos hemos preocupado de poner módulos cuando al calcular una integral aparece un logaritmo. El lector podría analizar estos casos con mucho más cuidado.",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Apartado 2: Ecuación de la forma $y' = f(ax + by)$</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado3.html",
+    "href": "parte1/apartado3.html",
+    "title": "4  Apartado 3: Ecuaciones Homogéneas",
+    "section": "",
+    "text": "4.1 Ecuaciones Homogéneas\nSupongamos que tenemos la ecuación \\[ y' = f\\left(\\frac{y}{x}\\right). \\]\nPara resolverla, hacemos el cambio de función \\(y(x)\\) por \\(u(x)\\) mediante \\(u = \\frac{y}{x}\\). Así, derivando \\(y = ux\\) tenemos \\(y' = u'x + u\\), es decir, \\(u'x + u = f(u)\\). Esta ecuación, que podemos poner como \\(u'x = f(u) - u\\), es de variables separadas. Vamos a solucionarla:",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Apartado 3: Ecuaciones Homogéneas</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado3.html#ecuaciones-homogéneas",
+    "href": "parte1/apartado3.html#ecuaciones-homogéneas",
+    "title": "4  Apartado 3: Ecuaciones Homogéneas",
+    "section": "",
+    "text": "Caso 1: \\(f(u) \\neq u\\)\nPodemos escribir \\(\\frac{du}{f(u)-u} = \\frac{dx}{x}\\) e, integrando, \\(\\int \\frac{du}{f(u)-u} = \\log(\\frac{x}{C})\\). Despejando \\(x\\) obtenemos \\(x = C e^{\\phi(u)}\\) con \\(\\phi(u) = \\int \\frac{du}{f(u)-u}\\).\nPor tanto, las curvas con ecuaciones paramétricas \\[\n\\begin{cases}\nx = C e^{\\phi(u)} \\\\\ny = C u e^{\\phi(u)}\n\\end{cases}\n\\] son solución de la ecuación diferencial para cada \\(C \\in \\mathbb{R}\\).\n\n\n\n\n\n\nFamilia de curvas homotéticas\n\n\n\nEsto constituye una familia de curvas homotéticas: una curva se obtiene de otra mediante una homotecia, es decir, multiplicando los valores de \\(x\\) e \\(y\\) por una constante.\n\n\nA veces, es conveniente expresar estas soluciones de otras formas. Siempre puede ponerse \\(x = C e^{\\phi(y/x)}\\), solución dada mediante una función implícita. Y, cuando en \\(x = C e^{\\phi(u)}\\) se logra despejar de alguna forma \\(u = H(x, C)\\), la solución de la E. D. queda mucho más sencilla: \\(y = xH(x, C)\\).\n\n\nCaso 2: Soluciones singulares\nSupongamos ahora que existe algún \\(u_0\\) tal que \\(f(u_0) = u_0\\). En este caso, es inmediato comprobar que la recta \\(y = u_0x\\) es solución: \\(y' = u_0 = f(u_0) = f(\\frac{y}{x})\\), luego se satisface la ecuación diferencial.\n\n\n\n\n\n\nSoluciones singulares\n\n\n\nEste tipo de soluciones que no se obtienen con el procedimiento general suelen denominarse soluciones singulares.\n\n\n\n\nNota sobre funciones homogéneas\nEn general, una función \\(h(x, y)\\) se dice homogénea de grado \\(\\alpha\\) si \\(h(\\lambda x, \\lambda y) = \\lambda^\\alpha h(x, y)\\).\nEs inmediato comprobar que una E. D. de la forma \\[ P(x, y) \\, dx + Q(x, y) \\, dy = 0 \\] con \\(P(x, y)\\) y \\(Q(x, y)\\) funciones homogéneas del mismo grado es, efectivamente, una ecuación diferencial homogénea (despejar \\(y' = \\frac{dy}{dx} = -\\frac{P(x,y)}{Q(x,y)} = -\\frac{P(x,x(y/x))}{Q(x,x(y/x))}\\) y extraer \\(\\lambda = x\\) de \\(P\\) y \\(Q\\)). De aquí proviene el nombre de este tipo de ecuaciones.\n\n\n\n\n\n\nRECETA 3. Homogéneas\n\n\n\nSon de la forma \\[ y' = f\\left(\\frac{y}{x}\\right). \\]\nSe hace el cambio de función \\(y(x)\\) por \\(u(x)\\) mediante \\(y = ux\\), transformándose así la E. D. en una de variables separadas.\n\n\n\n\nEjemplo 3\nResolver \\[ y' = \\frac{2xy - y^2}{x^2}. \\]\nSolución:\nCon el cambio \\(y = ux\\) podemos poner \\(y' = 2\\frac{y}{x} - (\\frac{y}{x})^2 = 2u - u^2\\). Como \\(y' = u'x + u\\), sustituyendo tenemos \\(u'x + u = 2u - u^2\\), es decir, \\(xu' = u - u^2\\).\nSi \\(u \\neq u^2\\), podemos poner \\(\\frac{du}{u-u^2} = \\frac{dx}{x}\\). Para integrar, descomponemos \\(\\frac{1}{u-u^2} = \\frac{A}{u} + \\frac{B}{1-u}\\), lo que se satisface para \\(A = B = 1\\).\nEntonces, integrando, \\(\\log u - \\log(1 - u) = \\log \\frac{x}{C}\\), es decir, \\(\\frac{u}{1-u} = \\frac{x}{C}\\); y sustituyendo \\(u = \\frac{y}{x}\\) tenemos \\(\\frac{y/x}{1-y/x} = \\frac{x}{C}\\), de donde \\(Cy = x(x - y)\\). De aquí es fácil despejar explícitamente \\(y\\) si así se desea.\nPor otra parte, a partir de \\(u_0 = 0\\) y \\(u_0 = 1\\) (para las cuales \\(u = u^2\\)), se tienen las soluciones singulares \\(y = 0\\) e \\(y = x\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Apartado 3: Ecuaciones Homogéneas</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado4.html",
+    "href": "parte1/apartado4.html",
+    "title": "5  Apartado 4: Ecuaciones Exactas",
+    "section": "",
+    "text": "5.1 Ecuaciones Exactas\nLlamamos exacta a una ecuación diferencial \\[ P(x, y) \\, dx + Q(x, y) \\, dy = 0, \\] es decir, \\(y' = \\frac{dy}{dx} = -\\frac{P(x,y)}{Q(x,y)}\\), que cumple \\(P_y = Q_x\\) (con la notación \\(P_y = \\frac{\\partial P}{\\partial y}\\), \\(Q_x = \\frac{\\partial Q}{\\partial x}\\)).",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Apartado 4: Ecuaciones Exactas</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado4.html#ecuaciones-exactas",
+    "href": "parte1/apartado4.html#ecuaciones-exactas",
+    "title": "5  Apartado 4: Ecuaciones Exactas",
+    "section": "",
+    "text": "Expresiones diferenciales\nUna expresión diferencial \\(P(x, y) \\, dx + Q(x, y) \\, dy\\) se dice que es una diferencial cerrada en una región \\(R\\) del plano \\(xy\\) si se verifica \\(P_y(x, y) = Q_x(x, y)\\) para todo \\((x, y) \\in R\\).\nY se dice exacta en \\(R\\) cuando existe alguna función \\(F(x, y)\\) tal que \\(\\frac{\\partial F}{\\partial x} = P\\) y \\(\\frac{\\partial F}{\\partial y} = Q\\) para todo \\((x, y) \\in R\\); en otras palabras, si la diferencial de \\(F\\) es \\(dF = P \\, dx + Q \\, dy\\) (\\(F\\), que es única salvo constantes, se denomina función potencial).\n\n\n\n\n\n\nTeorema de Schwartz\n\n\n\nEl teorema de Schwartz sobre igualdad de derivadas cruzadas nos asegura que cualquier expresión diferencial exacta es cerrada. Lo contrario no es cierto en general, aunque sí en dominios simplemente conexos (sin agujeros).\n\n\n\n\nMétodo de resolución\nSi tenemos \\(P \\, dx + Q \\, dy = 0\\) exacta, como existe \\(F\\) tal que \\(dF = P \\, dx + Q \\, dy\\), entonces la ecuación podemos ponerla en la forma \\(dF = 0\\) y, por tanto, su solución será \\(F(x, y) = C\\) (siendo \\(C\\) constante arbitraria). Así pues, basta con que encontremos la función potencial \\(F\\).\nEl procedimiento para hallarla es:\n\nBuscamos \\(F\\) tal que \\(\\frac{\\partial F}{\\partial x} = P\\); integrando \\(P(x, y)\\) respecto a \\(x\\) mientras se mantiene \\(y\\) constante: \\[F(x, y) = \\int P(x, y) \\, dx + \\varphi(y)\\] donde \\(\\varphi(y)\\) es una función arbitraria.\nDerivando respecto de \\(y\\): \\[\\frac{\\partial F}{\\partial y} = \\frac{\\partial}{\\partial y} \\int P(x, y) \\, dx + \\varphi'(y)\\]\nComo \\(\\frac{\\partial F}{\\partial y} = Q\\), resulta: \\[\\varphi'(y) = Q(x, y) - \\frac{\\partial}{\\partial y} \\int P(x, y) \\, dx\\]\nIntegrando obtenemos \\(\\varphi(y)\\) y, sustituyendo su valor, llegamos a \\(F(x, y)\\).\nLas soluciones quedan expresadas implícitamente como \\(F(x, y) = C\\).\n\n\n\n\n\n\n\nRECETA 4. Ecuaciones exactas\n\n\n\nSon las de la forma \\[ P(x, y) \\, dx + Q(x, y) \\, dy = 0, \\] que cumplen \\(P_y = Q_x\\). Se busca una función \\(F(x, y)\\) tal que \\(dF = P \\, dx + Q \\, dy\\), y la solución de la E. D. es \\(F(x, y) = C\\).\n\n\n\n\nEjemplo 4\nResolver \\[ 3y + e^x + (3x + \\cos y)y' = 0. \\]\nSolución:\nPonemos la ecuación en la forma \\(P \\, dx + Q \\, dy = 0\\) con: - \\(P(x, y) = 3y + e^x\\) - \\(Q(x, y) = 3x + \\cos y\\)\nVerificamos: \\(P_y = 3 = Q_x\\), luego la E. D. es exacta.\nCalculemos la función potencial \\(F\\):\n\nComo \\(F_x = 3y + e^x\\), integrando respecto de \\(x\\): \\[F(x, y) = 3yx + e^x + \\varphi(y)\\]\nDerivando respecto de \\(y\\) e igualando a \\(Q\\): \\[3x + \\varphi'(y) = 3x + \\cos y\\]\nPor tanto \\(\\varphi'(y) = \\cos y\\), de donde \\(\\varphi(y) = \\operatorname{sen} y\\).\nAsí: \\(F(x, y) = 3yx + e^x + \\operatorname{sen} y\\)\n\n\n\n\n\n\n\nSolución\n\n\n\nLa solución de la E. D. viene dada, implícitamente, por: \\[3yx + e^x + \\operatorname{sen} y = C\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Apartado 4: Ecuaciones Exactas</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado5.html",
+    "href": "parte1/apartado5.html",
+    "title": "6  Apartado 5: Ecuaciones Lineales",
+    "section": "",
+    "text": "6.1 Ecuaciones Lineales de Primer Orden\nUna ecuación diferencial lineal de primer orden es de la forma: \\[ y' + a(x)y = b(x) \\]\ndonde \\(a(x)\\) y \\(b(x)\\) son funciones dadas de \\(x\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Apartado 5: Ecuaciones Lineales</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado5.html#ecuaciones-lineales-de-primer-orden",
+    "href": "parte1/apartado5.html#ecuaciones-lineales-de-primer-orden",
+    "title": "6  Apartado 5: Ecuaciones Lineales",
+    "section": "",
+    "text": "Método del Factor Integrante\nEl método de resolución consiste en multiplicar ambos lados de la ecuación por un factor integrante \\(\\mu(x)\\) que convierte el lado izquierdo en la derivada de un producto.\n\n\n\n\n\n\nRECETA 5. Ecuaciones Lineales\n\n\n\nPara resolver \\(y' + a(x)y = b(x)\\):\n\nCalcular el factor integrante: \\(\\mu(x) = e^{\\int a(x) \\, dx}\\)\nMultiplicar la ecuación por \\(\\mu(x)\\): \\[\\mu(x)y' + \\mu(x)a(x)y = \\mu(x)b(x)\\]\nEl lado izquierdo es \\(\\frac{d}{dx}[\\mu(x)y]\\): \\[\\frac{d}{dx}[\\mu(x)y] = \\mu(x)b(x)\\]\nIntegrar ambos lados: \\[\\mu(x)y = \\int \\mu(x)b(x) \\, dx + C\\]\nDespejar \\(y\\): \\[y = \\frac{1}{\\mu(x)}\\left[\\int \\mu(x)b(x) \\, dx + C\\right]\\]\n\n\n\n\n\nEjemplo 5\nResolver \\[ y' + 2xy = x \\]\nSolución:\n\nIdentificamos: \\(a(x) = 2x\\), \\(b(x) = x\\)\nFactor integrante: \\[\\mu(x) = e^{\\int 2x \\, dx} = e^{x^2}\\]\nMultiplicamos: \\[e^{x^2}y' + 2xe^{x^2}y = xe^{x^2}\\]\nEl lado izquierdo es la derivada: \\[\\frac{d}{dx}[e^{x^2}y] = xe^{x^2}\\]\nIntegramos: \\[e^{x^2}y = \\int xe^{x^2} \\, dx = \\frac{1}{2}e^{x^2} + C\\]\nSolución: \\[y = \\frac{1}{2} + Ce^{-x^2}\\]\n\n\n\n\n\n\n\nObservación\n\n\n\nLa solución general es la suma de: - Solución particular de la ecuación completa: \\(y_p = \\frac{1}{2}\\) - Solución general de la ecuación homogénea: \\(y_h = Ce^{-x^2}\\)",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Apartado 5: Ecuaciones Lineales</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado6.html",
+    "href": "parte1/apartado6.html",
+    "title": "7  Apartado 6: Ecuación de Bernoulli",
+    "section": "",
+    "text": "7.1 Ecuación de Bernoulli\nLa ecuación de Bernoulli es de la forma: \\[ y' + a(x)y = b(x)y^n \\]\ndonde \\(n\\) es un número real (\\(n \\neq 0, 1\\)).",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Apartado 6: Ecuación de Bernoulli</span>"
+    ]
+  },
+  {
+    "objectID": "parte1/apartado6.html#ecuación-de-bernoulli",
+    "href": "parte1/apartado6.html#ecuación-de-bernoulli",
+    "title": "7  Apartado 6: Ecuación de Bernoulli",
+    "section": "",
+    "text": "Casos especiales\n\n\n\n\nSi \\(n = 0\\): la ecuación es lineal\nSi \\(n = 1\\): la ecuación es de variables separadas\n\n\n\n\nMétodo de resolución\nEl método consiste en hacer un cambio de variable que transforma la ecuación de Bernoulli en una ecuación lineal.\nCambio de variable: \\(z = y^{1-n}\\)\nDerivando: \\(z' = (1-n)y^{-n}y'\\), es decir, \\(y' = \\frac{y^n z'}{1-n}\\)\nSustituyendo en la ecuación original: \\[\\frac{y^n z'}{1-n} + a(x)y = b(x)y^n\\]\nDividiendo por \\(y^n\\): \\[\\frac{z'}{1-n} + a(x)y^{1-n} = b(x)\\]\nComo \\(z = y^{1-n}\\): \\[\\frac{z'}{1-n} + a(x)z = b(x)\\]\nMultiplicando por \\((1-n)\\): \\[z' + (1-n)a(x)z = (1-n)b(x)\\]\nEsta es una ecuación lineal en \\(z\\) que podemos resolver con el método del factor integrante.\n\n\n\n\n\n\nRECETA 6. Ecuación de Bernoulli\n\n\n\nPara resolver \\(y' + a(x)y = b(x)y^n\\) con \\(n \\neq 0, 1\\):\n\nHacer el cambio \\(z = y^{1-n}\\)\nLa ecuación se transforma en la lineal: \\[z' + (1-n)a(x)z = (1-n)b(x)\\]\nResolver la ecuación lineal en \\(z\\)\nDeshacer el cambio: \\(y = z^{\\frac{1}{1-n}}\\)\n\n\n\n\n\nEjemplo 6\nResolver \\[ y' + \\frac{y}{x} = y^2 \\]\nSolución:\nEsta es una ecuación de Bernoulli con \\(a(x) = \\frac{1}{x}\\), \\(b(x) = 1\\), \\(n = 2\\).\n\nCambio de variable: \\(z = y^{1-2} = y^{-1} = \\frac{1}{y}\\)\nDerivando: \\(z' = -\\frac{y'}{y^2}\\), por tanto \\(y' = -y^2 z'\\)\nSustituyendo en la ecuación: \\[-y^2 z' + \\frac{y}{x} = y^2\\]\nDividiendo por \\(y^2\\): \\[-z' + \\frac{1}{xy} = 1\\]\nComo \\(z = \\frac{1}{y}\\): \\[-z' + \\frac{z}{x} = 1\\]\nReordenando: \\[z' - \\frac{z}{x} = -1\\]\nEsta es una ecuación lineal. Factor integrante: \\[\\mu(x) = e^{\\int -\\frac{1}{x} \\, dx} = e^{-\\ln x} = \\frac{1}{x}\\]\nMultiplicamos: \\[\\frac{z'}{x} - \\frac{z}{x^2} = -\\frac{1}{x}\\]\nIntegrando: \\[\\frac{z}{x} = -\\ln|x| + C\\]\nDespejando \\(z\\): \\[z = -x\\ln|x| + Cx\\]\nDeshaciendo el cambio \\(y = \\frac{1}{z}\\): \\[y = \\frac{1}{Cx - x\\ln|x|}\\]\n\n\n\n\n\n\n\nSolución general\n\n\n\n\\[y = \\frac{1}{x(C - \\ln|x|)}\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte I: Ecuaciones Explícitas de Primer Orden",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Apartado 6: Ecuación de Bernoulli</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado7.html",
+    "href": "parte2/apartado7.html",
+    "title": "8  Apartado 7: \\(F\\) algebraica en \\(y'\\) de grado \\(n\\)",
+    "section": "",
+    "text": "8.1 Ecuaciones algebraicas en \\(y'\\)\nTenemos \\[ (y')^n + a_1(x, y)(y')^{n-1} + \\dots + a_{n-1}(x, y)y' + a_n(x, y) = 0. \\]\nResolviendo este polinomio en \\(y'\\) de grado \\(n\\) igualado a cero obtenemos \\[ (y' - f_1(x, y))(y' - f_2(x, y))\\cdots(y' - f_n(x, y)) = 0. \\]\nPor lo tanto, las soluciones de la E. D. de partida serán las de cada una de las nuevas ecuaciones diferenciales \\(y' - f_i(x, y) = 0\\), \\(i = 1, 2, \\dots, n\\), que habrá que resolver. De esta forma obtenemos \\(n\\) familias uniparamétricas de soluciones.",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Apartado 7: $F$ algebraica en $y'$ de grado $n$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado7.html#ecuaciones-algebraicas-en-y",
+    "href": "parte2/apartado7.html#ecuaciones-algebraicas-en-y",
+    "title": "8  Apartado 7: \\(F\\) algebraica en \\(y'\\) de grado \\(n\\)",
+    "section": "",
+    "text": "RECETA 7. \\(F\\) algebraica en \\(y'\\) de grado \\(n\\)\n\n\n\nTenemos \\[ (y')^n + a_1(x, y)(y')^{n-1} + \\dots + a_{n-1}(x, y)y' + a_n(x, y) = 0. \\]\nResolviéndolo como un polinomio en \\(y'\\) de grado \\(n\\) igualado a cero obtenemos \\[ (y' - f_1(x, y))(y' - f_2(x, y))\\cdots(y' - f_n(x, y)) = 0. \\]\nPor tanto, las soluciones de la E. D. de partida serán las soluciones de cada una de las ecuaciones \\(y' - f_i(x, y) = 0\\), \\(i = 1, 2, \\dots, n\\).\n\n\n\nEjemplo 7\nResolver \\[ y^2((y')^2 + 1) = 1. \\]\nSolución:\nDespejando \\((y')^2\\) queda \\((y')^2 = \\frac{1-y^2}{y^2}\\), cuyas soluciones algebraicas son \\(y' = \\pm \\frac{\\sqrt{1-y^2}}{y}\\).\nVamos a resolver estas dos nuevas ecuaciones diferenciales a la vez (ambas son de variables separadas). Si las ponemos como \\(\\pm \\frac{y \\, dy}{\\sqrt{1-y^2}} = dx\\), integrando, \\(\\mp \\sqrt{1 - y^2} = x + C\\).\nSi elevamos al cuadrado ambos términos, podemos expresar conjuntamente las dos familias de soluciones como \\(1 - y^2 = (x + C)^2\\), es decir: \\[(x + C)^2 + y^2 = 1\\]\nque son las circunferencias con centro en el eje \\(x\\) y radio 1.\n\n\n\n\n\n\nSoluciones singulares\n\n\n\nPor último, es evidente que \\(y = 1\\) e \\(y = -1\\) también son soluciones de la E. D., aunque no se encuentran entre las que acabamos de hallar. Si atendemos a la interpretación geométrica de las ecuaciones diferenciales, es lógico que estas dos rectas sean soluciones, ya que son las envolventes de la familia de circunferencias que satisfacen la E. D.",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Apartado 7: $F$ algebraica en $y'$ de grado $n$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado7.html#obtención-de-la-envolvente-de-una-familia-de-curvas",
+    "href": "parte2/apartado7.html#obtención-de-la-envolvente-de-una-familia-de-curvas",
+    "title": "8  Apartado 7: \\(F\\) algebraica en \\(y'\\) de grado \\(n\\)",
+    "section": "8.2 Obtención de la envolvente de una familia de curvas",
+    "text": "8.2 Obtención de la envolvente de una familia de curvas\nRecordemos qué es una envolvente: Dada una familia uniparamétrica de curvas \\(\\{\\varphi_\\alpha\\}_{\\alpha \\in A}\\) en el plano, la envolvente de la familia es una nueva curva \\(\\varphi\\) tal que, en cada punto de contacto de \\(\\varphi\\) con alguna de las \\(\\varphi_\\alpha\\), la tangente de \\(\\varphi\\) y de \\(\\varphi_\\alpha\\) es la misma.\n\nFamilia de curvas implícitas\nSupongamos que tenemos una familia de curvas expresadas implícitamente como \\(F(x, y, C) = 0\\). Las envolventes se obtienen eliminando \\(C\\) del sistema: \\[\n\\begin{cases}\nF(x, y, C) = 0 \\\\\nF_C(x, y, C) = 0\n\\end{cases}\n\\] donde con \\(F_C\\) hemos denotado la derivada parcial de \\(F\\) respecto a \\(C\\).\nEn el caso de las circunferencias del ejemplo anterior tendríamos: \\[\n\\begin{cases}\n(x + C)^2 + y^2 = 1 \\\\\n2(x + C) = 0\n\\end{cases}\n\\]\nDespejando en la segunda ecuación, \\(x = -C\\) y, sustituyendo en la primera, \\(y^2 = 1\\). Es decir, las envolventes son las rectas \\(y = \\pm 1\\).\n\n\nFamilia de curvas paramétricas\nSupongamos que tenemos la familia de curvas en paramétricas: \\[\n\\begin{cases}\nx = x(t, C) \\\\\ny = y(t, C)\n\\end{cases}\n\\]\nLas envolventes se obtienen despejando \\(C = C(t)\\) en el jacobiano igualado a cero: \\[\n\\det \\begin{pmatrix} x_C & y_C \\\\ x_t & y_t \\end{pmatrix} = 0\n\\] y sustituyendo en las ecuaciones paramétricas.\n\n\n\n\n\n\nPuntos singulares\n\n\n\nRealmente, con estos procedimientos no sólo aparecen las envolventes, sino también los lugares geométricos de puntos singulares, ya sea de puntos de retroceso, de puntos de inflexión o de cúspides.\nLos puntos de retroceso se llaman puntos singulares esenciales y los otros puntos singulares evitables. En todo caso, después de aplicar estos métodos, hay que comprobar siempre qué es lo que hemos encontrado.",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Apartado 7: $F$ algebraica en $y'$ de grado $n$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado8.html",
+    "href": "parte2/apartado8.html",
+    "title": "9  Apartado 8: Ecuación de la forma \\(y = f(x, y')\\)",
+    "section": "",
+    "text": "9.1 Método general\nComo procedimiento general para intentar resolver este tipo de ecuaciones, tomamos \\(y' = p\\) y derivamos \\(y = f(x, y')\\) respecto de \\(x\\), con lo cual tenemos \\[ p = y' = f_x + f_{y'} \\frac{dy'}{dx} = f_x(x, p) + f_{y'}(x, p)p'. \\]\nCuando \\(f\\) tiene la forma adecuada, la nueva ecuación \\(p = f_x(x, p) + f_p(x, p)p'\\) que hemos encontrado puede ser de alguno de los tipos ya estudiados. Si éste es el caso, la resolvemos, obteniendo su solución \\(x = \\phi(p, C)\\).\nEntonces, la solución de la E. D. de partida será: \\[\n\\begin{cases}\nx = \\phi(p, C) \\\\\ny = f(\\phi(p, C), p)\n\\end{cases}\n\\] expresado como una familia de curvas en paramétricas.",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Apartado 8: Ecuación de la forma $y = f(x, y')$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado8.html#método-general",
+    "href": "parte2/apartado8.html#método-general",
+    "title": "9  Apartado 8: Ecuación de la forma \\(y = f(x, y')\\)",
+    "section": "",
+    "text": "Note\n\n\n\nPuede resultar extraño pensar que el parámetro \\(p\\) vale precisamente \\(\\frac{dy}{dx}\\); pero esto no importa en absoluto, sino que puede considerarse una simple curiosidad.",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Apartado 8: Ecuación de la forma $y = f(x, y')$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado8.html#ecuación-y-fy",
+    "href": "parte2/apartado8.html#ecuación-y-fy",
+    "title": "9  Apartado 8: Ecuación de la forma \\(y = f(x, y')\\)",
+    "section": "9.2 8.1. Ecuación \\(y = f(y')\\)",
+    "text": "9.2 8.1. Ecuación \\(y = f(y')\\)\nEn este caso, como \\(f(x, y') = f(y')\\), se tiene \\(f_x(x, p) = 0\\), luego con el proceso descrito habremos obtenido la ecuación \\(p = f_p(p)p'\\) o, lo que es lo mismo, \\(p = f'(p)p'\\).\nSi \\(p \\neq 0\\), esto lo podemos poner como \\(dx = \\frac{f'(p)}{p} \\, dp\\), que es de variables separadas. Integrándola, \\(x = \\int \\frac{f'(p)}{p} \\, dp = \\phi(p) + C\\), y las soluciones de \\(y = f(y')\\) serán las curvas: \\[\n\\begin{cases}\nx = \\phi(p) + C \\\\\ny = f(p)\n\\end{cases}\n\\]\n\n\n\n\n\n\nObservación geométrica\n\n\n\nNotar, a la vista de su representación paramétrica, que todas ellas tienen la misma forma: se diferencian únicamente en un desplazamiento horizontal.\n\n\nA partir de \\(p = 0\\) obtenemos la solución constante \\(y = f(0)\\). Gráficamente, esto es una recta envolvente de las demás soluciones.",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Apartado 8: Ecuación de la forma $y = f(x, y')$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado8.html#ecuación-de-lagrange-y-xvarphiy-psiy-0",
+    "href": "parte2/apartado8.html#ecuación-de-lagrange-y-xvarphiy-psiy-0",
+    "title": "9  Apartado 8: Ecuación de la forma \\(y = f(x, y')\\)",
+    "section": "9.3 8.2. Ecuación de Lagrange: \\(y + x\\varphi(y') + \\psi(y') = 0\\)",
+    "text": "9.3 8.2. Ecuación de Lagrange: \\(y + x\\varphi(y') + \\psi(y') = 0\\)\nSi ponemos \\(y' = p\\) y derivamos respecto de \\(x\\) queda: \\[ p + \\varphi(p) + x\\varphi'(p)\\frac{dp}{dx} + \\psi'(p)\\frac{dp}{dx} = 0 \\]\nque podemos escribir como: \\[(p + \\varphi(p)) \\, dx + x\\varphi'(p) \\, dp + \\psi'(p) \\, dp = 0\\]\n\nCaso 1: \\(p + \\varphi(p) \\neq 0\\)\nDividimos por \\(p + \\varphi(p)\\), con lo que nos aparece la ecuación lineal: \\[ \\frac{dx}{dp} + \\frac{\\varphi'(p)}{p + \\varphi(p)}x + \\frac{\\psi'(p)}{p + \\varphi(p)} = 0 \\]\nen la que \\(x\\) actúa como función y \\(p\\) como variable. Si la resolvemos, obtendremos como solución \\(x = \\phi(p, C)\\). Con esto, habremos encontrado para la E. D. de Lagrange las soluciones: \\[\n\\begin{cases}\nx = \\phi(p, C) \\\\\ny = -\\phi(p, C)\\varphi(p) - \\psi(p)\n\\end{cases}\n\\] en forma de familia de curvas paramétricas.\n\n\nCaso 2: Soluciones singulares\nSupongamos que existe algún \\(\\lambda\\) para el cual \\(\\lambda + \\varphi(\\lambda) = 0\\). Formalmente, tomamos \\(y' = \\lambda\\), sustituyendo en la E. D., \\(y + x\\varphi(\\lambda) + \\psi(\\lambda) = 0\\), es decir: \\[y = \\lambda x - \\psi(\\lambda)\\]\nEsta recta es, efectivamente, solución de la ecuación de Lagrange. Estas rectas decimos que son las soluciones singulares de la ecuación.",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Apartado 8: Ecuación de la forma $y = f(x, y')$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado8.html#ecuación-de-clairaut-y---xy-psiy-0",
+    "href": "parte2/apartado8.html#ecuación-de-clairaut-y---xy-psiy-0",
+    "title": "9  Apartado 8: Ecuación de la forma \\(y = f(x, y')\\)",
+    "section": "9.4 8.3. Ecuación de Clairaut: \\(y - xy' + \\psi(y') = 0\\)",
+    "text": "9.4 8.3. Ecuación de Clairaut: \\(y - xy' + \\psi(y') = 0\\)\nÉste es un caso particular de ecuación de Lagrange con \\(\\varphi(y') = -y'\\). Aquí, como \\(\\varphi(\\lambda) + \\lambda = 0\\) para todo \\(\\lambda \\in \\mathbb{R}\\), no existen las soluciones que, en la ecuación de Lagrange, encontrábamos por el método general; sólo aparecen rectas.\n\n\n\n\n\n\nSolución general de Clairaut\n\n\n\nTenemos como soluciones de la E. D. toda la familia de rectas: \\[y = \\lambda x - \\psi(\\lambda), \\quad \\lambda \\in \\mathbb{R}\\]\n\n\n\nSolución singular (envolvente)\nExiste una solución singular, la envolvente de este haz de rectas. Para ello, planteamos el sistema: \\[\n\\begin{cases}\ny = \\lambda x - \\psi(\\lambda) \\\\\n0 = x - \\psi'(\\lambda)\n\\end{cases}\n\\]\ndonde la segunda ecuación es la primera derivada respecto al parámetro \\(\\lambda\\). La envolvente queda expresada en forma paramétrica como: \\[\n\\begin{cases}\nx = \\psi'(\\lambda) \\\\\ny = \\lambda \\psi'(\\lambda) - \\psi(\\lambda)\n\\end{cases}\n\\]\n\n\n\n\n\n\nVerificación\n\n\n\nPodemos garantizar que esta curva es una envolvente y no un lugar geométrico de puntos singulares. En cada punto \\((x(\\lambda), y(\\lambda))\\) de la curva, esta interseca precisamente a la recta \\(y = \\lambda x - \\psi(\\lambda)\\) del haz; y la pendiente de esa recta en el punto de intersección coincide con la de la curva: \\[ \\frac{dy}{dx} = \\frac{dy/d\\lambda}{dx/d\\lambda} = \\frac{\\psi'(\\lambda) + \\lambda\\psi''(\\lambda) - \\psi'(\\lambda)}{\\psi''(\\lambda)} = \\lambda \\]\n\n\n\n\n\n\n\n\nRECETA 8. Ecuación de la forma \\(y = f(x, y')\\)\n\n\n\nEn general, se toma \\(y' = p\\) y se deriva la ecuación \\(y = f(x, y')\\) respecto de \\(x\\). Si \\(f\\) tiene la forma adecuada, a la nueva E. D. se le puede aplicar alguno de los métodos ya estudiados.\n8.1. Cuando \\(y = f(y')\\), la ecuación que se obtiene es de variables separadas.\n8.2. Ecuación de Lagrange: \\(y + x\\varphi(y') + \\psi(y') = 0\\). Se reduce a una ecuación lineal con \\(x\\) como función y \\(p\\) como variable. Además, para los \\(\\lambda\\) tales que \\(\\lambda + \\varphi(\\lambda) = 0\\) se obtienen como soluciones las rectas \\(y = \\lambda x - \\psi(\\lambda)\\).\n8.3. Ecuación de Clairaut: \\(y - xy' + \\psi(y') = 0\\). Es un caso particular de ecuación de Lagrange en el que sólo aparecen rectas (y su envolvente).\n\n\n\n\nEjemplo 8.3: Ecuación de Clairaut\nResolver \\[ y = y'x - 2(y')^2. \\]\nSolución:\nEstamos ante una ecuación de Clairaut \\(y - xy' + \\psi(y') = 0\\) con \\(\\psi(y') = 2(y')^2\\).\nSin más que tomar \\(y' = \\lambda\\), las rectas \\(y = \\lambda x - 2\\lambda^2\\) son solución de la E. D. para cada \\(\\lambda \\in \\mathbb{R}\\).\nCalculemos su envolvente: en el sistema \\[\n\\begin{cases}\ny = \\lambda x - 2\\lambda^2 \\\\\n0 = x - 4\\lambda\n\\end{cases}\n\\]\nDespejamos \\(\\lambda = \\frac{x}{4}\\) en la segunda ecuación y, sustituyendo en la primera, encontramos que la envolvente es la parábola: \\[y = \\frac{x^2}{8}\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Apartado 8: Ecuación de la forma $y = f(x, y')$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado9.html",
+    "href": "parte2/apartado9.html",
+    "title": "10  Apartado 9: Ecuación de la forma \\(x = f(y, y')\\)",
+    "section": "",
+    "text": "10.1 Método general\nEstas ecuaciones son similares a las que aparecen en el apartado 8 pero con el papel de \\(x\\) e \\(y\\) intercambiado. En general, para intentar resolverlas, tomamos \\(y' = p\\) y derivamos \\(x = f(y, y')\\) (o, si se prefiere interpretarlo así, \\(x = f(y, p)\\)) respecto de \\(y\\) (en lugar de respecto a \\(x\\), como hacíamos en el apartado 8).\nAsí: \\[ \\frac{1}{p} = \\frac{dx}{dy} = f_y(y, p) + f_p(y, p)\\frac{dp}{dy} \\]\nSegún como sea \\(f\\), esta nueva ecuación \\(\\frac{1}{p} = f_y(y, p) + f_p(y, p)\\frac{dp}{dy}\\) a la que hemos reducido la que teníamos responde a alguno de los tipos previamente estudiados, luego podríamos resolverla.\nSi logramos hacerlo, obtenemos su solución \\(y = \\phi(p, C)\\). Con esto, la solución de la ecuación de partida será la familia de curvas paramétricas: \\[\n\\begin{cases}\nx = f(\\phi(p, C), p) \\\\\ny = \\phi(p, C)\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Apartado 9: Ecuación de la forma $x = f(y, y')$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado9.html#método-general",
+    "href": "parte2/apartado9.html#método-general",
+    "title": "10  Apartado 9: Ecuación de la forma \\(x = f(y, y')\\)",
+    "section": "",
+    "text": "¡Atención!\n\n\n\nEsto requiere tener un poco más de cuidado, además de usar \\(\\frac{dx}{dy} = \\frac{1}{dy/dx} = \\frac{1}{p}\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Apartado 9: Ecuación de la forma $x = f(y, y')$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado9.html#casos-especiales",
+    "href": "parte2/apartado9.html#casos-especiales",
+    "title": "10  Apartado 9: Ecuación de la forma \\(x = f(y, y')\\)",
+    "section": "10.2 Casos especiales",
+    "text": "10.2 Casos especiales\nPero no podemos asegurar que, para una función \\(f\\) cualquiera, sepamos resolver la ecuación intermedia que nos aparece. Se pueden estudiar casos similares a los de la forma \\(y = f(x, y')\\) en los que se garantiza que el método no quedará interrumpido.\nLos tres casos que merece la pena distinguir son los siguientes:\n\n9.1. Ecuación \\(x = f(y')\\)\nSimilar al caso 8.1, pero derivando respecto a \\(y\\).\n\n\n9.2. Ecuación \\(x + y\\varphi(y') + \\psi(y') = 0\\)\nSimilar al caso 8.2 (ecuación de Lagrange), pero con \\(x\\) e \\(y\\) intercambiados.\n\n\n9.3. Ecuación \\(x - \\frac{y}{y'} + \\psi(y') = 0\\)\nSimilar al caso 8.3 (ecuación de Clairaut), pero con \\(x\\) e \\(y\\) intercambiados.\n\n\n\n\n\n\nEjercicio\n\n\n\nSe deja al lector que, como ejercicio, describa el método de resolución de estos tres tipos de ecuaciones. Simplemente hay que dedicarse a modificar, con cuidado, el proceso utilizado en los correspondientes tipos 8.1, 8.2 y 8.3, recordando que ahora hay que derivar respecto de \\(y\\) en lugar de respecto de \\(x\\).\n\n\n\n\n\n\n\n\nRECETA 9. Ecuación de la forma \\(x = f(y, y')\\)\n\n\n\nEn general, se toma \\(y' = p\\) y se deriva la ecuación \\(x = f(y, y')\\) respecto de \\(y\\). Según como sea \\(f\\), la nueva E. D. que así se obtiene es ya conocida, procediéndose a su resolución. Se pueden estudiar casos similares a los de la forma \\(y = f(x, y')\\).\n\n\n\n\nEjemplo 9\nResolver \\[ x = (y')^3 + y'. \\]\nSolución:\nSi tomamos \\(\\frac{dy}{dx} = y' = p\\) y derivamos \\(x = p^3 + p\\) respecto de \\(y\\) tenemos: \\[ \\frac{1}{p} = \\frac{1}{dy/dx} = \\frac{dx}{dy} = 3p^2 \\frac{dp}{dy} + \\frac{dp}{dy} \\]\nque podemos poner como \\(dy = (3p^3 + p) \\, dp\\), ecuación en variables separadas.\nIntegrándola, \\(y = \\frac{3}{4}p^4 + \\frac{1}{2}p^2 + C\\).\n\n\n\n\n\n\nSolución\n\n\n\nPor lo tanto, las soluciones de la ecuación \\(x = (y')^3 + y'\\) son la familia de curvas paramétricas: \\[\n\\begin{cases}\nx = p^3 + p \\\\\ny = \\frac{3}{4}p^4 + \\frac{1}{2}p^2 + C\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Apartado 9: Ecuación de la forma $x = f(y, y')$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado10.html",
+    "href": "parte2/apartado10.html",
+    "title": "11  Apartado 10: Ecuación de la forma \\(F(y, y') = 0\\)",
+    "section": "",
+    "text": "11.1 Método general\nPara intentar encontrar sus soluciones, consideremos la curva \\(F(\\alpha, \\beta) = 0\\). El método de resolución requiere que hayamos logrado encontrar previamente una representación paramétrica de la curva, esto es, \\(\\alpha = \\varphi(t)\\) y \\(\\beta = \\psi(t)\\) tal que \\(F(\\varphi(t), \\psi(t)) = 0\\).\nSi así ha sido, vamos ahora a efectuar el cambio de función \\(y\\) por \\(t\\) mediante: \\[y = \\varphi(t), \\quad y' = \\psi(t)\\]\nEntonces, derivando \\(y = \\varphi(t)\\) respecto de \\(x\\) tenemos \\(y' = \\varphi'(t)\\frac{dt}{dx}\\) que, al ser \\(y' = \\psi(t)\\), puede escribirse como: \\[ \\psi(t) = \\varphi'(t)\\frac{dt}{dx} \\]\nEsta es una ecuación en variables separadas.",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Apartado 10: Ecuación de la forma $F(y, y') = 0$</span>"
+    ]
+  },
+  {
+    "objectID": "parte2/apartado10.html#resolución-según-casos",
+    "href": "parte2/apartado10.html#resolución-según-casos",
+    "title": "11  Apartado 10: Ecuación de la forma \\(F(y, y') = 0\\)",
+    "section": "11.2 Resolución según casos",
+    "text": "11.2 Resolución según casos\n\nCaso 1: \\(\\psi(t) \\neq 0\\)\nPodemos poner \\(dx = \\frac{\\varphi'(t)}{\\psi(t)} \\, dt\\) e, integrando: \\[x = \\int \\frac{\\varphi'(t)}{\\psi(t)} \\, dt + C\\]\nComo consecuencia, la familia de curvas paramétricas: \\[\n\\begin{cases}\nx = \\int \\frac{\\varphi'(t)}{\\psi(t)} \\, dt + C \\\\\ny = \\varphi(t)\n\\end{cases}\n\\] son soluciones de la E. D. de partida.\n\n\nCaso 2: Soluciones singulares (\\(\\psi(t_0) = 0\\))\nSi existe algún \\(t_0\\) para el que \\(\\psi(t_0) = 0\\), formalmente efectuamos el siguiente razonamiento: \\[0 = \\varphi'(t)\\frac{dt}{dx}\\]\nasí que \\(\\varphi'(t) = 0\\) y consecuentemente \\(\\varphi(t) = \\text{cte.} = \\varphi(t_0)\\), lo que nos conduciría a la solución \\(y = \\varphi(t_0)\\).\nY, en efecto, podemos comprobar con rigor que esta recta horizontal es solución de la E. D. sin más que sustituir en ella: \\[F(y, y') = F(\\varphi(t_0), 0) = F(\\varphi(t_0), \\psi(t_0)) = 0\\]\n\n\n\n\n\n\nRECETA 10. Ecuación de la forma \\(F(y, y') = 0\\)\n\n\n\nConsideramos la curva \\(F(\\alpha, \\beta) = 0\\). Si encontramos una representación paramétrica \\(\\alpha = \\varphi(t)\\), \\(\\beta = \\psi(t)\\), \\(F(\\varphi(t), \\psi(t)) = 0\\), se hace el cambio de función \\(y\\) por \\(t\\) mediante \\(y = \\varphi(t)\\), \\(y' = \\psi(t)\\). Así, derivando \\(y = \\varphi(t)\\) respecto de \\(x\\), aparece una ecuación en variables separadas.\n\n\n\n\nEjemplo 10\nResolver \\[ y^{2/3} + (y')^{2/3} = 1. \\]\nSolución:\nSi tomamos \\(y = \\cos^3 t\\), \\(y' = \\operatorname{sen}^3 t\\), es claro que: \\[(\\cos^3 t)^{2/3} + (\\operatorname{sen}^3 t)^{2/3} = 1\\]\nDerivando \\(y = \\cos^3 t\\) tenemos \\(y' = -3 \\cos^2 t \\operatorname{sen} t \\frac{dt}{dx}\\), lo que, usando \\(y' = \\operatorname{sen}^3 t\\), resulta ser: \\[\\operatorname{sen}^3 t = -3 \\cos^2 t \\operatorname{sen} t \\frac{dt}{dx}\\]\nSi suponemos \\(\\operatorname{sen} t \\neq 0\\), tenemos: \\[dx = \\frac{-3 \\cos^2 t}{\\operatorname{sen}^2 t} \\, dt = -3 \\operatorname{cotg}^2 t \\, dt\\]\nIntegrando: \\[\\begin{align*}\nx &= -3 \\int \\operatorname{cotg}^2 t \\, dt \\\\\n&= -3 \\int (1 + \\operatorname{cotg}^2 t) \\, dt + 3 \\int dt \\\\\n&= 3 \\operatorname{cotg} t + 3t + C\n\\end{align*}\\]\nPor tanto, las curvas paramétricas: \\[\n\\begin{cases}\nx = 3 \\operatorname{cotg} t + 3t + C \\\\\ny = \\cos^3 t\n\\end{cases}\n\\] son soluciones de la E. D. de partida.\n\n\n\n\n\n\nSoluciones singulares\n\n\n\nPor último, para los \\(t\\) tales que \\(\\operatorname{sen}^3 t = 0\\), lo cual ocurre cuando \\(t = k\\pi\\), \\(k \\in \\mathbb{Z}\\), aparecen como soluciones singulares las rectas horizontales \\(y = \\cos^3(k\\pi)\\), es decir: \\[y = 1 \\quad \\text{e} \\quad y = -1\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte II: E.D. con Derivada Implícita",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Apartado 10: Ecuación de la forma $F(y, y') = 0$</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado11.html",
+    "href": "parte3/apartado11.html",
+    "title": "12  Apartado 11: \\(F(x, y^{(k)}, \\dots, y^{(n)}) = 0\\)",
+    "section": "",
+    "text": "12.1 Reducción de orden: ausencia de \\(y\\)\nTenemos una ecuación en la que no aparece la variable dependiente \\(y\\) (y además, si \\(k &gt; 1\\), tampoco sus derivadas hasta el orden \\(k - 1\\)).\nEs evidente que el cambio \\(y^{(k)} = z\\) la convierte en: \\[ F(x, z, \\dots, z^{(n-k)}) = 0 \\]\nque es una E. D. de orden \\(n - k\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Apartado 11: $F(x, y^{(k)}, \\dots, y^{(n)}) = 0$</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado11.html#procedimiento-completo",
+    "href": "parte3/apartado11.html#procedimiento-completo",
+    "title": "12  Apartado 11: \\(F(x, y^{(k)}, \\dots, y^{(n)}) = 0\\)",
+    "section": "12.2 Procedimiento completo",
+    "text": "12.2 Procedimiento completo\nSi logramos resolverla, obtenemos que su solución será \\(z = \\phi(x, C_1, \\dots, C_{n-k})\\), una familia dependiente de \\(n - k\\) constantes.\nEntonces, al ser \\(y^{(k)} = z\\), para tener las soluciones de la ecuación original bastará con integrar \\(k\\) veces \\(\\phi(x, C_1, \\dots, C_{n-k})\\) respecto de \\(x\\), es decir: \\[ y = \\underbrace{\\int \\cdots \\int}_{k \\text{ veces}} \\phi(x, C_1, \\dots, C_{n-k}) \\underbrace{dx \\, dx \\dots dx}_{k \\text{ veces}} \\]\nlo cual introducirá \\(k\\) nuevas constantes en la solución general. De este modo, dicha solución general tendrá la forma: \\[ y = \\underbrace{\\int \\cdots \\int}_{k \\text{ veces}} \\phi(x, C_1, \\dots, C_{n-k}) \\underbrace{dx \\, dx \\dots dx}_{k \\text{ veces}} + C_{n-k+1}x^{k-1} + \\cdots + C_{n-1}x + C_n \\]\n\n\n\n\n\n\nRECETA 11. Ecuación de la forma \\(F(x, y^{(k)}, \\dots, y^{(n)}) = 0\\)\n\n\n\nMediante el cambio \\(y^{(k)} = z\\) se convierte en una ecuación de orden \\(n - k\\).\n\n\n\nEjemplo 11\nResolver \\[ y'' - xy''' + (y''')^3 = 0. \\]\nSolución:\nTomemos \\(y'' = z\\), con lo que la ecuación se transforma en \\(z - xz' + (z')^3 = 0\\), que es de Clairaut.\nSin más que sustituir \\(z' = \\lambda\\), las soluciones de ésta son las rectas: \\[z = \\lambda x - \\lambda^3, \\quad \\lambda \\in \\mathbb{R}\\]\nCalculemos las envolventes: en el sistema \\[\n\\begin{cases}\nz = \\lambda x - \\lambda^3 \\\\\n0 = x - 3\\lambda^2\n\\end{cases}\n\\]\nDespejamos \\(\\lambda = \\pm\\sqrt{\\frac{x}{3}}\\) en la segunda ecuación, con lo que, sustituyendo en la primera, encontramos las dos envolventes: \\[z = \\pm\\frac{2x}{3\\sqrt{3}}\\sqrt{\\frac{x}{3}}\\]\nUna vez resuelta completamente la ecuación de Clairaut, hallemos las soluciones de la original:\nComo \\(y'' = z\\), a partir de \\(z = \\lambda x - \\lambda^3\\), integrando dos veces: \\[ y = \\int \\left( \\int (\\lambda x - \\lambda^3) \\, dx \\right) dx = \\frac{\\lambda x^3}{6} - \\frac{\\lambda^3 x^2}{2} + C_1 x + C_2 \\]\nCambiando la notación de las constantes: \\[y = K_1x^3 - 108K_1^3 x^2 + K_2 x + K_3\\]\nPor último, de \\(z = \\pm\\frac{2}{3\\sqrt{3}}x^{3/2}\\) obtenemos: \\[ y = \\int \\left( \\int \\frac{\\pm 2}{3\\sqrt{3}}x^{3/2} \\, dx \\right) dx = \\frac{\\pm 8x^{7/2}}{105\\sqrt{3}} + C_1 x + C_2 \\]\n\n\n\n\n\n\nSoluciones finales\n\n\n\nEs decir, las dos familias de curvas: \\[y = \\frac{8x^{7/2}}{105\\sqrt{3}} + C_1 x + C_2\\] \\[y = -\\frac{8x^{7/2}}{105\\sqrt{3}} + C_1 x + C_2\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Apartado 11: $F(x, y^{(k)}, \\dots, y^{(n)}) = 0$</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado11p.html",
+    "href": "parte3/apartado11p.html",
+    "title": "13  Apartado 11’: Ecuaciones Lineales de Orden Superior",
+    "section": "",
+    "text": "13.1 Ecuaciones Lineales de Orden \\(n &gt; 1\\)\nSupongamos que tenemos una ecuación: \\[ a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \\cdots + a_1(x)y' + a_0(x)y = g(x) \\]\ncon \\(n &gt; 1\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Apartado 11': Ecuaciones Lineales de Orden Superior</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado11p.html#ecuaciones-lineales-de-orden-n-1",
+    "href": "parte3/apartado11p.html#ecuaciones-lineales-de-orden-n-1",
+    "title": "13  Apartado 11’: Ecuaciones Lineales de Orden Superior",
+    "section": "",
+    "text": "Observación importante\n\n\n\nExiste una teoría general bien establecida sobre ecuaciones diferenciales lineales de cualquier orden. Pero éste es un estudio esencialmente teórico: no es posible describir la solución general de una E. D. lineal de orden 2 o superior por medio de cuadraturas.\nSin embargo, sí que se calculan las soluciones de forma muy satisfactoria cuando nos encontramos ante ecuaciones lineales con coeficientes constantes.",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Apartado 11': Ecuaciones Lineales de Orden Superior</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado11p.html#método-de-reducción-de-orden",
+    "href": "parte3/apartado11p.html#método-de-reducción-de-orden",
+    "title": "13  Apartado 11’: Ecuaciones Lineales de Orden Superior",
+    "section": "13.2 Método de reducción de orden",
+    "text": "13.2 Método de reducción de orden\nEste método radica en haber encontrado previamente una solución particular \\(y_n(x)\\) de la lineal homogénea asociada: \\[a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \\cdots + a_1(x)y' + a_0(x)y = 0\\]\nSi hemos logrado encontrar tal solución particular, efectuamos el cambio de función \\(y\\) por \\(z\\) dado por: \\[y(x) = y_n(x)z(x)\\]\n\nProcedimiento\nDerivando sucesivamente: \\[\\begin{align*}\ny'(x) &= y'_n(x)z(x) + y_n(x)z'(x) \\\\\ny''(x) &= y''_n(x)z(x) + 2y'_n(x)z'(x) + y_n(x)z''(x) \\\\\n&\\vdots \\\\\ny^{(n)}(x) &= y_n^{(n)}(x)z(x) + \\cdots + \\binom{n}{k}y_n^{(k)}(x)z^{(n-k)}(x) + \\cdots + y_n(x)z^{(n)}(x)\n\\end{align*}\\]\nSustituyendo en la lineal y sacando factor común los \\(z^{(k)}\\), el coeficiente de \\(z\\) es 0 por ser precisamente \\(y_n\\) solución de la ecuación lineal homogénea. Así, podemos poner: \\[ b_n(x)z^{(n)} + b_{n-1}(x)z^{(n-1)} + \\cdots + b_1(x)z' = g(x) \\]\nSi en ella hacemos \\(z' = u\\) aparece: \\[ b_n(x)u^{(n-1)} + b_{n-1}(x)u^{(n-2)} + \\cdots + b_1(x)u = g(x) \\]\nque es una ecuación lineal de orden \\(n-1\\).\n\n\n\n\n\n\nRECETA 11’. Ecuaciones lineales de orden superior\n\n\n\nSon de la forma: \\[ a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \\cdots + a_1(x)y' + a_0(x)y = g(x) \\]\nSi logramos encontrar alguna solución \\(y_n(x)\\) de la lineal homogénea asociada, el cambio de función \\(y = y_n z\\) hace que la lineal se transforme en una del tipo anterior, cuyo orden se puede reducir. Así, aparece una nueva ecuación lineal, esta vez de orden \\(n-1\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Apartado 11': Ecuaciones Lineales de Orden Superior</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado11p.html#resultados-generales",
+    "href": "parte3/apartado11p.html#resultados-generales",
+    "title": "13  Apartado 11’: Ecuaciones Lineales de Orden Superior",
+    "section": "13.3 Resultados generales",
+    "text": "13.3 Resultados generales\n\nEstructura de la solución general\nLa solución general de la lineal de orden \\(n\\) puede expresarse como: \\[ y(x) = y_p(x) + C_1 y_1(x) + \\cdots + C_{n-1}y_{n-1}(x) + C_n y_n(x) \\]\ndonde \\(y_p(x)\\) es una solución particular de la lineal.\n\n\n\n\n\n\nImportant\n\n\n\nLa solución general de la lineal puede expresarse como una solución particular de la lineal más la solución general de la lineal homogénea asociada.\n\n\n\n\nMétodo de variación de las constantes\nTambién existe el método de variación de las constantes para E. D. lineales de orden \\(n\\), destinado a resolver la ecuación lineal cuando se conoce la solución general de la homogénea asociada, \\(y(x) = C_1 y_1(x) + C_2 y_2(x) + \\cdots + C_n y_n(x)\\).\nEn estas condiciones, se busca la solución de la lineal de la forma: \\[ y(x) = C_1(x)y_1(x) + C_2(x)y_2(x) + \\cdots + C_n(x)y_n(x) \\]\npara ciertas funciones \\(C_k(x)\\) a determinar.",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Apartado 11': Ecuaciones Lineales de Orden Superior</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado12.html",
+    "href": "parte3/apartado12.html",
+    "title": "14  Apartado 12: \\(F(y, y', \\ldots, y^{(n)}) = 0\\)",
+    "section": "",
+    "text": "14.1 Reducción de orden: ausencia de \\(x\\)\nEn esta ecuación no aparece explícitamente la variable independiente \\(x\\). Vamos a ver cómo se reduce de orden si efectuamos el cambio \\(y' = p\\) y la transformamos en una nueva en la que aparecerán \\(y\\), \\(p\\) y las derivadas de \\(p\\) respecto de \\(y\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Apartado 12: $F(y, y', \\ldots, y^{(n)}) = 0$</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado12.html#reducción-de-orden-ausencia-de-x",
+    "href": "parte3/apartado12.html#reducción-de-orden-ausencia-de-x",
+    "title": "14  Apartado 12: \\(F(y, y', \\ldots, y^{(n)}) = 0\\)",
+    "section": "",
+    "text": "¡Atención!\n\n\n\nLas derivadas de \\(p\\) son respecto de \\(y\\), no respecto de \\(x\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Apartado 12: $F(y, y', \\ldots, y^{(n)}) = 0$</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado12.html#derivadas-sucesivas",
+    "href": "parte3/apartado12.html#derivadas-sucesivas",
+    "title": "14  Apartado 12: \\(F(y, y', \\ldots, y^{(n)}) = 0\\)",
+    "section": "14.2 Derivadas sucesivas",
+    "text": "14.2 Derivadas sucesivas\nSi denotamos \\(p' = \\frac{dp}{dy}\\), \\(p'' = \\frac{d^2p}{dy^2}\\), …, y hacemos uso de la regla de la cadena, entonces:\n\\[y' = p\\]\n\\[ y'' = \\frac{dy'}{dx} = \\frac{dp}{dx} = \\frac{dp}{dy}\\frac{dy}{dx} = p'p \\]\n\\[ y''' = \\frac{dy''}{dx} = \\frac{d}{dx}(p'p) = \\frac{d}{dy}(p'p)\\frac{dy}{dx} = [p''p + (p')^2]p \\]\ny así sucesivamente. Nótese que en la expresión de cada \\(y^{(k)}\\) sólo aparecen derivadas de \\(p\\) hasta el orden \\(k-1\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Apartado 12: $F(y, y', \\ldots, y^{(n)}) = 0$</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado12.html#transformación-de-la-ecuación",
+    "href": "parte3/apartado12.html#transformación-de-la-ecuación",
+    "title": "14  Apartado 12: \\(F(y, y', \\ldots, y^{(n)}) = 0\\)",
+    "section": "14.3 Transformación de la ecuación",
+    "text": "14.3 Transformación de la ecuación\nCon esto, sustituyendo en \\(F\\) los valores que hemos encontrado para \\(y'\\), \\(y''\\), …, \\(y^{(n)}\\), la E. D. original se transforma en una de la forma: \\[ G\\left( y, \\frac{dp}{dy}, \\ldots, \\frac{d^{n-1}p}{dy^{n-1}} \\right) = 0 \\]\ncuyo orden es \\(n-1\\).\nSi logramos resolver esta nueva ecuación encontraremos que, en general, su solución será de la forma \\(p = \\phi(y, C_1, \\ldots, C_{n-1})\\), dependiente de \\(n-1\\) constantes.\nAhora, devolviendo a \\(p\\) su valor original, es decir, \\(p = \\frac{dy}{dx}\\), obtenemos: \\[\\frac{dy}{dx} = \\phi(y, C_1, \\ldots, C_{n-1})\\]\nque es otra ecuación, esta vez de primer orden, que también hay que resolver (lo cual, además, añade una nueva constante). Las soluciones de esta última serán, obviamente, las mismas que las de la E. D. de partida.\n\n\n\n\n\n\nRECETA 12. Ecuación de la forma \\(F(y, y', \\ldots, y^{(n)}) = 0\\)\n\n\n\nHacemos el cambio \\(y' = p\\) y transformamos la E. D. en una nueva dependiendo de \\(y\\), \\(p\\) y las derivadas de \\(p\\) respecto de \\(y\\). Ésta es de orden \\(n-1\\).\n\n\n\nEjemplo 12\nResolver \\[ 2yy'' = (y')^2 + 1. \\]\nSolución:\nTomando \\(y' = p\\), y tal como hemos comprobado al explicar el método, se tiene \\(y'' = p'p\\) donde \\(p' = \\frac{dp}{dy}\\).\nEntonces, al sustituir en la E. D., ésta se nos transforma en \\(2yp'p = p^2 + 1\\), es decir: \\[\\frac{2p \\, dp}{p^2 + 1} = \\frac{dy}{y}\\]\nque es de variables separadas.\nSi integramos: \\[\\log(p^2 + 1) = \\log(C_1 y)\\]\nde donde \\(p^2 + 1 = C_1 y\\), y por tanto \\(p = \\pm\\sqrt{C_1 y - 1}\\).\nVolvemos ahora a restaurar el valor \\(p = \\frac{dy}{dx}\\), con lo cual nos aparece: \\[\\frac{dy}{dx} = \\pm\\sqrt{C_1 y - 1}\\]\nÉsta es de nuevo una ecuación en variables separadas, que podemos escribir como: \\[(C_1 y - 1)^{-1/2} dy = \\pm dx\\]\nIntegrándola: \\[2\\sqrt{C_1 y - 1} = \\pm C_1 x + C_2\\]\n\n\n\n\n\n\nSolución\n\n\n\nCon lo que ya hemos encontrado las soluciones de la E. D. de partida: \\[2\\sqrt{C_1 y - 1} = \\pm C_1 x + C_2\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Apartado 12: $F(y, y', \\ldots, y^{(n)}) = 0$</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado12p.html",
+    "href": "parte3/apartado12p.html",
+    "title": "15  Apartado 12’: Ecuaciones Homogéneas Respecto a las Derivadas",
+    "section": "",
+    "text": "15.1 Ecuaciones homogéneas generalizadas\nSi la ecuación \\(F(x, y, y', \\ldots, y^{(n)}) = 0\\) es tal que, para \\(\\alpha\\) y \\(m\\) fijos, \\(F\\) cumple: \\[ F(\\lambda x, \\lambda^m u_0, \\lambda^{m-1}u_1, \\ldots, \\lambda^{m-n}u_n) = \\lambda^\\alpha F(x, u_0, u_1, \\ldots, u_n) \\]\nvamos a ver que, efectuando un cambio tanto de variable independiente como de dependiente, esta E. D. se podrá transformar en una del tipo anterior (es decir, en la que no aparecerá la variable independiente).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Apartado 12': Ecuaciones Homogéneas Respecto a las Derivadas</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado12p.html#ecuaciones-homogéneas-generalizadas",
+    "href": "parte3/apartado12p.html#ecuaciones-homogéneas-generalizadas",
+    "title": "15  Apartado 12’: Ecuaciones Homogéneas Respecto a las Derivadas",
+    "section": "",
+    "text": "Definición\n\n\n\nUna ecuación de estas características suele decirse que es homogénea generalizada de grado \\(\\alpha\\), en la que cada factor \\(x\\) contribuye con grado 1, cada \\(y\\) con grado \\(m\\), \\(y'\\) con grado \\(m-1\\), \\(y''\\) con \\(m-2\\), etcétera.",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Apartado 12': Ecuaciones Homogéneas Respecto a las Derivadas</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado12p.html#cambio-de-variables",
+    "href": "parte3/apartado12p.html#cambio-de-variables",
+    "title": "15  Apartado 12’: Ecuaciones Homogéneas Respecto a las Derivadas",
+    "section": "15.2 Cambio de variables",
+    "text": "15.2 Cambio de variables\nTomamos dos nuevas variables \\(t\\) y \\(z\\) (\\(t\\) la independiente y \\(z\\) la dependiente) que relacionamos con las originales \\(x\\) e \\(y\\) mediante: \\[x = e^t, \\quad y = e^{mt}z\\]\nCon esto, si denotamos \\(z' = \\frac{dz}{dt}\\), tenemos: \\[ \\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{me^{mt}z + e^{mt}z'}{e^t} = e^{(m-1)t}(z' + mz) \\]\nA partir de aquí: \\[\\begin{align*}\n\\frac{d^2 y}{dx^2} &= \\frac{d}{dx}\\left( \\frac{dy}{dx} \\right) = \\frac{d}{dt}\\left( \\frac{dy}{dx} \\right)\\frac{dt}{dx} \\\\\n&= e^{(m-2)t}(z'' + (2m-1)z' + m(m-1)z)\n\\end{align*}\\]\ny así sucesivamente. En general, por inducción, es claro que: \\[ \\frac{d^{(k)}y}{dx^{(k)}} = e^{(m-k)t}g_k(z, z', \\ldots, z^{(k)}) \\]",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Apartado 12': Ecuaciones Homogéneas Respecto a las Derivadas</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado12p.html#transformación-de-la-ecuación",
+    "href": "parte3/apartado12p.html#transformación-de-la-ecuación",
+    "title": "15  Apartado 12’: Ecuaciones Homogéneas Respecto a las Derivadas",
+    "section": "15.3 Transformación de la ecuación",
+    "text": "15.3 Transformación de la ecuación\nDe este modo, sustituyendo en la E. D. que estamos intentando resolver, obtenemos: \\[ F(e^t, e^{mt}z, e^{(m-1)t}(z' + mz), \\ldots, e^{(m-n)t}g_n(z, z', \\ldots, z^{(n)})) = 0 \\]\nextrayendo \\(\\lambda = e^t\\), esto resulta ser: \\[ e^{\\alpha t}F(1, z, (z' + mz), \\ldots, g_n(z, z', \\ldots, z^{(n)})) = 0 \\]\nComo \\(e^{\\alpha t}\\) no puede anularse, el otro factor tiene que ser cero, luego hemos transformado la ecuación de partida en una de la forma: \\[ G(z, z', \\ldots, z^{(n)}) = 0 \\]\nen la que no aparece explícitamente la variable independiente \\(t\\). Esta ecuación puede reducirse de orden aplicando el proceso descrito en el apartado anterior.\n\n\n\n\n\n\nRECETA 12’. Si la ecuación \\(F(x, y, y', \\ldots, y^{(n)}) = 0\\)\n\n\n\nes tal que, para \\(\\alpha\\) y \\(m\\) fijos, \\(F\\) cumple: \\[ F(\\lambda x, \\lambda^m u_0, \\lambda^{m-1}u_1, \\ldots, \\lambda^{m-n}u_n) = \\lambda^\\alpha F(x, u_0, u_1, \\ldots, u_n) \\]\nhaciendo el cambio \\(x = e^t\\), \\(y = e^{mt}z\\) la E. D. se transforma en una de la forma \\(G(z, z', \\ldots, z^{(n)}) = 0\\), a la que se puede aplicar el método anterior.\n\n\n\nEjemplo 12’\nResolver \\[ 4x^2 y^3 y'' = x^2 - y^4. \\]\nAnálisis de homogeneidad:\nPara que esta ecuación sea homogénea generalizada, cada monomio tiene que ser del mismo grado. En el miembro de la derecha, esto se consigue con \\(2 = 4m\\), es decir, \\(m = \\frac{1}{2}\\), con lo cual \\(x^2 - y^4\\) es de grado 2.\nEl miembro de la izquierda es de grado \\(2 + 3m + (m-2) = 2 + \\frac{3}{2} + (\\frac{1}{2} - 2) = 2\\), coincidente con el del otro miembro.\nAsí pues, con \\(m = \\frac{1}{2}\\) la E. D. es homogénea generalizada de grado 2.\nSolución:\n(El desarrollo completo está disponible en el documento LaTeX original)",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Apartado 12': Ecuaciones Homogéneas Respecto a las Derivadas</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado13.html",
+    "href": "parte3/apartado13.html",
+    "title": "16  Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos",
+    "section": "",
+    "text": "16.1 Ecuaciones homogéneas respecto a \\(y, y', \\ldots, y^{(n)}\\)\nSi la ecuación \\(F(x, y, y', \\ldots, y^{(n)}) = 0\\) es tal que, para \\(\\alpha\\) fijo, \\(F\\) cumple: \\[ F(x, \\lambda u_0, \\lambda u_1, \\ldots, \\lambda u_n) = \\lambda^\\alpha F(x, u_0, u_1, \\ldots, u_n) \\]\nvamos a comprobar cómo, a través de un cambio de variable dependiente, el orden se puede reducir en uno.",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado13.html#ecuaciones-homogéneas-respecto-a-y-y-ldots-yn",
+    "href": "parte3/apartado13.html#ecuaciones-homogéneas-respecto-a-y-y-ldots-yn",
+    "title": "16  Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos",
+    "section": "",
+    "text": "Definición\n\n\n\nLa propiedad que caracteriza a la función \\(F\\) suele expresarse diciendo que \\(F\\) es homogénea de grado \\(\\alpha\\) respecto a los argumentos \\(u_0, u_1, \\ldots, u_n\\).\nCon este lenguaje, la ecuación que estamos intentando resolver es homogénea de grado \\(\\alpha\\) respecto de \\(y, y', \\ldots, y^{(n)}\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado13.html#solución-trivial",
+    "href": "parte3/apartado13.html#solución-trivial",
+    "title": "16  Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos",
+    "section": "16.2 Solución trivial",
+    "text": "16.2 Solución trivial\nEn primer lugar, es claro que, cuando \\(\\alpha &gt; 0\\), la función constante \\(y = 0\\) (para la cual \\(y' = y'' = \\cdots = 0\\)) es solución ya que, efectivamente: \\[F(x, y, y', \\ldots, y^{(n)}) = F(x, 0, 0, \\ldots, 0) = 0^\\alpha F(x, 1, 1, \\ldots, 1) = 0\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado13.html#cambio-de-función",
+    "href": "parte3/apartado13.html#cambio-de-función",
+    "title": "16  Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos",
+    "section": "16.3 Cambio de función",
+    "text": "16.3 Cambio de función\nPara hallar las demás soluciones, tomemos una nueva función \\(z\\) dada por: \\[y' = yz\\]\nObviamente, esto es equivalente a decir \\(y = \\exp(\\int z\\,dx)\\), puesto que: \\[ \\frac{dy}{dx} = yz \\Longleftrightarrow \\frac{dy}{y} = z\\,dx \\Longleftrightarrow \\log y = \\int z\\,dx \\Longleftrightarrow y = \\exp\\left( \\int z\\,dx \\right) \\]\n\nDerivadas sucesivas\nSi derivamos sucesivamente la expresión \\(y' = yz\\), obtenemos: \\[y'' = y'z + yz' = y(z^2 + z')\\] \\[y''' = y''z + y'z' + yz'' = y(z^3 + 3zz' + z'')\\]\ny así sucesivamente.\n\n\n\n\n\n\nImportant\n\n\n\nEs importante destacar el hecho de que siempre aparece una relación del tipo \\(y^{(k)} = yg_k(z, z', \\ldots, z^{(k-1)})\\).",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos</span>"
+    ]
+  },
+  {
+    "objectID": "parte3/apartado13.html#transformación-de-la-ecuación",
+    "href": "parte3/apartado13.html#transformación-de-la-ecuación",
+    "title": "16  Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos",
+    "section": "16.4 Transformación de la ecuación",
+    "text": "16.4 Transformación de la ecuación\nSin más que sustituir, en la E. D. queda: \\[ F(x, y, yz, y(z^2 + z'), \\ldots, yg_n(z, z', \\ldots, z^{(n-1)})) = 0 \\]\nde donde, extrayendo \\(\\lambda = y\\): \\[ y^\\alpha F(x, 1, z, z^2 + z', \\ldots, g_n(z, z', \\ldots, z^{(n-1)})) = 0 \\]\ny por tanto, como estamos suponiendo que \\(y\\) no es la función nula, el segundo factor habrá de ser cero. Claramente, esto puede ponerse en la forma: \\[ G(x, z, z', \\ldots, z^{(n-1)}) = 0 \\]\nque es una ecuación de orden \\(n-1\\).\nSi logramos resolverla, tendremos que sus soluciones serán \\(z = \\phi(x, C_1, \\ldots, C_{n-1})\\), una familia dependiente de \\(n-1\\) constantes. Entonces, las soluciones de la E. D. original serán: \\[ y = \\exp\\left( \\int \\phi(x, C_1, \\ldots, C_{n-1})\\,dx \\right) \\]\nlo que, al integrar, introduce la \\(n\\)-ésima constante. Así, puede ponerse: \\[ y = C_n \\exp\\left( \\int \\phi(x, C_1, \\ldots, C_{n-1})\\,dx \\right) \\]\n\n\n\n\n\n\nRECETA 13. Si la ecuación \\(F(x, y, y', \\ldots, y^{(n)}) = 0\\)\n\n\n\nes tal que, para \\(\\alpha\\) fijo, \\(F\\) cumple: \\[ F(x, \\lambda u_0, \\lambda u_1, \\ldots, \\lambda u_n) = \\lambda^\\alpha F(x, u_0, u_1, \\ldots, u_n) \\]\nentonces el cambio de función dado por \\(y' = yz\\) (es decir, \\(y = \\exp(\\int z\\,dx)\\)) hace que el orden se reduzca en uno.\n\n\n\nEjemplo 13\nResolver \\[ 3x^2((y')^2 - yy'') = y^2. \\]\nSolución:\nEsta ecuación es homogénea de grado 2 respecto de \\(y, y', y''\\) pues, al sustituir \\(y, y', y''\\) por \\(\\lambda y, \\lambda y', \\lambda y''\\), la ecuación queda multiplicada por \\(\\lambda^2\\).\nPara resolverla, hacemos el cambio \\(y\\) por \\(z\\) dado por \\(y = \\exp(\\int z(x)\\,dx)\\), con lo cual: \\[ y' = z\\exp\\left( \\int z\\,dx \\right), \\quad y'' = (z' + z^2)\\exp\\left( \\int z\\,dx \\right) \\]\nSustituyendo en la E. D. queda: \\[ 3x^2\\left[ z^2\\exp\\left( 2 \\int z\\,dx \\right) - (z' + z^2)\\exp\\left( 2 \\int z\\,dx \\right) \\right] = \\exp\\left( 2 \\int z\\,dx \\right) \\]\nde donde, simplificando \\(\\exp(2 \\int z\\,dx)\\), se sigue \\(-3x^2 z' = 1\\), ecuación en variables separadas.\nTras ponerla como \\(dz = -\\frac{1}{3}x^{-2}\\,dx\\) la integramos, con lo que \\(z = \\frac{1}{3}x^{-1} + C_1\\).\nPor último: \\[\\begin{align*}\ny &= \\exp\\left( \\int z(x)\\,dx \\right) = \\exp\\left( \\int \\left( \\frac{1}{3}x^{-1} + C_1 \\right) dx \\right) \\\\\n&= \\exp\\left( \\frac{1}{3}\\log x + C_1 x + C_2 \\right) = x^{1/3}\\exp(C_1 x + C_2)\n\\end{align*}\\]\n\n\n\n\n\n\nSolución\n\n\n\nLa solución de la ecuación original es, sin más que cambiar la notación de las constantes, la familia de funciones: \\[y = K_1 x^{1/3}e^{K_2 x}\\]",
+    "crumbs": [
+      "Inicio",
+      "Parte III: Reducción de Orden",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Apartado 13: Ecuaciones Homogéneas Respecto a Ciertos Argumentos</span>"
+    ]
+  },
+  {
+    "objectID": "bibliografia.html",
+    "href": "bibliografia.html",
+    "title": "17  Bibliografía",
+    "section": "",
+    "text": "17.1 Referencias\nA continuación se presenta la bibliografía recomendada para profundizar en el estudio de ecuaciones diferenciales ordinarias:",
+    "crumbs": [
+      "Inicio",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Bibliografía</span>"
+    ]
+  },
+  {
+    "objectID": "bibliografia.html#referencias",
+    "href": "bibliografia.html#referencias",
+    "title": "17  Bibliografía",
+    "section": "",
+    "text": "F. Ayres, Ecuaciones diferenciales, Col. Schaum, McGraw-Hill, México, 1988.\nM. Braun, Ecuaciones diferenciales y sus aplicaciones, Grupo Editorial Iberoamérica, México, 1990.\nW. E. Boyce y R. C. DiPrima, Ecuaciones diferenciales y problemas con valores en la frontera, Limusa, México, 1992 (3.ª edición).\nE. A. Coddington, Introducción a las ecuaciones diferenciales ordinarias, CECSA, México, 1980.\nM. W. Hirsch y S. Smale, Ecuaciones diferenciales, sistemas dinámicos y álgebra lineal, Alianza Universidad Textos, Madrid, 1983.\nS. G. Krantz, Differential Equations. Theory, Technique and Practice, CRC Press, Boca Raton, 2015.\nL. Pontriaguine, Ecuaciones diferenciales ordinarias, Mir, Moscú, 1969.\nG. F. Simmons, Ecuaciones diferenciales con aplicaciones y notas históricas, McGraw-Hill, México, 1977.\nJ. Stewart, Cálculo, conceptos y contextos, Thomson, México, 1999.\n\n\n\n\n\n\n\nRecursos adicionales\n\n\n\nPara consulta en línea, se recomienda: - Wolfram MathWorld - Differential Equations - MIT OpenCourseWare - Differential Equations",
+    "crumbs": [
+      "Inicio",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Bibliografía</span>"
+    ]
+  },
+  {
+    "objectID": "apendice.html",
+    "href": "apendice.html",
+    "title": "18  Apéndice: Fórmulas de Integración",
+    "section": "",
+    "text": "18.1 Reglas principales de integración",
+    "crumbs": [
+      "Inicio",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Apéndice: Fórmulas de Integración</span>"
+    ]
+  },
+  {
+    "objectID": "apendice.html#reglas-principales-de-integración",
+    "href": "apendice.html#reglas-principales-de-integración",
+    "title": "18  Apéndice: Fórmulas de Integración",
+    "section": "",
+    "text": "1. Integral indefinida\nSi \\(F'(x) = f(x)\\), entonces: \\[\\int f(x) \\, dx = F(x) + C\\]\n\n\n2. Integrales inmediatas\n\nPotencias y logaritmoExponencialTrigonométricasTrigonométricas inversas\n\n\n\\[\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\quad (n \\neq -1)\\]\n\\[\\int \\frac{1}{x} \\, dx = \\ln|x| + C\\]\n\n\n\\[\\int e^x \\, dx = e^x + C\\]\n\\[\\int a^x \\, dx = \\frac{a^x}{\\ln a} + C \\quad (a &gt; 0, a \\neq 1)\\]\n\n\n\\[\\int \\operatorname{sen} x \\, dx = -\\cos x + C\\]\n\\[\\int \\cos x \\, dx = \\operatorname{sen} x + C\\]\n\\[\\int \\operatorname{tg} x \\, dx = -\\ln|\\cos x| + C\\]\n\\[\\int \\operatorname{cotg} x \\, dx = \\ln|\\operatorname{sen} x| + C\\]\n\\[\\int \\sec x \\, dx = \\ln|\\sec x + \\operatorname{tg} x| + C\\]\n\\[\\int \\csc x \\, dx = \\ln|\\csc x - \\operatorname{cotg} x| + C\\]\n\n\n\\[\\int \\frac{1}{\\sqrt{1-x^2}} \\, dx = \\operatorname{arcsen} x + C\\]\n\\[\\int \\frac{1}{1+x^2} \\, dx = \\operatorname{arctg} x + C\\]\n\\[\\int \\frac{1}{x\\sqrt{x^2-1}} \\, dx = \\operatorname{arcsec} |x| + C\\]\n\n\n\n\n\n3. Método de sustitución\nSi \\(u = g(x)\\), entonces: \\[\\int f(g(x))g'(x) \\, dx = \\int f(u) \\, du\\]\n\n\n4. Integración por partes\n\\[\\int u \\, dv = uv - \\int v \\, du\\]\no equivalentemente: \\[\\int u(x)v'(x) \\, dx = u(x)v(x) - \\int u'(x)v(x) \\, dx\\]\n\n\n5. Fracciones racionales\nPara integrar \\(\\frac{P(x)}{Q(x)}\\) donde \\(P\\) y \\(Q\\) son polinomios:\n\nSi grado de \\(P \\geq\\) grado de \\(Q\\): dividir primero\nDescomponer en fracciones simples\nIntegrar cada fracción simple\n\n\n\n\n\n\n\nDescomposición en fracciones simples\n\n\n\n\nPara \\((x-a)^n\\): términos \\(\\frac{A_1}{x-a} + \\frac{A_2}{(x-a)^2} + \\cdots + \\frac{A_n}{(x-a)^n}\\)\nPara \\(x^2 + bx + c\\) irreducible: término \\(\\frac{Ax + B}{x^2 + bx + c}\\)\n\n\n\n\n\nTabla de integrales útiles\n\n\n\n\n\n\n\nIntegral\nResultado\n\n\n\n\n\\(\\displaystyle\\int \\frac{1}{a^2+x^2} \\, dx\\)\n\\(\\displaystyle\\frac{1}{a}\\operatorname{arctg}\\frac{x}{a} + C\\)\n\n\n\\(\\displaystyle\\int \\frac{1}{\\sqrt{a^2-x^2}} \\, dx\\)\n\\(\\displaystyle\\operatorname{arcsen}\\frac{x}{a} + C\\)\n\n\n\\(\\displaystyle\\int \\frac{1}{a^2-x^2} \\, dx\\)\n\\(\\displaystyle\\frac{1}{2a}\\ln\\left|\\frac{a+x}{a-x}\\right| + C\\)\n\n\n\\(\\displaystyle\\int \\frac{1}{\\sqrt{x^2 \\pm a^2}} \\, dx\\)\n\\(\\displaystyle\\ln|x + \\sqrt{x^2 \\pm a^2}| + C\\)\n\n\n\\(\\displaystyle\\int \\sqrt{a^2-x^2} \\, dx\\)\n\\(\\displaystyle\\frac{x}{2}\\sqrt{a^2-x^2} + \\frac{a^2}{2}\\operatorname{arcsen}\\frac{x}{a} + C\\)\n\n\n\n\n\n\n\n\n\nRecursos para más fórmulas\n\n\n\nPara una lista más completa de fórmulas de integración, consultar:\n\nTablas de integrales de Gradshteyn y Ryzhik\nWolfram Integrator\nSymbolab Calculator",
+    "crumbs": [
+      "Inicio",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Apéndice: Fórmulas de Integración</span>"
+    ]
+  }
+]
